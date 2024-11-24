@@ -1,0 +1,51 @@
+function EvaluatePosition(board)
+    score = 0
+    for each piece in board
+        if white.owner == "white"
+            score += EvaluatePiece(board, piece)
+        else if piece.owner == "black"
+            score -= EvaluatePiece(board, piece)
+        end if
+    end for
+    return score
+end function
+
+function EvaluatePiece(board, piece)
+    score = 0
+    score += MaterialValue(piece)
+    score += PieceActivity(board, piece)
+    if piece.type == "king"
+        score += KingSafety(board, piece)
+    else if piece.type == "pawn"
+        score += PawnStructure(board, piece)
+    end if
+    score += ControlOfCenter(board, piece)
+    score += Development(board, piece)
+    score += SpaceContribution(board, piece)
+    score += Coordination(board, piece)
+    score += Mobility(board, piece)
+    return score
+end function
+
+function MaterialBalance(board)
+    score = 0
+    for each piece in board
+        if piece.type == "pawn"
+            value = 1
+        else if piece.type == "knight" or piece.type == "bishop"
+            value = 3
+        else if piece.type == "rook"
+            value = 5
+        else if piece.type == "queen"
+            value = 9
+        else
+            value = 0
+
+        if piece.owner == "white"
+            score += value
+        else if piece.owner == "black"
+            score -= value
+        end if
+    end for
+    return score
+end function
