@@ -1,33 +1,33 @@
-function EvaluatePosition(board)
+function EvaluatePosition()
     score = 0
     for each piece in board
         if white.owner == "white"
-            score += EvaluatePiece(board, piece)
+            score += EvaluatePiece(piece)
         else if piece.owner == "black"
-            score -= EvaluatePiece(board, piece)
+            score -= EvaluatePiece(piece)
         end if
     end for
     return score
 end function
 
-function EvaluatePiece(board, piece)
+function EvaluatePiece(piece)
     score = 0
     score += MaterialValue(piece)
-    score += PieceActivity(board, piece)
+    score += PieceActivity(piece)
     if piece.type == "king"
-        score += KingSafety(board, piece)
+        score += KingSafety(piece)
     else if piece.type == "pawn"
-        score += PawnStructure(board, piece)
+        score += PawnStructure(piece)
     end if
-    score += ControlOfCenter(board, piece)
-    score += Development(board, piece)
-    score += SpaceContribution(board, piece)
-    score += Coordination(board, piece)
-    score += Mobility(board, piece)
+    score += ControlOfCenter(piece)
+    score += Development(piece)
+    score += SpaceContribution(piece)
+    score += Coordination(piece)
+    score += Mobility(piece)
     return score
 end function
 
-function MaterialBalance(board)
+function MaterialBalance()
     score = 0
     for each piece in board
         if piece.type == "pawn"
@@ -49,3 +49,113 @@ function MaterialBalance(board)
     end for
     return score
 end function
+
+function PieceActivity()
+    score = 0
+    for each piece in board
+        legalMoves = generateLegalMoves(piece)
+        activity = length(legalMoves) * activityWeight(piece)
+
+        if piece.owner = "white"
+            score += activity
+        else if piece.owner = "black"
+            score -= activity
+        end if
+    end for
+    return score
+end function
+
+funtion KingSafety()
+    score = 0
+    for each king in board
+        safety = 0
+        if isFileOpen(king.position) or isDiagonalOpen(king.position) 
+            score -= 2
+        end if
+        for each square in AdjacentSquares(king.position)
+            if board[square] != "pawn" or board[square]. owner != king.owner    
+                safety -= 1
+            end if
+        end for
+
+        if king.owner = "white"
+            score += safety
+        else if king.owner = "black"
+            score -= safety
+        end if
+    end for
+    return score
+end function
+
+function PawnStructure
+    score = 0
+    for each pawn in board
+        structure = 0
+        if isIsolated(pawn)
+            structure -= 1
+        if isDoubled(pawn)
+            structure -= 1
+        if isPassed(pawn)
+            structure += 2
+        end if
+        if pawn.owner = "white"
+            score += structure
+        else if pawn.owner = "black"
+            score -= structure
+        end if
+    end for
+    return score
+end function
+
+function Minimax(position, depth, alpha, beta, maximisingPlayer)
+    if depth == 0 or gameOver(position)
+        return evaluate(position)
+    end if
+
+    if maximisingPlayer
+        maxEval = -infinity
+        for move in generateLegalMoves(position)
+            makeMove(position, move)
+            eval = minimax(position, depth -1, alpha, beta, false)
+            undoMove(position, move)
+            maxEval = max(alpha, eval)
+            alpha = max(alpha, eval)
+            if beta <= alpha
+                break
+            end if
+        end for
+        return maxEval
+    else
+        minEval = infinity
+        for move in generateLegalMoves(position)
+            makeMove(position, move)
+            eval = minimax(position, depth, alpha, beta, true)
+            undoMove(position, move)
+            minEval = min(minEval, eval)
+            beta = min(beta, eval)
+            if beta <= alpha
+                break
+            end if
+        end for
+        return minEval
+    end if
+end function
+
+function BestMove
+    bestEval = -infinity
+    bestMove = null
+    alpha = -infinity
+    beta = infinity
+
+    for move in generateLegalMoves(position)
+        moveMove(position, move)
+        eval = minimax(position, depth -1, alpha, beta, false)
+        undo_move(position, move)
+        if eval > bestEval
+            bestEval = eval
+            bestMove = move
+        end is
+    end for
+    return bestMove
+end function
+
