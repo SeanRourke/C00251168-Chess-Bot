@@ -38,6 +38,29 @@ int main() {
 
     Board chessBoard;
 
+    std::cout << "White Pawns" << endl;
+    printBitboard(chessBoard.whitePawns);
+    std::cout << "White Knights" << endl;
+    printBitboard(chessBoard.whiteKnights);
+    std::cout << "White Bishops" << endl;
+    printBitboard(chessBoard.whiteBishops);
+    std::cout << "White Rooks" << endl;
+    printBitboard(chessBoard.whiteRooks);
+    std::cout << "White Queens" << endl;
+    printBitboard(chessBoard.whiteQueens);
+    std::cout << "White King" << endl;
+    printBitboard(chessBoard.whiteKing);
+    std::cout << "Black Pawns" << endl;
+    printBitboard(chessBoard.blackPawns);
+    std::cout << "Black Knights" << endl;
+    printBitboard(chessBoard.blackKnights);
+    std::cout << "Black Bishops" << endl;
+    printBitboard(chessBoard.blackBishops);
+    std::cout << "Black Rooks" << endl;
+    printBitboard(chessBoard.blackRooks);
+    std::cout << "Black Queens" << endl;
+    printBitboard(chessBoard.blackQueens);
+    std::cout << "Black King" << endl;
     printBitboard(chessBoard.blackKing);
     return 0;
 
