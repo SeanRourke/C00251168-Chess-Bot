@@ -132,12 +132,59 @@ std::vector<Move> generateKnightMoves(int rank, int file) {
     return moves;
 }
 
+std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const Board& board) {
+
+    std::vector<Move> moves;
+    int directions[4][2] = {
+        {1, 1},
+        {1, -1},
+        {-1, 1},
+        {-1, -1}
+    };
+
+    for (const auto& direction: directions) {
+        int newRank = rank;
+        int newFile = file;
+
+        while (true) {
+            newRank += direction[0];
+            newFile += direction[1];
+
+            if (newRank < 0 || newRank >= BOARD_SIZE || newFile < 0 || newFile >= BOARD_SIZE) {
+                break;
+            }
+
+            int toSquare = newRank * BOARD_SIZE + newFile;
+
+            Bitboard occupied = board.allPieces;
+            if (occupied & (1ULL << toSquare)) {
+                for (int opponentColour = 0; opponentColour < MAX_COLOUR; ++opponentColour) {
+                    if (opponentColour != colour) {
+                        for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece) {
+                            if (board.bitboards[piece][colour] & (1ULL & toSquare)) {
+                                moves.push_back({rank * BOARD_SIZE + file, toSquare});
+                            }
+                        }
+                    } 
+                }
+
+                break;
+            }
+            moves.push_back({rank * BOARD_SIZE + file, toSquare});
+        }
+
+    }
+
+    return moves;
+
+}
+
 int main() {
 
     Board chessBoard;
     chessBoard.initialise();
     //chessBoard.printBoard();
-    std::vector<Move> moves = generatePawnMoves(1, 5, WHITE);
+    std::vector<Move> moves = generateBishopMoves(0, 2, WHITE, chessBoard);
     for (const Move& move : moves) {
         std::cout << move << " - ";
     }
