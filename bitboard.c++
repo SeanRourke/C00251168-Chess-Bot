@@ -104,7 +104,7 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour) {
             }
         }
 
-        for (int i = -1; i <= i; i += 2) {
+        for (int i = -1; i <= 1; i += 2) {
             int newFile = file + i;
             if (newFile >= 0 && newFile < BOARD_SIZE) {
                 moves.push_back({rank * BOARD_SIZE + file, newRank * BOARD_SIZE + newFile});
@@ -136,8 +136,8 @@ int main() {
 
     Board chessBoard;
     chessBoard.initialise();
-    chessBoard.printBoard();
-    std::vector<Move> moves = generateKnightMoves(3, 5);
+    //chessBoard.printBoard();
+    std::vector<Move> moves = generatePawnMoves(1, 5, WHITE);
     for (const Move& move : moves) {
         std::cout << move << " - ";
     }
