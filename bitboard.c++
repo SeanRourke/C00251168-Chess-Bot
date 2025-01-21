@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <array>
 #include <string>
+#include <vector>
 
 using Bitboard = uint64_t;
 
@@ -45,8 +46,8 @@ struct Board {
         bitboards[KING][WHITE] = 0x0000000000000010;
         bitboards[KING][BLACK] = 0x1000000000000000;
 
-        for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece){
-            for (int colour = 0; colour < MAX_COLOUR; ++colour){
+        for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece) {
+            for (int colour = 0; colour < MAX_COLOUR; ++colour) {
                 allPieces |= bitboards[piece][colour];
             }
         }
@@ -76,9 +77,71 @@ struct Board {
     }
 };
 
+struct Move {
+
+    int from;
+    int to;
+
+    friend std::ostream& operator<<(std::ostream& os, const Move& move) {
+        os << "(" << move.from << ", " << move.to << ")";
+        return os;
+    }
+
+};
+
+std::vector<Move> generatePawnMoves(int rank, int file, Colour colour) {
+    std::vector<Move> moves;
+    int direction = (colour == WHITE) ? 1 : -1;
+
+    int newRank = rank + direction;
+    if (newRank >= 0 && newRank < BOARD_SIZE) {
+        moves.push_back({rank * BOARD_SIZE + file, newRank * BOARD_SIZE + file});
+
+        if ((colour == WHITE && rank == 1) || (colour == BLACK && rank == 6)) {
+            newRank += direction;
+            if (newRank >= 0 && newRank < BOARD_SIZE) {
+                moves.push_back({rank * BOARD_SIZE + file, newRank * BOARD_SIZE + file});
+            }
+        }
+
+        for (int i = -1; i <= i; i += 2) {
+            int newFile = file + i;
+            if (newFile >= 0 && newFile < BOARD_SIZE) {
+                moves.push_back({rank * BOARD_SIZE + file, newRank * BOARD_SIZE + newFile});
+            }
+        }
+    }
+
+    return moves;
+}
+
+std::vector<Move> generateKnightMoves(int rank, int file) {
+    std::vector<Move> moves;
+    int knightMoves[8][2] = {
+        {2, 1}, {2, -1}, {-2, 1}, {-2, -1},
+        {1, 2}, {1, -2}, {-1, 2}, {-1, -2}
+    };
+
+    for (const auto& move : knightMoves) {
+        int newRank = rank + move[0];
+        int newFile = file + move[1];
+        if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE) {
+            moves.push_back({rank * BOARD_SIZE + file, newRank * BOARD_SIZE + newFile});
+        }
+    }
+    return moves;
+}
+
 int main() {
+
     Board chessBoard;
     chessBoard.initialise();
     chessBoard.printBoard();
+    std::vector<Move> moves = generateKnightMoves(3, 5);
+    for (const Move& move : moves) {
+        std::cout << move << " - ";
+    }
+
     return 0;
+
 }
