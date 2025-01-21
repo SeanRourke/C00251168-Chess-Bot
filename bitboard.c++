@@ -4,64 +4,81 @@
 #include <iostream>
 #include <bitset>
 #include <cstdint>
+#include <array>
+#include <string>
 
 using Bitboard = uint64_t;
-using namespace std;
 
-struct Board {
-    Bitboard whitePawns   = 0x000000000000FF00;
-    Bitboard blackPawns   = 0x00FF000000000000;
-    Bitboard whiteKnights = 0x0000000000000042;
-    Bitboard blackKnights = 0x4200000000000000;
-    Bitboard whiteBishops = 0x0000000000000024;
-    Bitboard blackBishops = 0x2400000000000000;
-    Bitboard whiteRooks   = 0x0000000000000081;
-    Bitboard blackRooks   = 0x8100000000000000;
-    Bitboard whiteQueens  = 0x0000000000000008;
-    Bitboard blackQueens  = 0x0800000000000000;
-    Bitboard whiteKing    = 0x0000000000000010;
-    Bitboard blackKing    = 0x1000000000000000;
+const int BOARD_SIZE = 8;
+
+enum Piece {
+    PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, MAX_PIECE_TYPE
 };
 
-void printBitboard(const Bitboard &board) {
-    for (int rank = 7; rank >= 0; rank--) {
-        for (int file = 0; file < 8; file++) {
-            int square = rank * 8 + file;
-            std::cout << ((board & (1ULL << square)) ? "1 " : ". ");
+enum Colour {
+    WHITE, BLACK, MAX_COLOUR
+};
+
+struct Board {
+
+    std::array<std::array<Bitboard, MAX_COLOUR>, MAX_PIECE_TYPE> bitboards = {};
+
+    Bitboard allPieces = 0;
+
+    void initialise() {
+
+        bitboards[PAWN][WHITE] = 0x000000000000FF00;
+        bitboards[PAWN][BLACK] = 0x00FF000000000000;
+
+        bitboards[ROOK][WHITE] = 0x0000000000000081;
+        bitboards[ROOK][BLACK] = 0x8100000000000000;
+
+        bitboards[KNIGHT][WHITE] = 0x0000000000000042;
+        bitboards[KNIGHT][BLACK] = 0x4200000000000000;
+
+        bitboards[BISHOP][WHITE] = 0x0000000000000024;
+        bitboards[BISHOP][BLACK] = 0x2400000000000000;
+
+        bitboards[QUEEN][WHITE] = 0x0000000000000008;
+        bitboards[QUEEN][BLACK] = 0x0800000000000000;
+
+        bitboards[KING][WHITE] = 0x0000000000000010;
+        bitboards[KING][BLACK] = 0x1000000000000000;
+
+        for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece){
+            for (int colour = 0; colour < MAX_COLOUR; ++colour){
+                allPieces |= bitboards[piece][colour];
+            }
         }
-        std::cout << std::endl;
     }
-    std::cout << std::endl;
-}
+
+    void printBitboard(Bitboard board) const {
+        for (int rank = BOARD_SIZE - 1; rank >= 0; --rank) {
+            for (int file = 0; file < BOARD_SIZE; ++file) {
+                int square = rank * BOARD_SIZE + file;
+                std::cout << ((board & (1ULL << square)) ? "1 " : ". ");
+            }
+            std::cout << '\n';
+        }
+        std::cout << '\n';
+    }
+
+    void printBoard() const {
+        std::array<std::string, MAX_PIECE_TYPE> pieceSymbols = {"P", "N", "B", "R", "Q", "K"};
+        std::array<std::string, MAX_COLOUR> colourPrefix = {"W", "B"};
+
+        for (int colour = 0; colour < MAX_COLOUR; ++colour) {
+            for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece) {
+                std::cout << colourPrefix[colour] << pieceSymbols[piece] << ":\n";
+                printBitboard(bitboards[piece][colour]);
+            }
+        }
+    }
+};
 
 int main() {
-
     Board chessBoard;
-
-    std::cout << "White Pawns" << endl;
-    printBitboard(chessBoard.whitePawns);
-    std::cout << "White Knights" << endl;
-    printBitboard(chessBoard.whiteKnights);
-    std::cout << "White Bishops" << endl;
-    printBitboard(chessBoard.whiteBishops);
-    std::cout << "White Rooks" << endl;
-    printBitboard(chessBoard.whiteRooks);
-    std::cout << "White Queens" << endl;
-    printBitboard(chessBoard.whiteQueens);
-    std::cout << "White King" << endl;
-    printBitboard(chessBoard.whiteKing);
-    std::cout << "Black Pawns" << endl;
-    printBitboard(chessBoard.blackPawns);
-    std::cout << "Black Knights" << endl;
-    printBitboard(chessBoard.blackKnights);
-    std::cout << "Black Bishops" << endl;
-    printBitboard(chessBoard.blackBishops);
-    std::cout << "Black Rooks" << endl;
-    printBitboard(chessBoard.blackRooks);
-    std::cout << "Black Queens" << endl;
-    printBitboard(chessBoard.blackQueens);
-    std::cout << "Black King" << endl;
-    printBitboard(chessBoard.blackKing);
+    chessBoard.initialise();
+    chessBoard.printBoard();
     return 0;
-
 }
