@@ -1,21 +1,34 @@
-// Seán Rourke
-// C00251168
+/**
+ * @file main.cpp
+ * @author Seán Rourke
+ * @brief Entry point for the chess engine.
+ * @version 0.1
+ * @date 2025
+ * 
+ * This file initialises the chess board and serves as the entry point for the chess bot.
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
 
 #include <iostream>
-#include <bitset>
-#include <cstdint>
-#include <array>
-#include <string>
 #include <vector>
 #include "board.h"
 #include "move.h"
 #include "moveGeneration.h"
 
+/**
+ * @brief Main function of the chess engine.
+ * 
+ * This function initialises the starting position of the chess board.
+ * 
+ * @return int Returns 0 on successful execution.
+ */
 int main()
 {
 
-    Board chessBoard;
-    chessBoard.initialise();
+    Board chessBoard; ///< Instance of the chessboard.
+    chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
     //chessBoard.printBoard();
     std::vector<Move> moves = generateRookMoves(2, 1, WHITE, chessBoard);
     for (const Move &move : moves)
