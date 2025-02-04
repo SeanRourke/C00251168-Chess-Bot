@@ -1,3 +1,13 @@
+/**
+ * @file board.h
+ * @author Seán Rourke
+ * @brief Defines chessboard representation using bitboards.
+ * @date 2025
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef BOARD_H
 #define BOARD_H
 

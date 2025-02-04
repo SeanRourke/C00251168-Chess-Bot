@@ -2,7 +2,6 @@
  * @file main.cpp
  * @author Seán Rourke
  * @brief Entry point for the chess engine.
- * @version 0.1
  * @date 2025
  * 
  * This file initialises the chess board and serves as the entry point for the chess bot.

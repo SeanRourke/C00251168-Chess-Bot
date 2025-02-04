@@ -1,3 +1,13 @@
+/**
+ * @file board.cpp
+ * @author Seán Rourke
+ * @brief Implements the board class for chessboard representation using bitboards.
+ * @date 2025
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "board.h"
 
 /**

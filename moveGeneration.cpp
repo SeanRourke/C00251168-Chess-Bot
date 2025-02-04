@@ -275,7 +275,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
         {-1, 1},
         {-1, -1}};
 
-    // firendly and opposition piece locations
+    // friendly and opposition piece locations
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
 
     // iterate through all possible king moves
