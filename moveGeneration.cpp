@@ -1,28 +1,32 @@
 #include "moveGeneration.h"
 
+/**
+ * @brief Generates legal moves for a pawn.
+ *
+ * @param rank The rank of the pawn.
+ * @param file The file of the pawn.
+ * @param colour The colour of the pawn (WHITE or BLACK).
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the pawn.
+ */
 std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Board &board)
 {
     std::vector<Move> moves;
 
-    // determine direction based on colour
     int forward = (colour == WHITE) ? 1 : -1;
     int startRank = (colour == WHITE) ? 1 : 6;
     int promotionRank = (colour == WHITE) ? 7 : 0;
 
-    // friendly and opposition piece locatins
     Bitboard enemyPieces = (colour == WHITE) ? board.blackPieces : board.whitePieces;
 
-    // one-square forward move
     int forwardRank = rank + forward;
     if (forwardRank >= 0 && forwardRank < BOARD_SIZE)
     {
         int forwardSquare = forwardRank * BOARD_SIZE + file;
-        // square is unoccupied
         if (!(board.allPieces & (1ULL << forwardSquare)))
         {
             if (forwardRank == promotionRank)
             {
-                // promotion moves
                 moves.push_back({rank * BOARD_SIZE + file, forwardSquare, QUEEN});
                 moves.push_back({rank * BOARD_SIZE + file, forwardSquare, ROOK});
                 moves.push_back({rank * BOARD_SIZE + file, forwardSquare, BISHOP});
@@ -33,7 +37,6 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
                 moves.push_back({rank * BOARD_SIZE + file, forwardSquare});
             }
 
-            // two-square forward move (only from the start rank)
             if (rank == startRank)
             {
                 int doubleForwardRank = rank + 2 * forward;
@@ -46,7 +49,6 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
         }
     }
 
-    // diagonal captures,  left (-1) and right (+1)
     for (int side = -1; side <= 1; side += 2)
     {
 
@@ -57,14 +59,12 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
 
             int captureSquare = forwardRank * BOARD_SIZE + captureFile;
 
-            // capturing an enemy piece
             if (enemyPieces & (1ULL << captureSquare))
             {
 
                 if (forwardRank == promotionRank)
                 {
 
-                    // promotion captures
                     moves.push_back({rank * BOARD_SIZE + file, captureSquare, QUEEN});
                     moves.push_back({rank * BOARD_SIZE + file, captureSquare, ROOK});
                     moves.push_back({rank * BOARD_SIZE + file, captureSquare, BISHOP});
@@ -72,14 +72,12 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
                 }
                 else
                 {
-                    // regular capture
                     moves.push_back({rank * BOARD_SIZE + file, captureSquare});
                 }
             }
         }
     }
 
-    // en Passant
     if (board.enPassantSquare != -1)
     {
         int enPassantFile = board.enPassantSquare % BOARD_SIZE;
@@ -93,37 +91,39 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
     return moves;
 }
 
+/**
+ * @brief Generates legal moves for a knight.
+ *
+ * @param rank The rank of the knight.
+ * @param file The file of the knight.
+ * @param colour The colour of the knight.
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the knight.
+ */
 std::vector<Move> generateKnightMoves(int rank, int file, Colour colour, const Board &board)
 {
 
     std::vector<Move> moves;
 
-    // knight move offsets
     int knightMoves[8][2] = {
         {2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
 
-    // friendly and opposition piece locations
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
 
-    // iterate through possible knight moves
     for (const auto &move : knightMoves)
     {
         int newRank = rank + move[0];
         int newFile = file + move[1];
 
-        // check if the move is within bounds
         if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE)
         {
             int toSquare = newRank * BOARD_SIZE + newFile;
 
-            // check if the target square is occupied by a friendly piece
             if (friendlyPieces & (1ULL << toSquare))
             {
-                // skip moves landing on friendly pieces
                 continue;
             }
 
-            // add the move to the list
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
         }
     }
@@ -131,22 +131,28 @@ std::vector<Move> generateKnightMoves(int rank, int file, Colour colour, const B
     return moves;
 }
 
+/**
+ * @brief Generates legal moves for a bishop.
+ *
+ * @param rank The rank of the bishop.
+ * @param file The file of the bishop.
+ * @param colour The colour of the bishop.
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the bishop.
+ */
 std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const Board &board)
 {
 
     std::vector<Move> moves;
 
-    // bishop move offsets
     int directions[4][2] = {
         {1, 1},
         {1, -1},
         {-1, 1},
         {-1, -1}};
 
-    // friendly and opposition piece locations
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
 
-    // iterate through bishop moves
     for (const auto &direction : directions)
     {
         int newRank = rank;
@@ -157,7 +163,6 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
             newRank += direction[0];
             newFile += direction[1];
 
-            // check if the move is within bounds
             if (newRank < 0 || newRank >= BOARD_SIZE || newFile < 0 || newFile >= BOARD_SIZE)
             {
                 break;
@@ -165,20 +170,15 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
 
             int toSquare = newRank * BOARD_SIZE + newFile;
 
-            // check if the square is occupied
             if (friendlyPieces & (1ULL << toSquare))
             {
-                // square is occupied by a friendly piece, stop this direction
                 break;
             }
 
-            // add the move to the list
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            // check if the square is occupied by an enemy piece
             if (board.allPieces & (1ULL << toSquare))
             {
-                // stop further movement in this direction after capturing
                 break;
             }
         }
@@ -187,22 +187,28 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
     return moves;
 }
 
+/**
+ * @brief Generates legal moves for a rook.
+ *
+ * @param rank The rank of the rook.
+ * @param file The file of the rook.
+ * @param colour The colour of the rook.
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the rook.
+ */
 std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Board &board)
 {
 
     std::vector<Move> moves;
 
-    // rook move offsets
     int directions[4][2] = {
         {1, 0},
         {-1, 0},
         {0, 1},
         {0, -1}};
 
-    // friendly and oppostion piece locations
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
 
-    // iterate through rook moves
     for (const auto &direction : directions)
     {
         int newRank = rank;
@@ -213,7 +219,6 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
             newRank += direction[0];
             newFile += direction[1];
 
-            // check if the move is within bounds
             if (newRank < 0 || newRank >= BOARD_SIZE || newFile < 0 || newFile >= BOARD_SIZE)
             {
                 break;
@@ -221,20 +226,15 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
 
             int toSquare = newRank * BOARD_SIZE + newFile;
 
-            // check if the square is occupied
             if (friendlyPieces & (1ULL << toSquare))
             {
-                // square is occupied by a friendly piece, stop this direction
                 break;
             }
 
-            // add the move to the list
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            // check if the square is occupied by an enemy piece
             if (board.allPieces & (1ULL << toSquare))
             {
-                // stop further movement in this direction after capturing
                 break;
             }
         }
@@ -243,28 +243,43 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
     return moves;
 }
 
+/**
+ * @brief Generates legal moves for a queen.
+ *
+ * @param rank The rank of the queen.
+ * @param file The file of the queen.
+ * @param colour The colour of the queen.
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the queen.
+ */
 std::vector<Move> generateQueenMoves(int rank, int file, Colour colour, const Board &board)
 {
 
     std::vector<Move> moves;
 
-    // generate rook moves (straight movements)
     auto rookMoves = generateRookMoves(rank, file, colour, board);
     moves.insert(moves.end(), rookMoves.begin(), rookMoves.end());
 
-    // generate bishop moves (diagonal movements)
     auto bishopMoves = generateBishopMoves(rank, file, colour, board);
     moves.insert(moves.end(), bishopMoves.begin(), bishopMoves.end());
 
     return moves;
 }
 
+/**
+ * @brief Generates legal moves for a king.
+ *
+ * @param rank The rank of the king.
+ * @param file The file of the king.
+ * @param colour The colour of the king.
+ * @param board The current state of the board.
+ * @return A vector of legal moves for the king.
+ */
 std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Board &board)
 {
 
     std::vector<Move> moves;
 
-    // define all possible king move directions
     int kingMoves[8][2] = {
         {1, 0},
         {-1, 0},
@@ -275,24 +290,19 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
         {-1, 1},
         {-1, -1}};
 
-    // friendly and opposition piece locations
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
 
-    // iterate through all possible king moves
     for (const auto &move : kingMoves)
     {
         int newRank = rank + move[0];
         int newFile = file + move[1];
 
-        // check if the new move is within bounds
         if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE)
         {
             int toSquare = newRank * BOARD_SIZE + newFile;
 
-            // check if the square is occupied by a friendly piece
             if (!(friendlyPieces & (1ULL << toSquare)))
             {
-                // add the move to the list
                 moves.push_back({rank * BOARD_SIZE + file, toSquare});
             }
         }
