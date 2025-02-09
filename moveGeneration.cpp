@@ -7,7 +7,7 @@
  * @param file The file of the pawn.
  * @param colour The colour of the pawn (WHITE or BLACK).
  * @param board The current state of the board.
- * @return A vector of legal moves for the pawn.
+ * @return std::vector<Move> A vector of legal moves for the pawn.
  */
 std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -98,7 +98,7 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
  * @param file The file of the knight.
  * @param colour The colour of the knight.
  * @param board The current state of the board.
- * @return A vector of legal moves for the knight.
+ * @return std::vector<Move> A vector of legal moves for the knight.
  */
 std::vector<Move> generateKnightMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -138,7 +138,7 @@ std::vector<Move> generateKnightMoves(int rank, int file, Colour colour, const B
  * @param file The file of the bishop.
  * @param colour The colour of the bishop.
  * @param board The current state of the board.
- * @return A vector of legal moves for the bishop.
+ * @return std::vector<Move> A vector of legal moves for the bishop.
  */
 std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -194,7 +194,7 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
  * @param file The file of the rook.
  * @param colour The colour of the rook.
  * @param board The current state of the board.
- * @return A vector of legal moves for the rook.
+ * @return std::vector<Move> A vector of legal moves for the rook.
  */
 std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -250,7 +250,7 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
  * @param file The file of the queen.
  * @param colour The colour of the queen.
  * @param board The current state of the board.
- * @return A vector of legal moves for the queen.
+ * @return std::vector<Move> A vector of legal moves for the queen.
  */
 std::vector<Move> generateQueenMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -273,7 +273,7 @@ std::vector<Move> generateQueenMoves(int rank, int file, Colour colour, const Bo
  * @param file The file of the king.
  * @param colour The colour of the king.
  * @param board The current state of the board.
- * @return A vector of legal moves for the king.
+ * @return std::vector<Move> A vector of legal moves for the king.
  */
 std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Board &board)
 {
@@ -310,3 +310,53 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
     return moves;
 }
+
+/**
+ * @brief Generates all move for a player
+ * 
+ * @param board The current state of the board.
+ * @param colour The colour of the player.
+ * @return std::vector<Move> 
+ */
+std::vector<Move> generateMoves(const Board &board, Colour colour) {
+    std::vector<Move> moves;
+    std::vector<Move> pieceMoves;
+
+    for (int piece = PAWN; piece < MAX_PIECE_TYPE; ++piece) {
+        Bitboard pieceBB = board.bitboards[piece][colour];
+
+        while (pieceBB) {
+            int square = __builtin_ctzll(pieceBB);
+            pieceBB &= pieceBB - 1;
+
+            int rank = square / 8;
+            int file = square % 8;
+
+            switch (piece) {
+                case PAWN:
+                    pieceMoves = generatePawnMoves(rank, file, colour, board);
+                    break;
+                case KNIGHT:
+                    pieceMoves = generateKnightMoves(rank, file, colour, board);
+                    break;
+                case BISHOP:
+                    pieceMoves = generateBishopMoves(rank, file, colour, board);
+                    break;
+                case ROOK:
+                    pieceMoves = generateRookMoves(rank, file, colour, board);
+                    break;
+                case QUEEN:
+                    pieceMoves = generateQueenMoves(rank, file, colour, board);
+                    break;
+                case KING:
+                    pieceMoves = generateKingMoves(rank, file, colour, board);
+                    break;
+            }
+
+            moves.insert(moves.end(), pieceMoves.begin(), pieceMoves.end());
+        }
+    }
+
+    return moves;
+}
+

@@ -71,4 +71,6 @@ std::vector<Move> generateQueenMoves(int rank, int file, Colour colour, const Bo
  */
 std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Board &board);
 
+std::vector<Move> generateMoves(const Board &board, Colour colour);
+
 #endif
