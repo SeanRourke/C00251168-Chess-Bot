@@ -1,3 +1,15 @@
+/**
+ * @file moveGeneration.cpp
+ * @author Seán Rourke
+ * @brief Generates moves for each type of piece.
+ * @date 2025
+ * 
+ * Generates moves for each piece type, or vector of all moves for a player.
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "moveGeneration.h"
 
 /**

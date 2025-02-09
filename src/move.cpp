@@ -1,3 +1,13 @@
+/**
+ * @file move.cpp
+ * @author Seán Rourke
+ * @brief Prints moves to the console.
+ * @date 2025
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "move.h"
 
 /**

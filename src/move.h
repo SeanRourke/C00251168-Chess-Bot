@@ -1,3 +1,13 @@
+/**
+ * @file move.h
+ * @author Seán Rourke
+ * @brief Defines move structure.
+ * @date 2025
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef MOVE_H
 #define MOVE_H
 

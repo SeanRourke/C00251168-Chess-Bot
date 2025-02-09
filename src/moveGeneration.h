@@ -1,3 +1,13 @@
+/**
+ * @file moveGeneration.h
+ * @author Seán Rourke
+ * @brief Defines functions for generating moves for piece types or player.
+ * @date 2025
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef MOVE_GENERATION_H
 #define MOVE_GENERATION_H
 
