@@ -71,6 +71,13 @@ std::vector<Move> generateQueenMoves(int rank, int file, Colour colour, const Bo
  */
 std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Board &board);
 
+/**
+ * @brief Generates all move for a player.
+ * 
+ * @param board The current state of the board.
+ * @param colour The colour of the player (WHITE or BLACK).
+ * @return std::vector<Move> 
+ */
 std::vector<Move> generateMoves(const Board &board, Colour colour);
 
 #endif

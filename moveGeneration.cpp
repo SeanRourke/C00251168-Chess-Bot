@@ -312,7 +312,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 }
 
 /**
- * @brief Generates all move for a player
+ * @brief Generates all move for a player.
  * 
  * @param board The current state of the board.
  * @param colour The colour of the player.
