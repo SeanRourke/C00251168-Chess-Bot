@@ -42,6 +42,25 @@ void Board::initialise()
     bitboards[KING][WHITE] = 0x0000000000000010;
     bitboards[KING][BLACK] = 0x1000000000000000;
 
+    pieces.fill(EMPTY);
+
+    for (int file = 0; file < BOARD_SIZE; ++file) {
+        pieces[file + 8] = PAWN;
+        pieces[file + 48] = PAWN;
+    }
+
+    pieces[0] = ROOK; pieces[7] = ROOK;
+    pieces[56] = ROOK; pieces[63] = ROOK;
+
+    pieces[1] = KNIGHT; pieces[6] = KNIGHT;
+    pieces[57] = KNIGHT; pieces[62] = KNIGHT;
+
+    pieces[2] = BISHOP; pieces[5] = BISHOP;
+    pieces[58] = BISHOP; pieces[61] = BISHOP;
+
+    pieces[3] = QUEEN; pieces[4] = KING;
+    pieces[59] = QUEEN; pieces[60] = KING;
+
     updateAggregateBitboards();
 }
 

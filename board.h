@@ -20,6 +20,8 @@ using Bitboard = uint64_t; ///< Defines a bitboard as a 64 bit integer.
 
 const int BOARD_SIZE = 8; ///< Number of ranks and files in a standard chessboard.
 
+const Piece EMPTY = static_cast<Piece>(-1); ///< Empty piece for empty squares.
+
 /**
  * @enum Piece
  * @brief Represents different types of chess pieces
@@ -64,6 +66,7 @@ public:
     Bitboard whitePieces = 0;   ///< Bitboard containing all white pieces.
     Bitboard blackPieces = 0;   ///< Bitboard containing all black pieces.
     int enPassantSquare = -1;   ///< Stores location of valid en passant square (-1 if none).
+    std::array<Piece, 64> pieces;
 
     /**
      * @brief Construct a new Board object.
