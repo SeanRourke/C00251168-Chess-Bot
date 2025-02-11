@@ -79,14 +79,27 @@ void Board::updateAggregateBitboards()
 {
     whitePieces = 0;
     blackPieces = 0;
+    allPieces = 0;
 
-    for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece)
-    {
-        whitePieces |= bitboards[piece][WHITE];
-        blackPieces |= bitboards[piece][BLACK];
+    pieces.fill(EMPTY);
+
+    for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece) {
+        for (int colour = 0; colour < MAX_COLOUR; ++colour) {
+            Bitboard bitboard = bitboards[piece][colour];
+
+            if (colour == WHITE) {
+                whitePieces |= bitboard;
+            } else {
+                blackPieces |= bitboard;
+            }
+
+            while (bitboard) {
+                int square = __builtin_ctzll(bitboard);
+                pieces[square] = static_cast<Piece>(piece);
+                bitboard &= bitboard - 1;
+            }
+        }
     }
-
-    allPieces = whitePieces | blackPieces;
 }
 
 /**

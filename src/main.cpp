@@ -37,5 +37,9 @@ int main()
     makeMove(chessBoard, moves[0]);
     chessBoard.printBoard();
 
+    for (auto piece: chessBoard.pieces){
+        std::cout << ' ' << piece << ',';
+    }
+
     return 0;
 }
