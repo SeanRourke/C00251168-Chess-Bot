@@ -15,6 +15,7 @@
 #include "board.h"
 #include "move.h"
 #include "moveGeneration.h"
+#include "makeMove.h"
 
 /**
  * @brief Main function of the chess engine.
@@ -28,11 +29,13 @@ int main()
 
     Board chessBoard; ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    //chessBoard.printBoard();
-    std::vector<Move> moves = generateMoves(chessBoard, WHITE);
+    chessBoard.printBoard();
+    std::vector<Move> moves = generatePawnMoves(1, 0, WHITE, chessBoard);
     for (const Move &move : moves){
         std::cout << ' ' << move << ',';
     }
+    makeMove(chessBoard, moves[1]);
+    chessBoard.printBoard();
 
     return 0;
 }

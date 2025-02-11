@@ -330,7 +330,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
  * @param colour The colour of the player.
  * @return std::vector<Move> 
  */
-std::vector<Move> generateMoves(const Board &board, Colour colour) {
+std::vector<Move> generateMoves(Colour colour, const Board &board) {
     std::vector<Move> moves;
     std::vector<Move> pieceMoves;
 
