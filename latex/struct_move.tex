@@ -1,0 +1,103 @@
+\doxysection{Move Struct Reference}
+\hypertarget{struct_move}{}\label{struct_move}\index{Move@{Move}}
+
+
+Represents a chess move.  
+
+
+
+
+{\ttfamily \#include $<$move.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_move_adee306e66c79ce9e87f43c171c48813e}{from}}
+\begin{DoxyCompactList}\small\item\em The starting square of the move (0-\/63). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_move_a3dc61126fdad5646a0baf65deb18b0f5}{to}}
+\begin{DoxyCompactList}\small\item\em The ending square of the move (0-\/63). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_move_a34b34bd2b4a3d14b25e16c0d24246398}{promotion\+Piece}} = -\/1
+\begin{DoxyCompactList}\small\item\em The promoted piece type (if applicable, otherwise -\/1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{struct_move_a72317566849f53db8af92bbf38903102}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{struct_move}{Move}} \&move)
+\begin{DoxyCompactList}\small\item\em Overloads the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print a move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a chess move. 
+
+This structure stores the starting and ending squares of a move. It also includes an optional promotion piece filed for pawn promotions. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{struct_move_a72317566849f53db8af92bbf38903102}\index{Move@{Move}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{struct_move_a72317566849f53db8af92bbf38903102} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{struct_move}{Move}} \&}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloads the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print a move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em move} & The move to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& The output stream with the move formatted.
+\end{DoxyReturn}
+This function formats a \doxylink{struct_move}{Move} object as (from, to) and outputs it to a stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em move} & The \doxylink{struct_move}{Move} object to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& The modified output stream. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_move_adee306e66c79ce9e87f43c171c48813e}\index{Move@{Move}!from@{from}}
+\index{from@{from}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{from}{from}}
+{\footnotesize\ttfamily \label{struct_move_adee306e66c79ce9e87f43c171c48813e} 
+int Move\+::from}
+
+
+
+The starting square of the move (0-\/63). 
+
+\Hypertarget{struct_move_a34b34bd2b4a3d14b25e16c0d24246398}\index{Move@{Move}!promotionPiece@{promotionPiece}}
+\index{promotionPiece@{promotionPiece}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{promotionPiece}{promotionPiece}}
+{\footnotesize\ttfamily \label{struct_move_a34b34bd2b4a3d14b25e16c0d24246398} 
+int Move\+::promotion\+Piece = -\/1}
+
+
+
+The promoted piece type (if applicable, otherwise -\/1). 
+
+\Hypertarget{struct_move_a3dc61126fdad5646a0baf65deb18b0f5}\index{Move@{Move}!to@{to}}
+\index{to@{to}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{to}{to}}
+{\footnotesize\ttfamily \label{struct_move_a3dc61126fdad5646a0baf65deb18b0f5} 
+int Move\+::to}
+
+
+
+The ending square of the move (0-\/63). 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{move_8h}{move.\+h}}\end{DoxyCompactItemize}

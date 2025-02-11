@@ -1,0 +1,186 @@
+\doxysection{Board Class Reference}
+\hypertarget{class_board}{}\label{class_board}\index{Board@{Board}}
+
+
+Represents a chessboard using bitboards.  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_board}{Board} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a6bdedb0152a492d9cd88bf9b2ef8b6f7}{initialise}} ()
+\begin{DoxyCompactList}\small\item\em Initialises the board with the standard chess starting position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_af73171e050a9b9b577fecd2ef354db58}{update\+Aggregate\+Bitboards}} ()
+\begin{DoxyCompactList}\small\item\em Updates aggregate bitboards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_ab2d8bcee5cf58420dd1c6823c11963c2}{print\+Bitboard}} (\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} board) const
+\begin{DoxyCompactList}\small\item\em Prints a given bitboard to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a3f5b48d92226217de5d488f3d5fb234a}{print\+Board}} () const
+\begin{DoxyCompactList}\small\item\em Prints bitboards for all pieces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ std\+::array$<$ \mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}}, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927daf2b5b700dd8c9ff2341a28b29f3cc39c}{MAX\+\_\+\+COLOUR}} $>$, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea14a098b28bbc0ec4772648e369435acd}{MAX\+\_\+\+PIECE\+\_\+\+TYPE}} $>$ \mbox{\hyperlink{class_board_a63518da5b7678d196f229fbd3bdf7323}{bitboards}} = \{\}
+\begin{DoxyCompactList}\small\item\em Stores bitboards for each piece type and colour. bitboard\mbox{[}Piece\mbox{]}\mbox{[}Colour\mbox{]} gives the bitboard for that piece-\/colour combination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} \mbox{\hyperlink{class_board_a3861e9b88ffe9313593c4d09a26a81b9}{all\+Pieces}} = 0
+\begin{DoxyCompactList}\small\item\em Bitboard containing all occupied squares. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} \mbox{\hyperlink{class_board_a27cd466ae4082244da8c6c989ee9b65a}{white\+Pieces}} = 0
+\begin{DoxyCompactList}\small\item\em Bitboard containing all white pieces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} \mbox{\hyperlink{class_board_aa7d2b95fa197d2ae6673857242b95e98}{black\+Pieces}} = 0
+\begin{DoxyCompactList}\small\item\em Bitboard containing all black pieces. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_board_a17395dbbea9ee60893e6516d280213e9}{en\+Passant\+Square}} = -\/1
+\begin{DoxyCompactList}\small\item\em Stores location of valid en passant square (-\/1 if none). \end{DoxyCompactList}\item 
+std\+::array$<$ \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}, 64 $>$ \mbox{\hyperlink{class_board_ada045e34163330c79fecaec05bfd2547}{pieces}}
+\item 
+\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} \mbox{\hyperlink{class_board_adb282aa017ead371974614eed9892278}{current\+Colour}} = \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50}{WHITE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a chessboard using bitboards. 
+
+Manages the board representation of a chessboard using bitboards. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily \label{class_board_a9ee491d4fea680cf69b033374a9fdfcb} 
+Board\+::\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_board}{Board} object. 
+
+Construct a new \doxylink{class_board}{Board}\+:\+: \doxylink{class_board}{Board} object and initialises it. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_board_a6bdedb0152a492d9cd88bf9b2ef8b6f7}\index{Board@{Board}!initialise@{initialise}}
+\index{initialise@{initialise}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily \label{class_board_a6bdedb0152a492d9cd88bf9b2ef8b6f7} 
+void Board\+::initialise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialises the board with the standard chess starting position. 
+
+Initialises the board to the standard chess starting position.
+
+This function sets up the bitboards for all pieces and colours according to the standard chess starting position. \Hypertarget{class_board_ab2d8bcee5cf58420dd1c6823c11963c2}\index{Board@{Board}!printBitboard@{printBitboard}}
+\index{printBitboard@{printBitboard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{printBitboard()}{printBitboard()}}
+{\footnotesize\ttfamily \label{class_board_ab2d8bcee5cf58420dd1c6823c11963c2} 
+void Board\+::print\+Bitboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}}}]{board}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints a given bitboard to the console. 
+
+Prints a given bitboard in and 8x8 grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The bitboard to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_board_a3f5b48d92226217de5d488f3d5fb234a}\index{Board@{Board}!printBoard@{printBoard}}
+\index{printBoard@{printBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
+{\footnotesize\ttfamily \label{class_board_a3f5b48d92226217de5d488f3d5fb234a} 
+void Board\+::print\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints bitboards for all pieces. 
+
+Prints each bitboard, showing piece placement.
+
+This function iterates through each piece type and colour, displaying the bitboard represention of their position. \Hypertarget{class_board_af73171e050a9b9b577fecd2ef354db58}\index{Board@{Board}!updateAggregateBitboards@{updateAggregateBitboards}}
+\index{updateAggregateBitboards@{updateAggregateBitboards}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{updateAggregateBitboards()}{updateAggregateBitboards()}}
+{\footnotesize\ttfamily \label{class_board_af73171e050a9b9b577fecd2ef354db58} 
+void Board\+::update\+Aggregate\+Bitboards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates aggregate bitboards. 
+
+Updates the aggregate bitboards for all pieces.
+
+This function recalculates \textquotesingle{}all\+Pieces\textquotesingle{}, \textquotesingle{}white\+Pieces\textquotesingle{}, and \textquotesingle{}black\+Pieces\textquotesingle{} by combining the bitboards of the individual pieces. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_board_a3861e9b88ffe9313593c4d09a26a81b9}\index{Board@{Board}!allPieces@{allPieces}}
+\index{allPieces@{allPieces}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{allPieces}{allPieces}}
+{\footnotesize\ttfamily \label{class_board_a3861e9b88ffe9313593c4d09a26a81b9} 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} Board\+::all\+Pieces = 0}
+
+
+
+Bitboard containing all occupied squares. 
+
+\Hypertarget{class_board_a63518da5b7678d196f229fbd3bdf7323}\index{Board@{Board}!bitboards@{bitboards}}
+\index{bitboards@{bitboards}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{bitboards}{bitboards}}
+{\footnotesize\ttfamily \label{class_board_a63518da5b7678d196f229fbd3bdf7323} 
+std\+::array$<$std\+::array$<$\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}}, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927daf2b5b700dd8c9ff2341a28b29f3cc39c}{MAX\+\_\+\+COLOUR}}$>$, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea14a098b28bbc0ec4772648e369435acd}{MAX\+\_\+\+PIECE\+\_\+\+TYPE}}$>$ Board\+::bitboards = \{\}}
+
+
+
+Stores bitboards for each piece type and colour. bitboard\mbox{[}Piece\mbox{]}\mbox{[}Colour\mbox{]} gives the bitboard for that piece-\/colour combination. 
+
+\Hypertarget{class_board_aa7d2b95fa197d2ae6673857242b95e98}\index{Board@{Board}!blackPieces@{blackPieces}}
+\index{blackPieces@{blackPieces}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{blackPieces}{blackPieces}}
+{\footnotesize\ttfamily \label{class_board_aa7d2b95fa197d2ae6673857242b95e98} 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} Board\+::black\+Pieces = 0}
+
+
+
+Bitboard containing all black pieces. 
+
+\Hypertarget{class_board_adb282aa017ead371974614eed9892278}\index{Board@{Board}!currentColour@{currentColour}}
+\index{currentColour@{currentColour}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{currentColour}{currentColour}}
+{\footnotesize\ttfamily \label{class_board_adb282aa017ead371974614eed9892278} 
+\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} Board\+::current\+Colour = \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50}{WHITE}}}
+
+\Hypertarget{class_board_a17395dbbea9ee60893e6516d280213e9}\index{Board@{Board}!enPassantSquare@{enPassantSquare}}
+\index{enPassantSquare@{enPassantSquare}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{enPassantSquare}{enPassantSquare}}
+{\footnotesize\ttfamily \label{class_board_a17395dbbea9ee60893e6516d280213e9} 
+int Board\+::en\+Passant\+Square = -\/1}
+
+
+
+Stores location of valid en passant square (-\/1 if none). 
+
+\Hypertarget{class_board_ada045e34163330c79fecaec05bfd2547}\index{Board@{Board}!pieces@{pieces}}
+\index{pieces@{pieces}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{pieces}{pieces}}
+{\footnotesize\ttfamily \label{class_board_ada045e34163330c79fecaec05bfd2547} 
+std\+::array$<$\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}, 64$>$ Board\+::pieces}
+
+\Hypertarget{class_board_a27cd466ae4082244da8c6c989ee9b65a}\index{Board@{Board}!whitePieces@{whitePieces}}
+\index{whitePieces@{whitePieces}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{whitePieces}{whitePieces}}
+{\footnotesize\ttfamily \label{class_board_a27cd466ae4082244da8c6c989ee9b65a} 
+\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} Board\+::white\+Pieces = 0}
+
+
+
+Bitboard containing all white pieces. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{board_8h}{board.\+h}}\item 
+src/\mbox{\hyperlink{board_8cpp}{board.\+cpp}}\end{DoxyCompactItemize}

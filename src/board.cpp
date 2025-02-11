@@ -4,6 +4,11 @@
  * @brief Implements the board class for chessboard representation using bitboards.
  * @date 2025
  * 
+ * This file implements board.h and sets up the chessboard with the standard
+ * chess starting position. 
+ * 
+ * It also updates the bitboards when a move is made.
+ * 
  * @copyright Copyright (c) 2025
  * 
  */
@@ -107,7 +112,7 @@ void Board::printBitboard(Bitboard board) const
  * @brief Prints each bitboard, showing piece placement.
  * 
  * This function iterates through each piece type and colour, 
- * displaying the botboard represention of their position.
+ * displaying the bitboard represention of their position.
  */
 void Board::printBoard() const
 {

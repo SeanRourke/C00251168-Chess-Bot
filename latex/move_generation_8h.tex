@@ -1,0 +1,311 @@
+\doxysection{src/move\+Generation.h File Reference}
+\hypertarget{move_generation_8h}{}\label{move_generation_8h}\index{src/moveGeneration.h@{src/moveGeneration.h}}
+
+
+Defines functions for generating moves for piece types or player.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_aca339ed682d2b7d726cab8c24ce596b4}{generate\+Pawn\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal pawn moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_af08913439d211af131ab3670ed406927}{generate\+Knight\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal knight moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_a48e12e1d01c1d7ac6f5dbdfa5da05d1d}{generate\+Bishop\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal bishop moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_a29e1644ff9db31ba537e31d9de6a4f1d}{generate\+Rook\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal rook moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_a37934c7d07cc09ae8c8e01a278c48da2}{generate\+Queen\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal queen moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_a6a2cedda9278d4b8b1cac8cf09f2e2e6}{generate\+King\+Moves}} (int rank, int file, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all legal king moves from a given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \mbox{\hyperlink{move_generation_8h_a3e8b374213c87f67e9aa7404b7747b5d}{generate\+Moves}} (\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Generates all move for a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines functions for generating moves for piece types or player. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{move_generation_8h_a48e12e1d01c1d7ac6f5dbdfa5da05d1d}\index{moveGeneration.h@{moveGeneration.h}!generateBishopMoves@{generateBishopMoves}}
+\index{generateBishopMoves@{generateBishopMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateBishopMoves()}{generateBishopMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_a48e12e1d01c1d7ac6f5dbdfa5da05d1d} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Bishop\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal bishop moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the bishop. \\
+\hline
+{\em file} & The file (column) of the bishop. \\
+\hline
+{\em colour} & The colour of the bishop (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the bishop.
+\end{DoxyReturn}
+Generates all legal bishop moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the bishop. \\
+\hline
+{\em file} & The file of the bishop. \\
+\hline
+{\em colour} & The colour of the bishop. \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the bishop. 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_a6a2cedda9278d4b8b1cac8cf09f2e2e6}\index{moveGeneration.h@{moveGeneration.h}!generateKingMoves@{generateKingMoves}}
+\index{generateKingMoves@{generateKingMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateKingMoves()}{generateKingMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_a6a2cedda9278d4b8b1cac8cf09f2e2e6} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+King\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal king moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the king. \\
+\hline
+{\em file} & The file (column) of the king. \\
+\hline
+{\em colour} & The colour of the king (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the king.
+\end{DoxyReturn}
+Generates all legal king moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the king. \\
+\hline
+{\em file} & The file of the king. \\
+\hline
+{\em colour} & The colour of the king. \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the king. 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_af08913439d211af131ab3670ed406927}\index{moveGeneration.h@{moveGeneration.h}!generateKnightMoves@{generateKnightMoves}}
+\index{generateKnightMoves@{generateKnightMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateKnightMoves()}{generateKnightMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_af08913439d211af131ab3670ed406927} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Knight\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal knight moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the knight. \\
+\hline
+{\em file} & The file (column) of the knight. \\
+\hline
+{\em colour} & The colour of the knight (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the knight.
+\end{DoxyReturn}
+Generates all legal knight moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the knight. \\
+\hline
+{\em file} & The file of the knight. \\
+\hline
+{\em colour} & The colour of the knight. \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the knight. 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_a3e8b374213c87f67e9aa7404b7747b5d}\index{moveGeneration.h@{moveGeneration.h}!generateMoves@{generateMoves}}
+\index{generateMoves@{generateMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateMoves()}{generateMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_a3e8b374213c87f67e9aa7404b7747b5d} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all move for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the board. \\
+\hline
+{\em colour} & The colour of the player (WHITE or BLACK). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the board. \\
+\hline
+{\em colour} & The colour of the player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_aca339ed682d2b7d726cab8c24ce596b4}\index{moveGeneration.h@{moveGeneration.h}!generatePawnMoves@{generatePawnMoves}}
+\index{generatePawnMoves@{generatePawnMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generatePawnMoves()}{generatePawnMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_aca339ed682d2b7d726cab8c24ce596b4} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Pawn\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal pawn moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the pawn. \\
+\hline
+{\em file} & The file (column) of the pawn. \\
+\hline
+{\em colour} & The colour of the pawn (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the pawn.
+\end{DoxyReturn}
+Generates all legal pawn moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the pawn. \\
+\hline
+{\em file} & The file of the pawn. \\
+\hline
+{\em colour} & The colour of the pawn (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the pawn. 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_a37934c7d07cc09ae8c8e01a278c48da2}\index{moveGeneration.h@{moveGeneration.h}!generateQueenMoves@{generateQueenMoves}}
+\index{generateQueenMoves@{generateQueenMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateQueenMoves()}{generateQueenMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_a37934c7d07cc09ae8c8e01a278c48da2} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Queen\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal queen moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the queen. \\
+\hline
+{\em file} & The file (column) of the queen. \\
+\hline
+{\em colour} & The colour of the queen (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the queen.
+\end{DoxyReturn}
+Generates all legal queen moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the queen. \\
+\hline
+{\em file} & The file of the queen. \\
+\hline
+{\em colour} & The colour of the queen. \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the queen. 
+\end{DoxyReturn}
+\Hypertarget{move_generation_8h_a29e1644ff9db31ba537e31d9de6a4f1d}\index{moveGeneration.h@{moveGeneration.h}!generateRookMoves@{generateRookMoves}}
+\index{generateRookMoves@{generateRookMoves}!moveGeneration.h@{moveGeneration.h}}
+\doxysubsubsection{\texorpdfstring{generateRookMoves()}{generateRookMoves()}}
+{\footnotesize\ttfamily \label{move_generation_8h_a29e1644ff9db31ba537e31d9de6a4f1d} 
+std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ generate\+Rook\+Moves (\begin{DoxyParamCaption}\item[{int}]{rank}{, }\item[{int}]{file}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Generates all legal rook moves from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank (row) of the rook. \\
+\hline
+{\em file} & The file (column) of the rook. \\
+\hline
+{\em colour} & The colour of the rook (WHITE or BLACK). \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A list of legal moves for the rook.
+\end{DoxyReturn}
+Generates all legal rook moves from a given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & The rank of the rook. \\
+\hline
+{\em file} & The file of the rook. \\
+\hline
+{\em colour} & The colour of the rook. \\
+\hline
+{\em board} & The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Move$>$ A vector of legal moves for the rook. 
+\end{DoxyReturn}

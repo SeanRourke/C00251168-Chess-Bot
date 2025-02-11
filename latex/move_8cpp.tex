@@ -1,0 +1,51 @@
+\doxysection{src/move.cpp File Reference}
+\hypertarget{move_8cpp}{}\label{move_8cpp}\index{src/move.cpp@{src/move.cpp}}
+
+
+Prints moves to the console.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{move_8cpp_a72317566849f53db8af92bbf38903102}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{struct_move}{Move}} \&move)
+\begin{DoxyCompactList}\small\item\em Overloads the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print a move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prints moves to the console. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{move_8cpp_a72317566849f53db8af92bbf38903102}\index{move.cpp@{move.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!move.cpp@{move.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{move_8cpp_a72317566849f53db8af92bbf38903102} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{struct_move}{Move}} \&}]{move}{}\end{DoxyParamCaption})}
+
+
+
+Overloads the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print a move. 
+
+This function formats a \doxylink{struct_move}{Move} object as (from, to) and outputs it to a stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em move} & The \doxylink{struct_move}{Move} object to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& The modified output stream. 
+\end{DoxyReturn}

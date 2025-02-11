@@ -1,0 +1,160 @@
+\doxysection{src/board.h File Reference}
+\hypertarget{board_8h}{}\label{board_8h}\index{src/board.h@{src/board.h}}
+
+
+Defines chessboard representation using bitboards.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_board}{Board}}
+\begin{DoxyCompactList}\small\item\em Represents a chessboard using bitboards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} = uint64\+\_\+t
+\begin{DoxyCompactList}\small\item\em Defines a bitboard as a 64 bit integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}} \{ \newline
+\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea1f189a15a64c7c4a1553e876b56c6bf2}{PAWN}}
+, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ead4a86ac7d51335fcb5756203a88612d6}{KNIGHT}}
+, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea6bc4b5ac244475b6bd2595d608f18814}{BISHOP}}
+, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea49b75ad9a5137e805c60f32ed9cc2820}{ROOK}}
+, \newline
+\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea58561257be7e2f96f82c0fdb51d7f964}{QUEEN}}
+, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea157524408d6f0fc4b7dc5e52f3dd3b80}{KING}}
+, \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314ea14a098b28bbc0ec4772648e369435acd}{MAX\+\_\+\+PIECE\+\_\+\+TYPE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents different types of chess pieces. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} \{ \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50}{WHITE}}
+, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927daf77fb67151d0c18d397069ad8c271ba3}{BLACK}}
+, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927daf2b5b700dd8c9ff2341a28b29f3cc39c}{MAX\+\_\+\+COLOUR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the colour of a chess piece. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{board_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}{BOARD\+\_\+\+SIZE}} = 8
+\begin{DoxyCompactList}\small\item\em Number of ranks and files in a standard chessboard. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}} \mbox{\hyperlink{board_8h_a65c7329fc2b4f1a9748dd674a7d9de0a}{EMPTY}} = static\+\_\+cast$<$\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}$>$(-\/1)
+\begin{DoxyCompactList}\small\item\em Empty piece for empty squares. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines chessboard representation using bitboards. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{board_8h_ace8780b9a5011037ca5d302fbfa2961e}\index{board.h@{board.h}!Bitboard@{Bitboard}}
+\index{Bitboard@{Bitboard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{Bitboard}{Bitboard}}
+{\footnotesize\ttfamily \label{board_8h_ace8780b9a5011037ca5d302fbfa2961e} 
+using \mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302fbfa2961e}{Bitboard}} = uint64\+\_\+t}
+
+
+
+Defines a bitboard as a 64 bit integer. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{board_8h_a7dae1270b9f323383fd77c3160a9927d}\index{board.h@{board.h}!Colour@{Colour}}
+\index{Colour@{Colour}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{Colour}{Colour}}
+{\footnotesize\ttfamily \label{board_8h_a7dae1270b9f323383fd77c3160a9927d} 
+enum \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}
+
+
+
+Represents the colour of a chess piece. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!board.h@{board.h}}\index{board.h@{board.h}!WHITE@{WHITE}}}\Hypertarget{board_8h_a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50}\label{board_8h_a7dae1270b9f323383fd77c3160a9927d} 
+WHITE&Represents white pieces. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!board.h@{board.h}}\index{board.h@{board.h}!BLACK@{BLACK}}}\Hypertarget{board_8h_a7dae1270b9f323383fd77c3160a9927daf77fb67151d0c18d397069ad8c271ba3}\label{board_8h_a7dae1270b9f323383fd77c3160a9927d} 
+BLACK&Represents black pieces. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_COLOUR@{MAX\_COLOUR}!board.h@{board.h}}\index{board.h@{board.h}!MAX\_COLOUR@{MAX\_COLOUR}}}\Hypertarget{board_8h_a7dae1270b9f323383fd77c3160a9927daf2b5b700dd8c9ff2341a28b29f3cc39c}\label{board_8h_a7dae1270b9f323383fd77c3160a9927d} 
+MAX\+\_\+\+COLOUR&Colour count. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314e}\index{board.h@{board.h}!Piece@{Piece}}
+\index{Piece@{Piece}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{Piece}{Piece}}
+{\footnotesize\ttfamily \label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+enum \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}}
+
+
+
+Represents different types of chess pieces. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAWN@{PAWN}!board.h@{board.h}}\index{board.h@{board.h}!PAWN@{PAWN}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea1f189a15a64c7c4a1553e876b56c6bf2}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+PAWN&Represents a pawn. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KNIGHT@{KNIGHT}!board.h@{board.h}}\index{board.h@{board.h}!KNIGHT@{KNIGHT}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ead4a86ac7d51335fcb5756203a88612d6}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+KNIGHT&Represents a knight. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BISHOP@{BISHOP}!board.h@{board.h}}\index{board.h@{board.h}!BISHOP@{BISHOP}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea6bc4b5ac244475b6bd2595d608f18814}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+BISHOP&Represents a bishop. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOK@{ROOK}!board.h@{board.h}}\index{board.h@{board.h}!ROOK@{ROOK}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea49b75ad9a5137e805c60f32ed9cc2820}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+ROOK&Represents a rook. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUEEN@{QUEEN}!board.h@{board.h}}\index{board.h@{board.h}!QUEEN@{QUEEN}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea58561257be7e2f96f82c0fdb51d7f964}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+QUEEN&Represents a queen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KING@{KING}!board.h@{board.h}}\index{board.h@{board.h}!KING@{KING}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea157524408d6f0fc4b7dc5e52f3dd3b80}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+KING&Represents a king. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_PIECE\_TYPE@{MAX\_PIECE\_TYPE}!board.h@{board.h}}\index{board.h@{board.h}!MAX\_PIECE\_TYPE@{MAX\_PIECE\_TYPE}}}\Hypertarget{board_8h_ade35c903123b92bed5cc7b84e6a1314ea14a098b28bbc0ec4772648e369435acd}\label{board_8h_ade35c903123b92bed5cc7b84e6a1314e} 
+MAX\+\_\+\+PIECE\+\_\+\+TYPE&Piece type count. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{board_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}\index{board.h@{board.h}!BOARD\_SIZE@{BOARD\_SIZE}}
+\index{BOARD\_SIZE@{BOARD\_SIZE}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{BOARD\_SIZE}{BOARD\_SIZE}}
+{\footnotesize\ttfamily \label{board_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07} 
+const int BOARD\+\_\+\+SIZE = 8}
+
+
+
+Number of ranks and files in a standard chessboard. 
+
+\Hypertarget{board_8h_a65c7329fc2b4f1a9748dd674a7d9de0a}\index{board.h@{board.h}!EMPTY@{EMPTY}}
+\index{EMPTY@{EMPTY}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{EMPTY}{EMPTY}}
+{\footnotesize\ttfamily \label{board_8h_a65c7329fc2b4f1a9748dd674a7d9de0a} 
+const \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}} EMPTY = static\+\_\+cast$<$\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}$>$(-\/1)}
+
+
+
+Empty piece for empty squares. 
+
