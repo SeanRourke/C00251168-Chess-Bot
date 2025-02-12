@@ -67,6 +67,11 @@ void Board::initialise()
     pieces[59] = QUEEN; pieces[60] = KING;
 
     updateAggregateBitboards();
+
+    whiteCanCastleKingSide = true;
+    whiteCanCastleQueenSide = true;
+    blackCanCastleKingSide = true;
+    blackCanCastleQueenSide = true;
 }
 
 /**

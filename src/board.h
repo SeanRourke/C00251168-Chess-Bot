@@ -69,6 +69,11 @@ public:
     std::array<Piece, 64> pieces;
     Colour currentColour = WHITE;
 
+    bool whiteCanCastleKingSide;
+    bool whiteCanCastleQueenSide;
+    bool blackCanCastleKingSide;
+    bool blackCanCastleQueenSide;
+
     /**
      * @brief Construct a new Board object.
      */
