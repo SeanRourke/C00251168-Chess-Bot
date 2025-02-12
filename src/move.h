@@ -24,6 +24,7 @@ struct Move {
     int from;   ///< The starting square of the move (0-63).
     int to;     ///< The ending square of the move (0-63).
     int promotionPiece = -1;    ///< The promoted piece type (if applicable, otherwise -1).
+    bool castling = false;
     
     /**
      * @brief Overloads the << operator to print a move.

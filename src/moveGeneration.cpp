@@ -11,6 +11,7 @@
  */
 
 #include "moveGeneration.h"
+#include "moveValidation.h"
 
 /**
  * @brief Generates legal moves for a pawn.
@@ -317,6 +318,47 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
             {
                 moves.push_back({rank * BOARD_SIZE + file, toSquare});
             }
+        }
+    }
+
+    if (colour == WHITE)
+    {
+        if (board.whiteCanCastleKingSide && 
+            !(board.allPieces & ((1ULL << 5) | (1ULL << 6))) &&
+            !isSquareAttacked(4, WHITE, board) &&
+            !isSquareAttacked(5, WHITE, board) &&
+            !isSquareAttacked(6, WHITE, board))
+        {
+            moves.push_back({4, 6, -1, true});
+        }
+
+        if (board.whiteCanCastleQueenSide && 
+            !(board.allPieces & ((1ULL << 1) | (1ULL << 2) | (1ULL << 3))) &&
+            !isSquareAttacked(4, WHITE, board) &&
+            !isSquareAttacked(3, WHITE, board) &&
+            !isSquareAttacked(2, WHITE, board))
+        {
+            moves.push_back({4, 2, -1, true});
+        }
+    }
+    else
+    {
+        if (board.blackCanCastleKingSide && 
+            !(board.allPieces & ((1ULL << 61) | (1ULL << 62))) &&
+            !isSquareAttacked(60, BLACK, board) &&
+            !isSquareAttacked(61, BLACK, board) &&
+            !isSquareAttacked(62, BLACK, board))
+        {
+            moves.push_back({60, 62, -1, true});
+        }
+
+        if (board.blackCanCastleQueenSide && 
+            !(board.allPieces & ((1ULL << 57) | (1ULL << 58) | (1ULL << 59))) &&
+            !isSquareAttacked(60, BLACK, board) &&
+            !isSquareAttacked(59, BLACK, board) &&
+            !isSquareAttacked(58, BLACK, board))
+        {
+            moves.push_back({60, 58, -1, true});
         }
     }
 

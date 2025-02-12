@@ -20,6 +20,9 @@
  * @return std::ostream& The modified output stream.
  */
 std::ostream &operator<<(std::ostream &os, const Move &move) {
-    os << "(" << move.from << ", " << move.to << ")";
-    return os;
+    os << "Move(" << move.from << " -> " << move.to;
+    if (move.promotionPiece != -1) os << ", Promotion: " << move.promotionPiece;
+    if (move.castling) os << ", Castling";
+    os << ")";
+        return os;
 }
