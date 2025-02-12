@@ -334,9 +334,9 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
         if (board.whiteCanCastleQueenSide && 
             !(board.allPieces & ((1ULL << 1) | (1ULL << 2) | (1ULL << 3))) &&
-            !isSquareAttacked(4, WHITE, board) &&
-            !isSquareAttacked(3, WHITE, board) &&
-            !isSquareAttacked(2, WHITE, board))
+            !isSquareAttacked(4, BLACK, board) &&
+            !isSquareAttacked(3, BLACK, board) &&
+            !isSquareAttacked(2, BLACK, board))
         {
             moves.push_back({4, 2, -1, true});
         }
@@ -345,9 +345,9 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
     {
         if (board.blackCanCastleKingSide && 
             !(board.allPieces & ((1ULL << 61) | (1ULL << 62))) &&
-            !isSquareAttacked(60, BLACK, board) &&
-            !isSquareAttacked(61, BLACK, board) &&
-            !isSquareAttacked(62, BLACK, board))
+            !isSquareAttacked(60, WHITE, board) &&
+            !isSquareAttacked(61, WHITE, board) &&
+            !isSquareAttacked(62, WHITE, board))
         {
             moves.push_back({60, 62, -1, true});
         }

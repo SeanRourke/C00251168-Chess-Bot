@@ -35,10 +35,10 @@ void Board::initialise()
     bitboards[ROOK][WHITE] = 0x0000000000000081;
     bitboards[ROOK][BLACK] = 0x8100000000000000;
 
-    bitboards[KNIGHT][WHITE] = 0x0000000000000042;
+    bitboards[KNIGHT][WHITE] = 0x0000000000000000;
     bitboards[KNIGHT][BLACK] = 0x4200000000000000;
 
-    bitboards[BISHOP][WHITE] = 0x0000000000000024;
+    bitboards[BISHOP][WHITE] = 0x0000000000000000;
     bitboards[BISHOP][BLACK] = 0x2400000000000000;
 
     bitboards[QUEEN][WHITE] = 0x0000000000000008;
@@ -66,12 +66,13 @@ void Board::initialise()
     pieces[3] = QUEEN; pieces[4] = KING;
     pieces[59] = QUEEN; pieces[60] = KING;
 
-    updateAggregateBitboards();
-
     whiteCanCastleKingSide = true;
     whiteCanCastleQueenSide = true;
     blackCanCastleKingSide = true;
     blackCanCastleQueenSide = true;
+
+    updateAggregateBitboards();
+
 }
 
 /**
