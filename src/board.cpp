@@ -41,7 +41,7 @@ void Board::initialise()
     bitboards[BISHOP][WHITE] = 0x0000000000000000;
     bitboards[BISHOP][BLACK] = 0x2400000000000000;
 
-    bitboards[QUEEN][WHITE] = 0x0000000000000008;
+    bitboards[QUEEN][WHITE] = 0x0000000000000000;
     bitboards[QUEEN][BLACK] = 0x0800000000000000;
 
     bitboards[KING][WHITE] = 0x0000000000000010;

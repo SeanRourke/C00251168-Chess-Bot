@@ -68,7 +68,7 @@ void makeMove(Board &board, const Move &move)
       }
 
       // Handle castling
-      if (pieceType == KING && abs(fromSquare - toSquare) == 2)
+      if (pieceType == KING && move.castling)
       {
          int rookFrom, rookTo;
          if (toSquare == 62) // White kingside castling
@@ -85,7 +85,7 @@ void makeMove(Board &board, const Move &move)
          board.pieces[rookTo] = rook;
          board.bitboards[rook][board.currentColour] &= ~(1ULL << rookFrom);
          board.bitboards[rook][board.currentColour] |= (1ULL << rookTo);
-      }
+         
    }
 
    // Clear the original square

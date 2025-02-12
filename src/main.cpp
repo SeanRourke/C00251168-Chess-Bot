@@ -34,7 +34,7 @@ int main()
     for (const Move &move : moves){
         std::cout << ' ' << move << ',';
     }
-    makeMove(chessBoard, moves[23]);
+    makeMove(chessBoard, moves[24]);
     chessBoard.printBoard();
 
 
