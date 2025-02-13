@@ -18,7 +18,7 @@
  */
 float materialCount(const Board &board)
 {
-    constexpr int pieceValues[MAX_PIECE_TYPE] = {1, 3, 3, 5, 9, 0}; // Ignore king
+    constexpr int pieceValues[MAX_PIECE_TYPE] = {1, 3, 3, 5, 9, 1000}; // Ignore king
 
     int whiteMaterial = 0, blackMaterial = 0;
 
