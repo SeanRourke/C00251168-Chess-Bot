@@ -86,14 +86,15 @@ void makeMove(Board &board, const Move &move)
          board.bitboards[rook][board.currentColour] &= ~(1ULL << rookFrom);
          board.bitboards[rook][board.currentColour] |= (1ULL << rookTo);
          
+      }
+
+      // Clear the original square
+      board.pieces[fromSquare] = EMPTY;
+
+      // Update bitboards
+      board.updateAggregateBitboards();
+
+      // Switch turns
+      board.currentColour = (board.currentColour == WHITE) ? BLACK : WHITE;
    }
-
-   // Clear the original square
-   board.pieces[fromSquare] = EMPTY;
-
-   // Update bitboards
-   board.updateAggregateBitboards();
-
-   // Switch turns
-   board.currentColour = (board.currentColour == WHITE) ? BLACK : WHITE;
 }
