@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/makeMove.h Source File</title>
+<title>My Project: src/moveValidation.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,25 +88,65 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">makeMove.h</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">moveValidation.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="make_move_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef MAKE_MOVE_H</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define MAKE_MOVE_H</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="move_8h.html">move.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="make_move_8h.html#aa0f94b544a9620b3fd70ff30461d11d1">makeMove</a>(<a class="code hl_class" href="class_board.html">Board</a> &amp;board, <span class="keyword">const</span> <a class="code hl_struct" href="struct_move.html">Move</a> &amp;move);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Defines chessboard representation using bitboards.</div></div>
-<div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdoc">Represents a chessboard using bitboards.</div><div class="ttdef"><b>Definition</b> board.h:58</div></div>
-<div class="ttc" id="amake_move_8h_html_aa0f94b544a9620b3fd70ff30461d11d1"><div class="ttname"><a href="make_move_8h.html#aa0f94b544a9620b3fd70ff30461d11d1">makeMove</a></div><div class="ttdeci">void makeMove(Board &amp;board, const Move &amp;move)</div><div class="ttdoc">Update bitboards to represent a move being made.</div><div class="ttdef"><b>Definition</b> makeMove.cpp:20</div></div>
-<div class="ttc" id="amove_8h_html"><div class="ttname"><a href="move_8h.html">move.h</a></div><div class="ttdoc">Defines move structure.</div></div>
-<div class="ttc" id="astruct_move_html"><div class="ttname"><a href="struct_move.html">Move</a></div><div class="ttdoc">Represents a chess move.</div><div class="ttdef"><b>Definition</b> move.h:24</div></div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>Implements <a class="el" href="move_validation_8h.html" title="Checks if a move is legal.">moveValidation.h</a> to check if a move is legal.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a680473f8d22ad30898a31ba3e9ccb9d5" id="r_a680473f8d22ad30898a31ba3e9ccb9d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a> (int square, <a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a> attacker, const <a class="el" href="class_board.html">Board</a> &amp;board)</td></tr>
+<tr class="separator:a680473f8d22ad30898a31ba3e9ccb9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements <a class="el" href="move_validation_8h.html" title="Checks if a move is legal.">moveValidation.h</a> to check if a move is legal. </p>
+<dl class="section author"><dt>Author</dt><dd>Seán Rourke </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2025</dd></dl>
+<p>Provides functionality to check if a square is attacked, used in both castling and pin logic.</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a680473f8d22ad30898a31ba3e9ccb9d5" name="a680473f8d22ad30898a31ba3e9ccb9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680473f8d22ad30898a31ba3e9ccb9d5">&#9670;&#160;</a></span>isSquareAttacked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isSquareAttacked </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>square</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a></td>          <td class="paramname"><span class="paramname"><em>attacker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_board.html">Board</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">square</td><td>The square being checked for attacks. </td></tr>
+    <tr><td class="paramname">attacker</td><td>The colour of the attacking player. </td></tr>
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the square is attacked. </dd>
+<dd>
+false If the square is not attacked. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

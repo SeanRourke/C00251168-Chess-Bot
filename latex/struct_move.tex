@@ -17,7 +17,9 @@ int \mbox{\hyperlink{struct_move_adee306e66c79ce9e87f43c171c48813e}{from}}
 int \mbox{\hyperlink{struct_move_a3dc61126fdad5646a0baf65deb18b0f5}{to}}
 \begin{DoxyCompactList}\small\item\em The ending square of the move (0-\/63). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_move_a34b34bd2b4a3d14b25e16c0d24246398}{promotion\+Piece}} = -\/1
-\begin{DoxyCompactList}\small\item\em The promoted piece type (if applicable, otherwise -\/1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The promoted piece type (if applicable, otherwise -\/1). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_move_a2326b647619e2985fc0fa18c2d8f49ad}{castling}} = false
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,6 +68,12 @@ std\+::ostream\& The modified output stream.
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{struct_move_a2326b647619e2985fc0fa18c2d8f49ad}\index{Move@{Move}!castling@{castling}}
+\index{castling@{castling}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{castling}{castling}}
+{\footnotesize\ttfamily \label{struct_move_a2326b647619e2985fc0fa18c2d8f49ad} 
+bool Move\+::castling = false}
+
 \Hypertarget{struct_move_adee306e66c79ce9e87f43c171c48813e}\index{Move@{Move}!from@{from}}
 \index{from@{from}!Move@{Move}}
 \doxysubsubsection{\texorpdfstring{from}{from}}

@@ -1,0 +1,49 @@
+\doxysection{src/move\+Validation.h File Reference}
+\hypertarget{move_validation_8h}{}\label{move_validation_8h}\index{src/moveValidation.h@{src/moveValidation.h}}
+
+
+Checks if a move is legal.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{move_validation_8h_a680473f8d22ad30898a31ba3e9ccb9d5}{is\+Square\+Attacked}} (int square, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} attacker, const \mbox{\hyperlink{class_board}{Board}} \&board)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Checks if a move is legal. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{move_validation_8h_a680473f8d22ad30898a31ba3e9ccb9d5}\index{moveValidation.h@{moveValidation.h}!isSquareAttacked@{isSquareAttacked}}
+\index{isSquareAttacked@{isSquareAttacked}!moveValidation.h@{moveValidation.h}}
+\doxysubsubsection{\texorpdfstring{isSquareAttacked()}{isSquareAttacked()}}
+{\footnotesize\ttfamily \label{move_validation_8h_a680473f8d22ad30898a31ba3e9ccb9d5} 
+bool is\+Square\+Attacked (\begin{DoxyParamCaption}\item[{int}]{square}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{attacker}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em square} & The square being checked for attacks. \\
+\hline
+{\em attacker} & The colour of the attacking player. \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the square is attacked. 
+
+false If the square is not attacked. 
+\end{DoxyReturn}

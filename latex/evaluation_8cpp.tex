@@ -1,0 +1,67 @@
+\doxysection{src/evaluation.cpp File Reference}
+\hypertarget{evaluation_8cpp}{}\label{evaluation_8cpp}\index{src/evaluation.cpp@{src/evaluation.cpp}}
+
+
+Implements \doxylink{evaluation_8h}{evaluation.\+h} to determine who is better, white or black.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{evaluation_8cpp_a3b2867ea6b179dcbb9204ea1bda62a19}{material\+Count}} (const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Counts material value of each player. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84}{evaluation}} (const \mbox{\hyperlink{class_board}{Board}} \&board)
+\begin{DoxyCompactList}\small\item\em Run all heuristic functions to determine evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements \doxylink{evaluation_8h}{evaluation.\+h} to determine who is better, white or black. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84}\index{evaluation.cpp@{evaluation.cpp}!evaluation@{evaluation}}
+\index{evaluation@{evaluation}!evaluation.cpp@{evaluation.cpp}}
+\doxysubsubsection{\texorpdfstring{evaluation()}{evaluation()}}
+{\footnotesize\ttfamily \label{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84} 
+float evaluation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Run all heuristic functions to determine evaluation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The evaluation of the position. 
+\end{DoxyReturn}
+\Hypertarget{evaluation_8cpp_a3b2867ea6b179dcbb9204ea1bda62a19}\index{evaluation.cpp@{evaluation.cpp}!materialCount@{materialCount}}
+\index{materialCount@{materialCount}!evaluation.cpp@{evaluation.cpp}}
+\doxysubsubsection{\texorpdfstring{materialCount()}{materialCount()}}
+{\footnotesize\ttfamily \label{evaluation_8cpp_a3b2867ea6b179dcbb9204ea1bda62a19} 
+float material\+Count (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Counts material value of each player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the chessboard; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The evaluation of the position. 
+\end{DoxyReturn}

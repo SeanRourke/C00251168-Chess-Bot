@@ -38,6 +38,14 @@ int \mbox{\hyperlink{class_board_a17395dbbea9ee60893e6516d280213e9}{en\+Passant\
 std\+::array$<$ \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}, 64 $>$ \mbox{\hyperlink{class_board_ada045e34163330c79fecaec05bfd2547}{pieces}}
 \item 
 \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} \mbox{\hyperlink{class_board_adb282aa017ead371974614eed9892278}{current\+Colour}} = \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50}{WHITE}}
+\item 
+bool \mbox{\hyperlink{class_board_ad0b38a7eb1327d59a4a02dd671e4700b}{white\+Can\+Castle\+King\+Side}}
+\item 
+bool \mbox{\hyperlink{class_board_a396092cbde11800bef0445282a1536bf}{white\+Can\+Castle\+Queen\+Side}}
+\item 
+bool \mbox{\hyperlink{class_board_ae485f709b5f129c5252eb0f32539276f}{black\+Can\+Castle\+King\+Side}}
+\item 
+bool \mbox{\hyperlink{class_board_ab04b1e25cb23cd0521bb381ee9b04f48}{black\+Can\+Castle\+Queen\+Side}}
 \end{DoxyCompactItemize}
 
 
@@ -136,6 +144,18 @@ std\+::array$<$std\+::array$<$\mbox{\hyperlink{board_8h_ace8780b9a5011037ca5d302
 
 Stores bitboards for each piece type and colour. bitboard\mbox{[}Piece\mbox{]}\mbox{[}Colour\mbox{]} gives the bitboard for that piece-\/colour combination. 
 
+\Hypertarget{class_board_ae485f709b5f129c5252eb0f32539276f}\index{Board@{Board}!blackCanCastleKingSide@{blackCanCastleKingSide}}
+\index{blackCanCastleKingSide@{blackCanCastleKingSide}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{blackCanCastleKingSide}{blackCanCastleKingSide}}
+{\footnotesize\ttfamily \label{class_board_ae485f709b5f129c5252eb0f32539276f} 
+bool Board\+::black\+Can\+Castle\+King\+Side}
+
+\Hypertarget{class_board_ab04b1e25cb23cd0521bb381ee9b04f48}\index{Board@{Board}!blackCanCastleQueenSide@{blackCanCastleQueenSide}}
+\index{blackCanCastleQueenSide@{blackCanCastleQueenSide}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{blackCanCastleQueenSide}{blackCanCastleQueenSide}}
+{\footnotesize\ttfamily \label{class_board_ab04b1e25cb23cd0521bb381ee9b04f48} 
+bool Board\+::black\+Can\+Castle\+Queen\+Side}
+
 \Hypertarget{class_board_aa7d2b95fa197d2ae6673857242b95e98}\index{Board@{Board}!blackPieces@{blackPieces}}
 \index{blackPieces@{blackPieces}!Board@{Board}}
 \doxysubsubsection{\texorpdfstring{blackPieces}{blackPieces}}
@@ -167,6 +187,18 @@ Stores location of valid en passant square (-\/1 if none).
 \doxysubsubsection{\texorpdfstring{pieces}{pieces}}
 {\footnotesize\ttfamily \label{class_board_ada045e34163330c79fecaec05bfd2547} 
 std\+::array$<$\mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}, 64$>$ Board\+::pieces}
+
+\Hypertarget{class_board_ad0b38a7eb1327d59a4a02dd671e4700b}\index{Board@{Board}!whiteCanCastleKingSide@{whiteCanCastleKingSide}}
+\index{whiteCanCastleKingSide@{whiteCanCastleKingSide}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{whiteCanCastleKingSide}{whiteCanCastleKingSide}}
+{\footnotesize\ttfamily \label{class_board_ad0b38a7eb1327d59a4a02dd671e4700b} 
+bool Board\+::white\+Can\+Castle\+King\+Side}
+
+\Hypertarget{class_board_a396092cbde11800bef0445282a1536bf}\index{Board@{Board}!whiteCanCastleQueenSide@{whiteCanCastleQueenSide}}
+\index{whiteCanCastleQueenSide@{whiteCanCastleQueenSide}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{whiteCanCastleQueenSide}{whiteCanCastleQueenSide}}
+{\footnotesize\ttfamily \label{class_board_a396092cbde11800bef0445282a1536bf} 
+bool Board\+::white\+Can\+Castle\+Queen\+Side}
 
 \Hypertarget{class_board_a27cd466ae4082244da8c6c989ee9b65a}\index{Board@{Board}!whitePieces@{whitePieces}}
 \index{whitePieces@{whitePieces}!Board@{Board}}

@@ -136,6 +136,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ada045e34163330c79fecaec05bfd2547"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb282aa017ead371974614eed9892278" id="r_adb282aa017ead371974614eed9892278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb282aa017ead371974614eed9892278">currentColour</a> = <a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927da283fc479650da98250635b9c3c0e7e50">WHITE</a></td></tr>
 <tr class="separator:adb282aa017ead371974614eed9892278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b38a7eb1327d59a4a02dd671e4700b" id="r_ad0b38a7eb1327d59a4a02dd671e4700b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0b38a7eb1327d59a4a02dd671e4700b">whiteCanCastleKingSide</a></td></tr>
+<tr class="separator:ad0b38a7eb1327d59a4a02dd671e4700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a396092cbde11800bef0445282a1536bf" id="r_a396092cbde11800bef0445282a1536bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396092cbde11800bef0445282a1536bf">whiteCanCastleQueenSide</a></td></tr>
+<tr class="separator:a396092cbde11800bef0445282a1536bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae485f709b5f129c5252eb0f32539276f" id="r_ae485f709b5f129c5252eb0f32539276f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae485f709b5f129c5252eb0f32539276f">blackCanCastleKingSide</a></td></tr>
+<tr class="separator:ae485f709b5f129c5252eb0f32539276f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04b1e25cb23cd0521bb381ee9b04f48" id="r_ab04b1e25cb23cd0521bb381ee9b04f48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04b1e25cb23cd0521bb381ee9b04f48">blackCanCastleQueenSide</a></td></tr>
+<tr class="separator:ab04b1e25cb23cd0521bb381ee9b04f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a chessboard using bitboards. </p>
@@ -284,6 +292,34 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae485f709b5f129c5252eb0f32539276f" name="ae485f709b5f129c5252eb0f32539276f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae485f709b5f129c5252eb0f32539276f">&#9670;&#160;</a></span>blackCanCastleKingSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board::blackCanCastleKingSide</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab04b1e25cb23cd0521bb381ee9b04f48" name="ab04b1e25cb23cd0521bb381ee9b04f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04b1e25cb23cd0521bb381ee9b04f48">&#9670;&#160;</a></span>blackCanCastleQueenSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board::blackCanCastleQueenSide</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa7d2b95fa197d2ae6673857242b95e98" name="aa7d2b95fa197d2ae6673857242b95e98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7d2b95fa197d2ae6673857242b95e98">&#9670;&#160;</a></span>blackPieces</h2>
 
@@ -338,6 +374,34 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::array&lt;<a class="el" href="board_8h.html#ade35c903123b92bed5cc7b84e6a1314e">Piece</a>, 64&gt; Board::pieces</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0b38a7eb1327d59a4a02dd671e4700b" name="ad0b38a7eb1327d59a4a02dd671e4700b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b38a7eb1327d59a4a02dd671e4700b">&#9670;&#160;</a></span>whiteCanCastleKingSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board::whiteCanCastleKingSide</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a396092cbde11800bef0445282a1536bf" name="a396092cbde11800bef0445282a1536bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396092cbde11800bef0445282a1536bf">&#9670;&#160;</a></span>whiteCanCastleQueenSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board::whiteCanCastleQueenSide</td>
         </tr>
       </table>
 </div><div class="memdoc">

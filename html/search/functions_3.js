@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['makemove_1',['makeMove',['../make_move_8cpp.html#aa0f94b544a9620b3fd70ff30461d11d1',1,'makeMove(Board &amp;board, const Move &amp;move):&#160;makeMove.cpp'],['../make_move_8h.html#aa0f94b544a9620b3fd70ff30461d11d1',1,'makeMove(Board &amp;board, const Move &amp;move):&#160;makeMove.cpp']]]
+  ['initialise_0',['initialise',['../class_board.html#a6bdedb0152a492d9cd88bf9b2ef8b6f7',1,'Board']]],
+  ['issquareattacked_1',['isSquareAttacked',['../move_validation_8cpp.html#a680473f8d22ad30898a31ba3e9ccb9d5',1,'isSquareAttacked(int square, Colour attacker, const Board &amp;board):&#160;moveValidation.cpp'],['../move_validation_8h.html#a680473f8d22ad30898a31ba3e9ccb9d5',1,'isSquareAttacked(int square, Colour attacker, const Board &amp;board):&#160;moveValidation.cpp']]]
 ];
