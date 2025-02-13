@@ -22,7 +22,7 @@ float materialCount(const Board &board)
 
     int whiteMaterial = 0, blackMaterial = 0;
 
-    for (int piece = PAWN; piece < KING; ++piece)
+    for (int piece = PAWN; piece < MAX_PIECE_TYPE; ++piece)
     { // Exclude king
         whiteMaterial += __builtin_popcountll(board.bitboards[piece][WHITE]) * pieceValues[piece];
         blackMaterial += __builtin_popcountll(board.bitboards[piece][BLACK]) * pieceValues[piece];
