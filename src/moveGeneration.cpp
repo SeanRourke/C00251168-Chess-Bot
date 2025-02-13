@@ -52,9 +52,12 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
 
             if (rank == startRank)
             {
+                int singleForwardRank = rank + forward;
+                int singleForwardSquare = singleForwardRank * BOARD_SIZE + file;
                 int doubleForwardRank = rank + 2 * forward;
                 int doubleForwardSquare = doubleForwardRank * BOARD_SIZE + file;
-                if (!(board.allPieces & (1ULL << doubleForwardSquare)))
+                if (!(board.allPieces & (1ULL << singleForwardSquare)) &&
+                    !(board.allPieces & (1ULL << doubleForwardSquare)))
                 {
                     moves.push_back({rank * BOARD_SIZE + file, doubleForwardSquare});
                 }
@@ -97,7 +100,7 @@ std::vector<Move> generatePawnMoves(int rank, int file, Colour colour, const Boa
         int enPassantRank = board.enPassantSquare / BOARD_SIZE;
         if (abs(enPassantFile - file) == 1 && enPassantRank == forwardRank)
         {
-            moves.push_back({rank * BOARD_SIZE + file, board.enPassantSquare, PAWN});
+            moves.push_back({rank * BOARD_SIZE + file, board.enPassantSquare});
         }
     }
 
@@ -165,7 +168,6 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
         {-1, -1}};
 
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
-    Bitboard enemyPieces = (colour == WHITE) ? board.blackPieces : board.whitePieces;
 
     for (const auto &direction : directions)
     {
@@ -191,7 +193,7 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
 
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            if (enemyPieces & (1ULL << toSquare))
+            if (board.allPieces & (1ULL << toSquare))
             {
                 break;
             }
@@ -222,7 +224,6 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
         {0, -1}};
 
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
-    Bitboard enemyPieces = (colour == WHITE) ? board.blackPieces : board.whitePieces;
 
     for (const auto &direction : directions)
     {
@@ -248,7 +249,7 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
 
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            if (enemyPieces & (1ULL << toSquare))
+            if (board.allPieces & (1ULL << toSquare))
             {
                 break;
             }

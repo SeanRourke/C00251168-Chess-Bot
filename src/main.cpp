@@ -31,14 +31,7 @@ int main()
 
     Board chessBoard; ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    //chessBoard.printBoard();
-    //std::vector<Move> moves = generateMoves(WHITE, chessBoard);
-    //for (const Move &move : moves){
-    //    std::cout << ' ' << move << ',';
-    //}
-    //makeMove(chessBoard, moves[24]);
-    //chessBoard.printBoard();
-
+    chessBoard.printBoard();
 
     /*for (auto piece: chessBoard.pieces){
         std::cout << ' ' << piece << ',';
@@ -49,19 +42,16 @@ int main()
     //float eval = evaluation(chessBoard);
     //std::cout << eval;
 
-    std::vector<Move> moves = generateQueenMoves(5,0, WHITE, chessBoard);
-    //makeMove(chessBoard, moves[1]);
-    //chessBoard.printBoard();
-    //Move move = moves[1];
+    std::vector<Move> moves = generatePawnMoves(6,0, WHITE, chessBoard);
 
-    for (auto move : moves){
-        std::cout << move;
-    }
+    makeMove(chessBoard, moves[1]);
+    chessBoard.printBoard();
+    Move move = moves[1];
 
     //std::cout << std::endl << move.from;
 
-    //undoMove(chessBoard, move);
-    //chessBoard.printBoard();
+    undoMove(chessBoard, move);
+    chessBoard.printBoard();
 
 
 }
