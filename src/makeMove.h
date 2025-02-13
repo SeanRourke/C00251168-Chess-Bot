@@ -3,9 +3,9 @@
  * @author Seán Rourke
  * @brief Defines makeMove function.
  * @date 2025
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #ifndef MAKE_MOVE_H
@@ -16,7 +16,7 @@
 
 /**
  * @brief Update bitboards to represent a move being made.
- * 
+ *
  * @param board The current state of the chessboard.
  * @param move The selected move to be made.
  */

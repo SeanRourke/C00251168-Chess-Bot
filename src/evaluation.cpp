@@ -22,22 +22,23 @@ float materialCount(const Board &board)
 
     int whiteMaterial = 0, blackMaterial = 0;
 
-    for (int piece = PAWN; piece < KING; ++piece) { // Exclude king
+    for (int piece = PAWN; piece < KING; ++piece)
+    { // Exclude king
         whiteMaterial += __builtin_popcountll(board.bitboards[piece][WHITE]) * pieceValues[piece];
         blackMaterial += __builtin_popcountll(board.bitboards[piece][BLACK]) * pieceValues[piece];
     }
 
     return whiteMaterial - blackMaterial; // Positive if white is better, negative if black is better
-
 }
 
 /**
  * @brief Run all heuristic functions to determine evaluation.
- * 
+ *
  * @param board The current state of the chessboard.
  * @return float The evaluation of the position.
  */
-float evaluation(const Board &board){
+float evaluation(const Board &board)
+{
     float eval = 0.0;
 
     eval += materialCount(board);

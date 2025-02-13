@@ -3,11 +3,11 @@
  * @author Seán Rourke
  * @brief Generates moves for each type of piece.
  * @date 2025
- * 
+ *
  * Generates moves for each piece type, or vector of all moves for a player.
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #include "moveGeneration.h"
@@ -323,7 +323,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
     if (colour == WHITE)
     {
-        if (board.whiteCanCastleKingSide && 
+        if (board.whiteCanCastleKingSide &&
             !(board.allPieces & ((1ULL << 5) | (1ULL << 6))) &&
             !isSquareAttacked(4, WHITE, board) &&
             !isSquareAttacked(5, WHITE, board) &&
@@ -332,7 +332,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
             moves.push_back({4, 6, -1, true});
         }
 
-        if (board.whiteCanCastleQueenSide && 
+        if (board.whiteCanCastleQueenSide &&
             !(board.allPieces & ((1ULL << 1) | (1ULL << 2) | (1ULL << 3))) &&
             !isSquareAttacked(4, BLACK, board) &&
             !isSquareAttacked(3, BLACK, board) &&
@@ -343,7 +343,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
     }
     else
     {
-        if (board.blackCanCastleKingSide && 
+        if (board.blackCanCastleKingSide &&
             !(board.allPieces & ((1ULL << 61) | (1ULL << 62))) &&
             !isSquareAttacked(60, WHITE, board) &&
             !isSquareAttacked(61, WHITE, board) &&
@@ -352,7 +352,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
             moves.push_back({60, 62, -1, true});
         }
 
-        if (board.blackCanCastleQueenSide && 
+        if (board.blackCanCastleQueenSide &&
             !(board.allPieces & ((1ULL << 57) | (1ULL << 58) | (1ULL << 59))) &&
             !isSquareAttacked(60, BLACK, board) &&
             !isSquareAttacked(59, BLACK, board) &&
@@ -367,44 +367,48 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
 /**
  * @brief Generates all move for a player.
- * 
+ *
  * @param board The current state of the board.
  * @param colour The colour of the player.
- * @return std::vector<Move> 
+ * @return std::vector<Move>
  */
-std::vector<Move> generateMoves(Colour colour, const Board &board) {
+std::vector<Move> generateMoves(Colour colour, const Board &board)
+{
     std::vector<Move> moves;
     std::vector<Move> pieceMoves;
 
-    for (int piece = PAWN; piece < MAX_PIECE_TYPE; ++piece) {
+    for (int piece = PAWN; piece < MAX_PIECE_TYPE; ++piece)
+    {
         Bitboard pieceBB = board.bitboards[piece][colour];
 
-        while (pieceBB) {
+        while (pieceBB)
+        {
             int square = __builtin_ctzll(pieceBB);
             pieceBB &= pieceBB - 1;
 
             int rank = square / 8;
             int file = square % 8;
 
-            switch (piece) {
-                case PAWN:
-                    pieceMoves = generatePawnMoves(rank, file, colour, board);
-                    break;
-                case KNIGHT:
-                    pieceMoves = generateKnightMoves(rank, file, colour, board);
-                    break;
-                case BISHOP:
-                    pieceMoves = generateBishopMoves(rank, file, colour, board);
-                    break;
-                case ROOK:
-                    pieceMoves = generateRookMoves(rank, file, colour, board);
-                    break;
-                case QUEEN:
-                    pieceMoves = generateQueenMoves(rank, file, colour, board);
-                    break;
-                case KING:
-                    pieceMoves = generateKingMoves(rank, file, colour, board);
-                    break;
+            switch (piece)
+            {
+            case PAWN:
+                pieceMoves = generatePawnMoves(rank, file, colour, board);
+                break;
+            case KNIGHT:
+                pieceMoves = generateKnightMoves(rank, file, colour, board);
+                break;
+            case BISHOP:
+                pieceMoves = generateBishopMoves(rank, file, colour, board);
+                break;
+            case ROOK:
+                pieceMoves = generateRookMoves(rank, file, colour, board);
+                break;
+            case QUEEN:
+                pieceMoves = generateQueenMoves(rank, file, colour, board);
+                break;
+            case KING:
+                pieceMoves = generateKingMoves(rank, file, colour, board);
+                break;
             }
 
             moves.insert(moves.end(), pieceMoves.begin(), pieceMoves.end());
@@ -413,4 +417,3 @@ std::vector<Move> generateMoves(Colour colour, const Board &board) {
 
     return moves;
 }
-

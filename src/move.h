@@ -3,9 +3,9 @@
  * @author Seán Rourke
  * @brief Defines move structure.
  * @date 2025
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #ifndef MOVE_H
@@ -14,18 +14,19 @@
 #include <iostream>
 
 /**
- * @struct Move 
+ * @struct Move
  * @brief Represents a chess move.
- * 
+ *
  * This structure stores the starting and ending squares of a move.
  * It also includes an optional promotion piece filed for pawn promotions.
  */
-struct Move {
-    int from;   ///< The starting square of the move (0-63).
-    int to;     ///< The ending square of the move (0-63).
-    int promotionPiece = -1;    ///< The promoted piece type (if applicable, otherwise -1).
+struct Move
+{
+    int from;                ///< The starting square of the move (0-63).
+    int to;                  ///< The ending square of the move (0-63).
+    int promotionPiece = -1; ///< The promoted piece type (if applicable, otherwise -1).
     bool castling = false;
-    
+
     /**
      * @brief Overloads the << operator to print a move.
      * @param os The output stream.

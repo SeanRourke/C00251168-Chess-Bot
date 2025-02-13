@@ -21,7 +21,7 @@
 /**
  * @brief Main function of the chess engine.
  * 
- * This function initialises the starting position of the chess board.
+ * This function initialises the starting position of the chessboard.
  * 
  * @return int Returns 0 on successful execution.
  */

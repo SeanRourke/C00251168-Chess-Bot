@@ -85,8 +85,7 @@ void makeMove(Board &board, const Move &move)
          board.pieces[rookTo] = rook;
          board.bitboards[rook][board.currentColour] &= ~(1ULL << rookFrom);
          board.bitboards[rook][board.currentColour] |= (1ULL << rookTo);
-         
-      }
+            }
 
       // Clear the original square
       board.pieces[fromSquare] = EMPTY;

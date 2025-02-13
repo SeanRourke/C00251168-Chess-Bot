@@ -3,9 +3,9 @@
  * @author Seán Rourke
  * @brief Defines chessboard representation using bitboards.
  * @date 2025
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #ifndef BOARD_H
@@ -26,13 +26,13 @@ const int BOARD_SIZE = 8; ///< Number of ranks and files in a standard chessboar
  */
 enum Piece
 {
-    PAWN,   ///< Represents a pawn.
-    KNIGHT, ///< Represents a knight.
-    BISHOP, ///< Represents a bishop.
-    ROOK,   ///< Represents a rook.
-    QUEEN,  ///< Represents a queen.
-    KING,   ///< Represents a king.
-    MAX_PIECE_TYPE  ///< Piece type count.
+    PAWN,          ///< Represents a pawn.
+    KNIGHT,        ///< Represents a knight.
+    BISHOP,        ///< Represents a bishop.
+    ROOK,          ///< Represents a rook.
+    QUEEN,         ///< Represents a queen.
+    KING,          ///< Represents a king.
+    MAX_PIECE_TYPE ///< Piece type count.
 };
 
 const Piece EMPTY = static_cast<Piece>(-1); ///< Empty piece for empty squares.
@@ -43,15 +43,15 @@ const Piece EMPTY = static_cast<Piece>(-1); ///< Empty piece for empty squares.
  */
 enum Colour
 {
-    WHITE,  ///< Represents white pieces.
-    BLACK,  ///< Represents black pieces.
-    MAX_COLOUR  ///< Colour count.
+    WHITE,     ///< Represents white pieces.
+    BLACK,     ///< Represents black pieces.
+    MAX_COLOUR ///< Colour count.
 };
 
 /**
- * @class Board 
+ * @class Board
  * @brief Represents a chessboard using bitboards.
- * 
+ *
  * Manages the board representation of a chessboard using bitboards.
  */
 class Board
@@ -62,10 +62,10 @@ public:
      * bitboard[Piece][Colour] gives the bitboard for that piece-colour combination.
      */
     std::array<std::array<Bitboard, MAX_COLOUR>, MAX_PIECE_TYPE> bitboards = {};
-    Bitboard allPieces = 0;     ///< Bitboard containing all occupied squares. 
-    Bitboard whitePieces = 0;   ///< Bitboard containing all white pieces.
-    Bitboard blackPieces = 0;   ///< Bitboard containing all black pieces.
-    int enPassantSquare = -1;   ///< Stores location of valid en passant square (-1 if none).
+    Bitboard allPieces = 0;   ///< Bitboard containing all occupied squares.
+    Bitboard whitePieces = 0; ///< Bitboard containing all white pieces.
+    Bitboard blackPieces = 0; ///< Bitboard containing all black pieces.
+    int enPassantSquare = -1; ///< Stores location of valid en passant square (-1 if none).
     std::array<Piece, 64> pieces;
     Colour currentColour = WHITE;
 
@@ -91,7 +91,7 @@ public:
 
     /**
      * @brief Prints a given bitboard to the console.
-     * 
+     *
      * @param board The bitboard to be printed.
      */
     void printBitboard(Bitboard board) const;

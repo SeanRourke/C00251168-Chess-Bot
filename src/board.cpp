@@ -3,28 +3,28 @@
  * @author Seán Rourke
  * @brief Implements the board class for chessboard representation using bitboards.
  * @date 2025
- * 
+ *
  * This file implements board.h and sets up the chessboard with the standard
- * chess starting position. 
- * 
+ * chess starting position.
+ *
  * It also updates the bitboards when a move is made.
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #include "board.h"
 
 /**
  * @brief Construct a new Board:: Board object and initialises it.
- * 
+ *
  */
 Board::Board() { initialise(); }
 
 /**
  * @brief Initialises the board to the standard chess starting position.
- * 
- * This function sets up the bitboards for all pieces and colours 
+ *
+ * This function sets up the bitboards for all pieces and colours
  * according to the standard chess starting position.
  */
 void Board::initialise()
@@ -47,25 +47,33 @@ void Board::initialise()
     bitboards[KING][WHITE] = 0x0000000000000010;
     bitboards[KING][BLACK] = 0x1000000000000000;
 
-
     pieces.fill(EMPTY);
 
-    for (int file = 0; file < BOARD_SIZE; ++file) {
+    for (int file = 0; file < BOARD_SIZE; ++file)
+    {
         pieces[file + 8] = PAWN;
         pieces[file + 48] = PAWN;
     }
 
-    pieces[0] = ROOK; pieces[7] = ROOK;
-    pieces[56] = ROOK; pieces[63] = ROOK;
+    pieces[0] = ROOK;
+    pieces[7] = ROOK;
+    pieces[56] = ROOK;
+    pieces[63] = ROOK;
 
-    pieces[1] = KNIGHT; pieces[6] = KNIGHT;
-    pieces[57] = KNIGHT; pieces[62] = KNIGHT;
+    pieces[1] = KNIGHT;
+    pieces[6] = KNIGHT;
+    pieces[57] = KNIGHT;
+    pieces[62] = KNIGHT;
 
-    pieces[2] = BISHOP; pieces[5] = BISHOP;
-    pieces[58] = BISHOP; pieces[61] = BISHOP;
+    pieces[2] = BISHOP;
+    pieces[5] = BISHOP;
+    pieces[58] = BISHOP;
+    pieces[61] = BISHOP;
 
-    pieces[3] = QUEEN; pieces[4] = KING;
-    pieces[59] = QUEEN; pieces[60] = KING;
+    pieces[3] = QUEEN;
+    pieces[4] = KING;
+    pieces[59] = QUEEN;
+    pieces[60] = KING;
 
     whiteCanCastleKingSide = true;
     whiteCanCastleQueenSide = true;
@@ -73,12 +81,11 @@ void Board::initialise()
     blackCanCastleQueenSide = true;
 
     updateAggregateBitboards();
-
 }
 
 /**
  * @brief Updates the aggregate bitboards for all pieces.
- * 
+ *
  * This function recalculates 'allPieces', 'whitePieces', and 'blackPieces'
  * by combining the bitboards of the individual pieces.
  */
@@ -90,17 +97,23 @@ void Board::updateAggregateBitboards()
 
     pieces.fill(EMPTY);
 
-    for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece) {
-        for (int colour = 0; colour < MAX_COLOUR; ++colour) {
+    for (int piece = 0; piece < MAX_PIECE_TYPE; ++piece)
+    {
+        for (int colour = 0; colour < MAX_COLOUR; ++colour)
+        {
             Bitboard bitboard = bitboards[piece][colour];
 
-            if (colour == WHITE) {
+            if (colour == WHITE)
+            {
                 whitePieces |= bitboard;
-            } else {
+            }
+            else
+            {
                 blackPieces |= bitboard;
             }
 
-            while (bitboard) {
+            while (bitboard)
+            {
                 int square = __builtin_ctzll(bitboard);
                 pieces[square] = static_cast<Piece>(piece);
                 bitboard &= bitboard - 1;
@@ -111,7 +124,7 @@ void Board::updateAggregateBitboards()
 
 /**
  * @brief Prints a given bitboard in and 8x8 grid.
- * 
+ *
  * @param board The bitboard to be printed.
  */
 void Board::printBitboard(Bitboard board) const
@@ -130,8 +143,8 @@ void Board::printBitboard(Bitboard board) const
 
 /**
  * @brief Prints each bitboard, showing piece placement.
- * 
- * This function iterates through each piece type and colour, 
+ *
+ * This function iterates through each piece type and colour,
  * displaying the bitboard represention of their position.
  */
 void Board::printBoard() const
