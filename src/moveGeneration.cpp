@@ -165,6 +165,7 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
         {-1, -1}};
 
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
+    Bitboard enemyPieces = (colour == WHITE) ? board.blackPieces : board.whitePieces;
 
     for (const auto &direction : directions)
     {
@@ -190,7 +191,7 @@ std::vector<Move> generateBishopMoves(int rank, int file, Colour colour, const B
 
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            if (board.allPieces & (1ULL << toSquare))
+            if (enemyPieces & (1ULL << toSquare))
             {
                 break;
             }
@@ -221,6 +222,7 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
         {0, -1}};
 
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
+    Bitboard enemyPieces = (colour == WHITE) ? board.blackPieces : board.whitePieces;
 
     for (const auto &direction : directions)
     {
@@ -246,7 +248,7 @@ std::vector<Move> generateRookMoves(int rank, int file, Colour colour, const Boa
 
             moves.push_back({rank * BOARD_SIZE + file, toSquare});
 
-            if (board.allPieces & (1ULL << toSquare))
+            if (enemyPieces & (1ULL << toSquare))
             {
                 break;
             }

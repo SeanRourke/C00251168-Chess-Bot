@@ -49,7 +49,7 @@ int main()
     //float eval = evaluation(chessBoard);
     //std::cout << eval;
 
-    std::vector<Move> moves = generateKnightMoves(3,5, WHITE, chessBoard);
+    std::vector<Move> moves = generateQueenMoves(5,0, WHITE, chessBoard);
     //makeMove(chessBoard, moves[1]);
     //chessBoard.printBoard();
     //Move move = moves[1];
