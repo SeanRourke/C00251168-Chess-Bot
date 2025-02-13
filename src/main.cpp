@@ -16,6 +16,7 @@
 #include "move.h"
 #include "moveGeneration.h"
 #include "makeMove.h"
+#include "evaluation.h"
 
 /**
  * @brief Main function of the chess engine.
@@ -35,7 +36,7 @@ int main()
     //    std::cout << ' ' << move << ',';
     //}
     //makeMove(chessBoard, moves[24]);
-    chessBoard.printBoard();
+    //chessBoard.printBoard();
 
 
     /*for (auto piece: chessBoard.pieces){
@@ -43,4 +44,9 @@ int main()
     }
 
     return 0;*/
+
+    float eval = evaluation(chessBoard);
+    std::cout << eval;
+
+
 }
