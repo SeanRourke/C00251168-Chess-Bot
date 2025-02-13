@@ -8,8 +8,7 @@
  *
  */
 
-#include "board.h"
-#include "move.h"
+#include "makeMove.h"
 
 /**
  * @brief Update bitboards to represent a move being made.
@@ -21,6 +20,17 @@ void makeMove(Board &board, const Move &move)
 {
    int fromSquare = move.from;
    int toSquare = move.to;
+
+   MoveHistory history;
+   history.move = move;
+   history.capturedPiece = board.pieces[toSquare]; // Store captured piece
+   history.whiteCanCastleKingSide = board.whiteCanCastleKingSide;
+   history.whiteCanCastleQueenSide = board.whiteCanCastleQueenSide;
+   history.blackCanCastleKingSide = board.blackCanCastleKingSide;
+   history.blackCanCastleQueenSide = board.blackCanCastleQueenSide;
+   history.enPassantSquare = board.enPassantSquare;
+
+   board.moveHistory.push_back(history); // Save the current board state
 
    Piece pieceType = board.pieces[fromSquare];
 
@@ -85,7 +95,7 @@ void makeMove(Board &board, const Move &move)
          board.pieces[rookTo] = rook;
          board.bitboards[rook][board.currentColour] &= ~(1ULL << rookFrom);
          board.bitboards[rook][board.currentColour] |= (1ULL << rookTo);
-            }
+      }
 
       // Clear the original square
       board.pieces[fromSquare] = EMPTY;

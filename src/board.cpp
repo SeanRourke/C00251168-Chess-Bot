@@ -14,6 +14,7 @@
  */
 
 #include "board.h"
+#include "move.h"
 
 /**
  * @brief Construct a new Board:: Board object and initialises it.

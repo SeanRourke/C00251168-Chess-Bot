@@ -12,6 +12,7 @@
 #define MOVE_H
 
 #include <iostream>
+#include "board.h"
 
 /**
  * @struct Move
@@ -34,6 +35,17 @@ struct Move
      * @return std::ostream& The output stream with the move formatted.
      */
     friend std::ostream &operator<<(std::ostream &os, const Move &move);
+};
+
+struct MoveHistory
+{
+    Move move;
+    Piece capturedPiece;
+    bool whiteCanCastleKingSide;
+    bool whiteCanCastleQueenSide;
+    bool blackCanCastleKingSide;
+    bool blackCanCastleQueenSide;
+    int enPassantSquare;
 };
 
 #endif

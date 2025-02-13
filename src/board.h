@@ -15,6 +15,7 @@
 #include <iostream>
 #include <bitset>
 #include <cstdint>
+#include <vector>
 
 using Bitboard = uint64_t; ///< Defines a bitboard as a 64 bit integer.
 
@@ -48,6 +49,8 @@ enum Colour
     MAX_COLOUR ///< Colour count.
 };
 
+struct MoveHistory;
+
 /**
  * @class Board
  * @brief Represents a chessboard using bitboards.
@@ -68,6 +71,7 @@ public:
     int enPassantSquare = -1; ///< Stores location of valid en passant square (-1 if none).
     std::array<Piece, 64> pieces;
     Colour currentColour = WHITE;
+    std::vector<MoveHistory> moveHistory;
 
     bool whiteCanCastleKingSide;
     bool whiteCanCastleQueenSide;
