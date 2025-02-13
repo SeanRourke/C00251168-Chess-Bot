@@ -30,11 +30,11 @@ int main()
     Board chessBoard; ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
     //chessBoard.printBoard();
-    std::vector<Move> moves = generateMoves(WHITE, chessBoard);
-    for (const Move &move : moves){
-        std::cout << ' ' << move << ',';
-    }
-    makeMove(chessBoard, moves[24]);
+    //std::vector<Move> moves = generateMoves(WHITE, chessBoard);
+    //for (const Move &move : moves){
+    //    std::cout << ' ' << move << ',';
+    //}
+    //makeMove(chessBoard, moves[24]);
     chessBoard.printBoard();
 
 
