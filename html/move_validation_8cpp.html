@@ -101,6 +101,9 @@ $(function(){ initResizable(false); });
 Functions</h2></td></tr>
 <tr class="memitem:a680473f8d22ad30898a31ba3e9ccb9d5" id="r_a680473f8d22ad30898a31ba3e9ccb9d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a> (int square, <a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a> attacker, const <a class="el" href="class_board.html">Board</a> &amp;board)</td></tr>
 <tr class="separator:a680473f8d22ad30898a31ba3e9ccb9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9364ccb99bc4361d2680f39f27e4c5f9" id="r_a9364ccb99bc4361d2680f39f27e4c5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9364ccb99bc4361d2680f39f27e4c5f9">filterIllegalMoves</a> (std::vector&lt; <a class="el" href="struct_move.html">Move</a> &gt; &amp;moves, const <a class="el" href="class_board.html">Board</a> &amp;board, <a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a> colour)</td></tr>
+<tr class="memdesc:a9364ccb99bc4361d2680f39f27e4c5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters out moves that would leave the moving player's king in check.  <br /></td></tr>
+<tr class="separator:a9364ccb99bc4361d2680f39f27e4c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements <a class="el" href="move_validation_8h.html" title="Checks if a move is legal.">moveValidation.h</a> to check if a move is legal. </p>
@@ -109,6 +112,43 @@ Functions</h2></td></tr>
 <p>Provides functionality to check if a square is attacked, used in both castling and pin logic.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a9364ccb99bc4361d2680f39f27e4c5f9" name="a9364ccb99bc4361d2680f39f27e4c5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9364ccb99bc4361d2680f39f27e4c5f9">&#9670;&#160;</a></span>filterIllegalMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void filterIllegalMoves </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="struct_move.html">Move</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>moves</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_board.html">Board</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a></td>          <td class="paramname"><span class="paramname"><em>colour</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filters out moves that would leave the moving player's king in check. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moves</td><td>Unfiltered generated moves. </td></tr>
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+    <tr><td class="paramname">colour</td><td>The player making the move.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function creates a copy of the main board. It then simulates each potential move and checks if it leaves the moving player's king in check. If it does, the move is removed from the movelist. </p>
+
+</div>
+</div>
 <a id="a680473f8d22ad30898a31ba3e9ccb9d5" name="a680473f8d22ad30898a31ba3e9ccb9d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a680473f8d22ad30898a31ba3e9ccb9d5">&#9670;&#160;</a></span>isSquareAttacked()</h2>
 

@@ -9,7 +9,9 @@ Implements \doxylink{move_validation_8h}{move\+Validation.\+h} to check if a mov
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5}{is\+Square\+Attacked}} (int square, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} attacker, const \mbox{\hyperlink{class_board}{Board}} \&board)
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9}{filter\+Illegal\+Moves}} (std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \&moves, const \mbox{\hyperlink{class_board}{Board}} \&board, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour)
+\begin{DoxyCompactList}\small\item\em Filters out moves that would leave the moving player\textquotesingle{}s king in check. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -29,7 +31,26 @@ Copyright (c) 2025
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5}\index{moveValidation.cpp@{moveValidation.cpp}!isSquareAttacked@{isSquareAttacked}}
+\Hypertarget{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9}\index{moveValidation.cpp@{moveValidation.cpp}!filterIllegalMoves@{filterIllegalMoves}}
+\index{filterIllegalMoves@{filterIllegalMoves}!moveValidation.cpp@{moveValidation.cpp}}
+\doxysubsubsection{\texorpdfstring{filterIllegalMoves()}{filterIllegalMoves()}}
+{\footnotesize\ttfamily \label{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9} 
+void filter\+Illegal\+Moves (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \&}]{moves}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{}\end{DoxyParamCaption})}
+
+
+
+Filters out moves that would leave the moving player\textquotesingle{}s king in check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moves} & Unfiltered generated moves. \\
+\hline
+{\em board} & The current state of the chessboard. \\
+\hline
+{\em colour} & The player making the move.\\
+\hline
+\end{DoxyParams}
+This function creates a copy of the main board. It then simulates each potential move and checks if it leaves the moving player\textquotesingle{}s king in check. If it does, the move is removed from the movelist. \Hypertarget{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5}\index{moveValidation.cpp@{moveValidation.cpp}!isSquareAttacked@{isSquareAttacked}}
 \index{isSquareAttacked@{isSquareAttacked}!moveValidation.cpp@{moveValidation.cpp}}
 \doxysubsubsection{\texorpdfstring{isSquareAttacked()}{isSquareAttacked()}}
 {\footnotesize\ttfamily \label{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5} 
