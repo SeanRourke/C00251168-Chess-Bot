@@ -421,5 +421,7 @@ std::vector<Move> generateMoves(Colour colour, const Board &board)
         }
     }
 
+    filterIllegalMoves(moves, board, colour);
+
     return moves;
 }

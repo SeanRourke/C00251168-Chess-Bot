@@ -38,7 +38,8 @@ int main()
     Move bestMove;
     float bestEval = -1000000;
     std::vector<Move> moves = generateMoves(WHITE, chessBoard);
-    int depth = 4;
+    filterIllegalMoves(moves, chessBoard, WHITE);
+    int depth = 2;
 
     for (const Move &move : moves)
     {

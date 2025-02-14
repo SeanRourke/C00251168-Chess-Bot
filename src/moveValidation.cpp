@@ -15,6 +15,7 @@
 #include "vector"
 #include "move.h"
 #include "moveGeneration.h"
+#include "makeMove.h"
 
 bool isSquareAttacked(int square, Colour attacker, const Board &board)
 {
@@ -154,3 +155,33 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
     return false; // Not attacked
 }
 
+/**
+ * @brief Filters out moves that would leave the moving player's king in check.
+ * 
+ * @param moves Unfiltered generated moves.
+ * @param board The current state of the chessboard.
+ * @param colour The player making the move.
+ * 
+ * This function creates a copy of the main board.
+ * It then simulates each potential move and checks if it leaves the moving player's king in check.
+ * If it does, the move is removed from the movelist.
+ */
+void filterIllegalMoves(std::vector<Move> &moves, const Board &board, Colour colour){
+
+    moves.erase(std::remove_if(moves.begin(), moves.end(),
+                                [&](const Move &move)
+                                {
+                                    Board tempBoard = board; // Copy the board
+                                    makeMove(tempBoard, move);
+
+                                    Bitboard kingBB = tempBoard.bitboards[KING][colour];
+                                    if (kingBB == 0) return true; // If king is missing, move is illegal
+
+                                    // Find the king's position after making the move
+                                    int kingSquare = __builtin_ctzll(kingBB);
+
+                                    // Remove move if it leaves the king in check
+                                    return isSquareAttacked(kingSquare, (colour == WHITE) ? BLACK : WHITE, tempBoard);
+                                }),
+                moves.end());
+}
