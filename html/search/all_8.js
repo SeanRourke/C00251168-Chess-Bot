@@ -9,10 +9,13 @@ var searchData=
   ['max_5fcolour_6',['MAX_COLOUR',['../board_8h.html#a7dae1270b9f323383fd77c3160a9927daf2b5b700dd8c9ff2341a28b29f3cc39c',1,'board.h']]],
   ['max_5fpiece_5ftype_7',['MAX_PIECE_TYPE',['../board_8h.html#ade35c903123b92bed5cc7b84e6a1314ea14a098b28bbc0ec4772648e369435acd',1,'board.h']]],
   ['move_8',['Move',['../struct_move.html',1,'']]],
-  ['move_2ecpp_9',['move.cpp',['../move_8cpp.html',1,'']]],
-  ['move_2eh_10',['move.h',['../move_8h.html',1,'']]],
-  ['movegeneration_2ecpp_11',['moveGeneration.cpp',['../move_generation_8cpp.html',1,'']]],
-  ['movegeneration_2eh_12',['moveGeneration.h',['../move_generation_8h.html',1,'']]],
-  ['movevalidation_2ecpp_13',['moveValidation.cpp',['../move_validation_8cpp.html',1,'']]],
-  ['movevalidation_2eh_14',['moveValidation.h',['../move_validation_8h.html',1,'']]]
+  ['move_9',['move',['../struct_move_history.html#a8e6bba6c33272a0bddff8fa0769549ac',1,'MoveHistory']]],
+  ['move_2ecpp_10',['move.cpp',['../move_8cpp.html',1,'']]],
+  ['move_2eh_11',['move.h',['../move_8h.html',1,'']]],
+  ['movegeneration_2ecpp_12',['moveGeneration.cpp',['../move_generation_8cpp.html',1,'']]],
+  ['movegeneration_2eh_13',['moveGeneration.h',['../move_generation_8h.html',1,'']]],
+  ['movehistory_14',['MoveHistory',['../struct_move_history.html',1,'']]],
+  ['movehistory_15',['moveHistory',['../class_board.html#a2a050a3ae2016ce84b98e5051fb287bd',1,'Board']]],
+  ['movevalidation_2ecpp_16',['moveValidation.cpp',['../move_validation_8cpp.html',1,'']]],
+  ['movevalidation_2eh_17',['moveValidation.h',['../move_validation_8h.html',1,'']]]
 ];

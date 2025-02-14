@@ -1,0 +1,55 @@
+\doxysection{src/search.cpp File Reference}
+\hypertarget{search_8cpp}{}\label{search_8cpp}\index{src/search.cpp@{src/search.cpp}}
+
+
+This file implements \doxylink{search_8h}{search.\+h}.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{search_8cpp_ac147bebfc17bb3096c39dcd0310fcdef}{alpha\+Beta}} (\mbox{\hyperlink{class_board}{Board}} board, int depth, float alpha, float beta, bool maximising\+Player)
+\begin{DoxyCompactList}\small\item\em Performs the Alpha-\/\+Beta pruning search algorithm to find the best move evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements \doxylink{search_8h}{search.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Seán Rourke 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{search_8cpp_ac147bebfc17bb3096c39dcd0310fcdef}\index{search.cpp@{search.cpp}!alphaBeta@{alphaBeta}}
+\index{alphaBeta@{alphaBeta}!search.cpp@{search.cpp}}
+\doxysubsubsection{\texorpdfstring{alphaBeta()}{alphaBeta()}}
+{\footnotesize\ttfamily \label{search_8cpp_ac147bebfc17bb3096c39dcd0310fcdef} 
+float alpha\+Beta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board}{Board}}}]{board}{, }\item[{int}]{depth}{, }\item[{float}]{alpha}{, }\item[{float}]{beta}{, }\item[{bool}]{maximising\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Performs the Alpha-\/\+Beta pruning search algorithm to find the best move evaluation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the chessboard. \\
+\hline
+{\em depth} & How deep to look down the tree. \\
+\hline
+{\em alpha} & The best score the maximising player can guarantee. \\
+\hline
+{\em beta} & The best score the minimising player can guarentee. \\
+\hline
+{\em maximising\+Player} & Whether the current player is the maximising or minimising player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The best evaluation score found. 
+\end{DoxyReturn}

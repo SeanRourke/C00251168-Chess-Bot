@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/moveValidation.h Source File</title>
+<title>My Project: src/undoMove.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,22 +88,24 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">moveValidation.h</div></div>
+  <div class="headertitle"><div class="title">undoMove.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="move_validation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef MOVEVALIDATION_H</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define MOVEVALIDATION_H</span></div>
+<a href="undo_move_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor"> #ifndef UNDOMOVE_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor"> #define UNDOMOVE_H</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">bool</span> <a class="code hl_function" href="move_validation_8h.html#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a>(<span class="keywordtype">int</span> square, <a class="code hl_enumeration" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a> attacker, <span class="keyword">const</span> <a class="code hl_class" href="class_board.html">Board</a> &amp;board);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor"> #include &quot;<a class="code" href="move_8h.html">move.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor"> #include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> <span class="keywordtype">void</span> <a class="code hl_function" href="undo_move_8h.html#abf670acc4c3db2e626e02c55cf16d3e9">undoMove</a>(<a class="code hl_class" href="class_board.html">Board</a> &amp;board, <a class="code hl_struct" href="struct_move.html">Move</a> &amp;move);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor"> #endif</span></div>
 <div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Defines chessboard representation using bitboards.</div></div>
-<div class="ttc" id="aboard_8h_html_a7dae1270b9f323383fd77c3160a9927d"><div class="ttname"><a href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a></div><div class="ttdeci">Colour</div><div class="ttdoc">Represents the colour of a chess piece.</div><div class="ttdef"><b>Definition</b> board.h:46</div></div>
 <div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdoc">Represents a chessboard using bitboards.</div><div class="ttdef"><b>Definition</b> board.h:61</div></div>
-<div class="ttc" id="amove_validation_8h_html_a680473f8d22ad30898a31ba3e9ccb9d5"><div class="ttname"><a href="move_validation_8h.html#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a></div><div class="ttdeci">bool isSquareAttacked(int square, Colour attacker, const Board &amp;board)</div><div class="ttdef"><b>Definition</b> moveValidation.cpp:19</div></div>
+<div class="ttc" id="amove_8h_html"><div class="ttname"><a href="move_8h.html">move.h</a></div><div class="ttdoc">Defines move structure.</div></div>
+<div class="ttc" id="astruct_move_html"><div class="ttname"><a href="struct_move.html">Move</a></div><div class="ttdoc">Represents a chess move.</div><div class="ttdef"><b>Definition</b> move.h:25</div></div>
+<div class="ttc" id="aundo_move_8h_html_abf670acc4c3db2e626e02c55cf16d3e9"><div class="ttname"><a href="undo_move_8h.html#abf670acc4c3db2e626e02c55cf16d3e9">undoMove</a></div><div class="ttdeci">void undoMove(Board &amp;board, Move &amp;move)</div><div class="ttdef"><b>Definition</b> undoMove.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

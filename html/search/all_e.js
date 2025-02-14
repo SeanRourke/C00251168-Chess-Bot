@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updateaggregatebitboards_0',['updateAggregateBitboards',['../class_board.html#af73171e050a9b9b577fecd2ef354db58',1,'Board']]]
+  ['to_0',['to',['../struct_move.html#a3dc61126fdad5646a0baf65deb18b0f5',1,'Move']]]
 ];

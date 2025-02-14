@@ -7,17 +7,29 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MOVE\_H}}
 \DoxyCodeLine{00013\ }
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_move}{Move}}}
-\DoxyCodeLine{00024\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_adee306e66c79ce9e87f43c171c48813e}{from}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_a3dc61126fdad5646a0baf65deb18b0f5}{to}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_a34b34bd2b4a3d14b25e16c0d24246398}{promotionPiece}}\ =\ -\/1;\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_a2326b647619e2985fc0fa18c2d8f49ad}{castling}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{struct_move_a72317566849f53db8af92bbf38903102}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_move}{Move}}\ \&move);}
-\DoxyCodeLine{00037\ \};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{board_8h}{board.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_move}{Move}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_adee306e66c79ce9e87f43c171c48813e}{from}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_a3dc61126fdad5646a0baf65deb18b0f5}{to}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_a34b34bd2b4a3d14b25e16c0d24246398}{promotionPiece}}\ =\ -\/1;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_a2326b647619e2985fc0fa18c2d8f49ad}{castling}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{struct_move_a72317566849f53db8af92bbf38903102}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_move}{Move}}\ \&move);}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_move_history}{MoveHistory}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_move}{Move}}\ \mbox{\hyperlink{struct_move_history_a8e6bba6c33272a0bddff8fa0769549ac}{move}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{board_8h_ade35c903123b92bed5cc7b84e6a1314e}{Piece}}\ \mbox{\hyperlink{struct_move_history_a0d7ef9fa8279e6497581d079664b6cf0}{capturedPiece}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_history_a5784df0513572170f2923c720eb10f0f}{whiteCanCastleKingSide}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_history_afd2ef694fd07b6fbaff5407c18efdc8a}{whiteCanCastleQueenSide}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_history_abb4ad47dae99c8ad699ec8c5e1b6fe6b}{blackCanCastleKingSide}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_move_history_a596d73db499984ca5940c0ddb1de08d6}{blackCanCastleQueenSide}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_move_history_aa2c419884a42f0832cac03c909c7b4aa}{enPassantSquare}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

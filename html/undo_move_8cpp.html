@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/moveValidation.h Source File</title>
+<title>My Project: src/undoMove.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,23 +88,48 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">moveValidation.h</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">undoMove.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="move_validation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef MOVEVALIDATION_H</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define MOVEVALIDATION_H</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">bool</span> <a class="code hl_function" href="move_validation_8h.html#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a>(<span class="keywordtype">int</span> square, <a class="code hl_enumeration" href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a> attacker, <span class="keyword">const</span> <a class="code hl_class" href="class_board.html">Board</a> &amp;board);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Defines chessboard representation using bitboards.</div></div>
-<div class="ttc" id="aboard_8h_html_a7dae1270b9f323383fd77c3160a9927d"><div class="ttname"><a href="board_8h.html#a7dae1270b9f323383fd77c3160a9927d">Colour</a></div><div class="ttdeci">Colour</div><div class="ttdoc">Represents the colour of a chess piece.</div><div class="ttdef"><b>Definition</b> board.h:46</div></div>
-<div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdoc">Represents a chessboard using bitboards.</div><div class="ttdef"><b>Definition</b> board.h:61</div></div>
-<div class="ttc" id="amove_validation_8h_html_a680473f8d22ad30898a31ba3e9ccb9d5"><div class="ttname"><a href="move_validation_8h.html#a680473f8d22ad30898a31ba3e9ccb9d5">isSquareAttacked</a></div><div class="ttdeci">bool isSquareAttacked(int square, Colour attacker, const Board &amp;board)</div><div class="ttdef"><b>Definition</b> moveValidation.cpp:19</div></div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>This file implements <a class="el" href="undo_move_8h.html" title="Updates bitboards to undo the previous move.">undoMove.h</a>.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abf670acc4c3db2e626e02c55cf16d3e9" id="r_abf670acc4c3db2e626e02c55cf16d3e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf670acc4c3db2e626e02c55cf16d3e9">undoMove</a> (<a class="el" href="class_board.html">Board</a> &amp;board, <a class="el" href="struct_move.html">Move</a> &amp;move)</td></tr>
+<tr class="separator:abf670acc4c3db2e626e02c55cf16d3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file implements <a class="el" href="undo_move_8h.html" title="Updates bitboards to undo the previous move.">undoMove.h</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Seán Rourke </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2025</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="abf670acc4c3db2e626e02c55cf16d3e9" name="abf670acc4c3db2e626e02c55cf16d3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf670acc4c3db2e626e02c55cf16d3e9">&#9670;&#160;</a></span>undoMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void undoMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_move.html">Move</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>move</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

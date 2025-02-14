@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/move.h File Reference</title>
+<title>My Project: src/search.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,30 +89,76 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">move.h File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">search.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines move structure.  
+<p>This file implements <a class="el" href="search_8h.html" title="Look at potential moves to determine best move.">search.h</a>.  
 <a href="#details">More...</a></p>
-
-<p><a href="move_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_move.html">Move</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a chess move.  <a href="struct_move.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_move_history.html">MoveHistory</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac147bebfc17bb3096c39dcd0310fcdef" id="r_ac147bebfc17bb3096c39dcd0310fcdef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac147bebfc17bb3096c39dcd0310fcdef">alphaBeta</a> (<a class="el" href="class_board.html">Board</a> board, int depth, float alpha, float beta, bool maximisingPlayer)</td></tr>
+<tr class="memdesc:ac147bebfc17bb3096c39dcd0310fcdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Alpha-Beta pruning search algorithm to find the best move evaluation.  <br /></td></tr>
+<tr class="separator:ac147bebfc17bb3096c39dcd0310fcdef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines move structure. </p>
+<div class="textblock"><p>This file implements <a class="el" href="search_8h.html" title="Look at potential moves to determine best move.">search.h</a>. </p>
 <dl class="section author"><dt>Author</dt><dd>Seán Rourke </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ac147bebfc17bb3096c39dcd0310fcdef" name="ac147bebfc17bb3096c39dcd0310fcdef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac147bebfc17bb3096c39dcd0310fcdef">&#9670;&#160;</a></span>alphaBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float alphaBeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a></td>          <td class="paramname"><span class="paramname"><em>board</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>depth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>beta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>maximisingPlayer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs the Alpha-Beta pruning search algorithm to find the best move evaluation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+    <tr><td class="paramname">depth</td><td>How deep to look down the tree. </td></tr>
+    <tr><td class="paramname">alpha</td><td>The best score the maximising player can guarantee. </td></tr>
+    <tr><td class="paramname">beta</td><td>The best score the minimising player can guarentee. </td></tr>
+    <tr><td class="paramname">maximisingPlayer</td><td>Whether the current player is the maximising or minimising player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The best evaluation score found. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

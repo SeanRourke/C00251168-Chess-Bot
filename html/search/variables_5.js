@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pieces_0',['pieces',['../class_board.html#ada045e34163330c79fecaec05bfd2547',1,'Board']]],
-  ['promotionpiece_1',['promotionPiece',['../struct_move.html#a34b34bd2b4a3d14b25e16c0d24246398',1,'Move']]]
+  ['move_0',['move',['../struct_move_history.html#a8e6bba6c33272a0bddff8fa0769549ac',1,'MoveHistory']]],
+  ['movehistory_1',['moveHistory',['../class_board.html#a2a050a3ae2016ce84b98e5051fb287bd',1,'Board']]]
 ];

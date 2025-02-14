@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['board_0',['Board',['../class_board.html#a9ee491d4fea680cf69b033374a9fdfcb',1,'Board']]]
+  ['alphabeta_0',['alphaBeta',['../search_8cpp.html#ac147bebfc17bb3096c39dcd0310fcdef',1,'alphaBeta(Board board, int depth, float alpha, float beta, bool maximisingPlayer):&#160;search.cpp'],['../search_8h.html#ac147bebfc17bb3096c39dcd0310fcdef',1,'alphaBeta(Board board, int depth, float alpha, float beta, bool maximisingPlayer):&#160;search.cpp']]]
 ];
