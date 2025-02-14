@@ -3,11 +3,11 @@
  * @author Seán Rourke
  * @brief Entry point for the chess engine.
  * @date 2025
- * 
+ *
  * This file initialises the chess board and serves as the entry point for the chess bot.
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 
 #include <iostream>
@@ -19,45 +19,54 @@
 #include "evaluation.h"
 #include "undoMove.h"
 #include "moveValidation.h"
+#include "search.h"
 
 /**
  * @brief Main function of the chess engine.
- * 
+ *
  * This function initialises the starting position of the chessboard.
- * 
+ *
  * @return int Returns 0 on successful execution.
  */
 int main()
 {
 
-    Board chessBoard; ///< Instance of the chessboard.
+    Board chessBoard;        ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
     chessBoard.printBoard();
 
-    /*for (auto piece: chessBoard.pieces){
-        std::cout << ' ' << piece << ',';
+    Move bestMove;
+    float bestEval = -1000000;
+    std::vector<Move> moves = generateMoves(WHITE, chessBoard);
+    int depth = 4;
+
+    for (const Move &move : moves)
+    {
+        Board tempBoard = chessBoard; // Create a copy
+        makeMove(tempBoard, move);
+
+        int eval = alphaBeta(tempBoard, depth, -100000, 100000, true);
+
+        if (eval > bestEval)
+        {
+            bestEval = eval;
+            bestMove = move;
+        }
+    }
+    // bestMove = moves[0];
+    if (!moves.empty())
+    {
+        makeMove(chessBoard, bestMove);
+    }
+    else
+    {
+        std::cout << "No valid moves found." << std::endl;
     }
 
-    return 0;*/
+    std::cout << std::endl
+              << "EVAL: " << evaluation(chessBoard) << std::endl;
 
-    //float eval = evaluation(chessBoard);
-    //std::cout << eval;
+    chessBoard.printBoard();
 
-    std::vector<Move> moves = generateKingMoves(3, 0, BLACK, chessBoard);
-
-    for (auto move : moves) {
-        std::cout << " " << move << ", ";
-    }
-
-
-    //makeMove(chessBoard, moves[1]);
-    //chessBoard.printBoard();
-    //Move move = moves[1];
-
-    //std::cout << std::endl << move.from;
-
-    //undoMove(chessBoard, move);
-    //chessBoard.printBoard();
-
-
+    return 0;
 }
