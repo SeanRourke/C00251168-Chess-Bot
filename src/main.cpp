@@ -30,44 +30,147 @@
  */
 int main()
 {
-
     Board chessBoard;        ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
     chessBoard.printBoard();
 
-    Move bestMove;
-    float bestEval = -1000000;
-    std::vector<Move> moves = generateMoves(WHITE, chessBoard);
-    filterIllegalMoves(moves, chessBoard, WHITE);
-    int depth = 2;
+    int depth = 4;
 
-    for (const Move &move : moves)
+    // White's turn
     {
-        Board tempBoard = chessBoard; // Create a copy
-        makeMove(tempBoard, move);
+        Move bestMove;
+        float bestEval = -1000000;
+        std::vector<Move> moves = generateMoves(WHITE, chessBoard);
+        filterIllegalMoves(moves, chessBoard, WHITE);
 
-        int eval = alphaBeta(tempBoard, depth, -100000, 100000, true);
-
-        if (eval > bestEval)
+        for (const Move &move : moves)
         {
-            bestEval = eval;
-            bestMove = move;
+            Board tempBoard = chessBoard; // Create a copy
+            makeMove(tempBoard, move);
+
+            float eval = alphaBeta(tempBoard, depth, -100000, 100000, false);
+
+            if (eval > bestEval)
+            {
+                bestEval = eval;
+                bestMove = move;
+            }
         }
-    }
-    // bestMove = moves[0];
-    if (!moves.empty())
-    {
-        makeMove(chessBoard, bestMove);
-    }
-    else
-    {
-        std::cout << "No valid moves found." << std::endl;
+
+        if (!moves.empty())
+        {
+            makeMove(chessBoard, bestMove);
+            std::cout << std::endl  << bestMove <<  std::endl;
+            chessBoard.printBoard();
+        }
+        else
+        {
+            std::cout << "No valid moves found for WHITE." << std::endl << "Black Wins" << std::endl;
+        }
+
     }
 
-    std::cout << std::endl
-              << "EVAL: " << evaluation(chessBoard) << std::endl;
+    // Black's turn
+    {
+        Move bestMove;
+        float bestEval = -1000000; // Reset bestEval for the black player's turn
+        std::vector<Move> moves = generateMoves(BLACK, chessBoard);
+        filterIllegalMoves(moves, chessBoard, BLACK); // Pass BLACK instead of WHITE
 
-    chessBoard.printBoard();
+        for (const Move &move : moves)
+        {
+            Board tempBoard = chessBoard; // Create a copy
+            makeMove(tempBoard, move);
+
+            float eval = alphaBeta(tempBoard, depth, -100000, 100000, true);
+
+            if (eval > bestEval)
+            {
+                bestEval = eval;
+                bestMove = move;
+            }
+        }
+
+        if (!moves.empty())
+        {
+            makeMove(chessBoard, bestMove);
+            std::cout << std::endl << bestMove <<  std::endl << std::endl;
+            chessBoard.printBoard();
+        }
+        else
+        {
+            std::cout << "No valid moves found for BLACK." << std::endl << "White Wins" << std::endl;
+        }
+
+    }
+
+    // White's turn
+    {
+        Move bestMove;
+        float bestEval = -1000000;
+        std::vector<Move> moves = generateMoves(WHITE, chessBoard);
+        filterIllegalMoves(moves, chessBoard, WHITE);
+
+        for (const Move &move : moves)
+        {
+            Board tempBoard = chessBoard; // Create a copy
+            makeMove(tempBoard, move);
+
+            float eval = alphaBeta(tempBoard, depth, -100000, 100000, false);
+
+            if (eval > bestEval)
+            {
+                bestEval = eval;
+                bestMove = move;
+            }
+        }
+
+        if (!moves.empty())
+        {
+            makeMove(chessBoard, bestMove);
+            std::cout << std::endl  << bestMove <<  std::endl << std::endl;
+            chessBoard.printBoard();
+        }
+        else
+        {
+            std::cout << "No valid moves found for WHITE." << std::endl << "Black Wins" << std::endl;
+        }
+
+    }
+
+    // Black's turn
+    {
+        Move bestMove;
+        float bestEval = -1000000; // Reset bestEval for the black player's turn
+        std::vector<Move> moves = generateMoves(BLACK, chessBoard);
+        filterIllegalMoves(moves, chessBoard, BLACK); // Pass BLACK instead of WHITE
+
+        for (const Move &move : moves)
+        {
+            Board tempBoard = chessBoard; // Create a copy
+            makeMove(tempBoard, move);
+
+            float eval = alphaBeta(tempBoard, depth, -100000, 100000, true);
+
+            if (eval > bestEval)
+            {
+                bestEval = eval;
+                bestMove = move;
+            }
+        }
+
+        if (!moves.empty())
+        {
+            makeMove(chessBoard, bestMove);
+            std::cout << std::endl << bestMove << std::endl << std::endl;
+            chessBoard.printBoard();
+        }
+        else
+        {
+            std::cout << "No valid moves found for BLACK." << std::endl << "White Wins" << std::endl;
+        }
+
+    }
 
     return 0;
 }
