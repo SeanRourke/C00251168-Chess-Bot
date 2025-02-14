@@ -307,6 +307,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
         {-1, -1}};
 
     Bitboard friendlyPieces = (colour == WHITE) ? board.whitePieces : board.blackPieces;
+    Colour attacker = (colour == WHITE) ? BLACK : WHITE;
 
     for (const auto &move : kingMoves)
     {
@@ -319,7 +320,9 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
             if (!(friendlyPieces & (1ULL << toSquare)))
             {
-                moves.push_back({rank * BOARD_SIZE + file, toSquare});
+                if (!isSquareAttacked(toSquare, attacker, board)){
+                    moves.push_back({rank * BOARD_SIZE + file, toSquare});
+                }
             }
         }
     }

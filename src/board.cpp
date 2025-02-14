@@ -30,8 +30,8 @@ Board::Board() { initialise(); }
  */
 void Board::initialise()
 {
-    bitboards[PAWN][WHITE] = 0x0001000000000000;
-    bitboards[PAWN][BLACK] = 0x00F0000000000000;
+    bitboards[PAWN][WHITE] = 0x000000000000FF00;
+    bitboards[PAWN][BLACK] = 0x00FF000000000000;
 
     bitboards[ROOK][WHITE] = 0x0000000000000081;
     bitboards[ROOK][BLACK] = 0x8100000000000000;

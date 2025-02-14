@@ -18,6 +18,7 @@
 #include "makeMove.h"
 #include "evaluation.h"
 #include "undoMove.h"
+#include "moveValidation.h"
 
 /**
  * @brief Main function of the chess engine.
@@ -42,16 +43,21 @@ int main()
     //float eval = evaluation(chessBoard);
     //std::cout << eval;
 
-    std::vector<Move> moves = generatePawnMoves(6,0, WHITE, chessBoard);
+    std::vector<Move> moves = generateKingMoves(3, 0, BLACK, chessBoard);
 
-    makeMove(chessBoard, moves[1]);
-    chessBoard.printBoard();
-    Move move = moves[1];
+    for (auto move : moves) {
+        std::cout << " " << move << ", ";
+    }
+
+
+    //makeMove(chessBoard, moves[1]);
+    //chessBoard.printBoard();
+    //Move move = moves[1];
 
     //std::cout << std::endl << move.from;
 
-    undoMove(chessBoard, move);
-    chessBoard.printBoard();
+    //undoMove(chessBoard, move);
+    //chessBoard.printBoard();
 
 
 }

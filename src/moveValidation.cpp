@@ -21,18 +21,36 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
     Colour defender = (attacker == WHITE) ? BLACK : WHITE;
 
     // Check for pawn attacks
-    int pawnDirection = (defender == WHITE) ? -1 : 1;
-    int attackLeft = square + (pawnDirection * BOARD_SIZE) - 1;
-    int attackRight = square + (pawnDirection * BOARD_SIZE) + 1;
+    if (defender == WHITE) {
+        if (square % 8 != 0){
+            int left = square + 7;
+            if (board.blackPieces & (1ULL << left) && board.pieces[left] == PAWN) {
+                return true;
+            }
+        }
+        if (square % 8 != 7){
+            int right = square + 9;
+            if (board.blackPieces & (1ULL << right) && board.pieces[right] == PAWN) {
+                return true;
+            }
+        }
+    }
 
-    if (board.allPieces & (1ULL << attackLeft) && (board.blackPieces & (1ULL << attackLeft) || board.whitePieces & (1ULL << attackLeft)))
-    {
-        return true; // Attacked by a pawn
+    if (defender == BLACK) {
+        if (square % 8 != 0){
+            int left = square - 7;
+            if (board.whitePieces & (1ULL << left) && board.pieces[left] == PAWN) {
+                return true;
+            }
+        }
+        if (square % 8 != 7){
+            int right = square - 9;
+            if (board.whitePieces & (1ULL << right) && board.pieces[right] == PAWN) {
+                return true;
+            }
+        }
     }
-    if (board.allPieces & (1ULL << attackRight) && (board.blackPieces & (1ULL << attackRight) || board.whitePieces & (1ULL << attackRight)))
-    {
-        return true; // Attacked by a pawn
-    }
+    
 
     // Check for knight attacks
     int knightMoves[8][2] = {
@@ -45,7 +63,9 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
         if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE)
         {
             int knightSquare = newRank * BOARD_SIZE + newFile;
-            if (board.allPieces & (1ULL << knightSquare) && (board.blackPieces & (1ULL << knightSquare) || board.whitePieces & (1ULL << knightSquare)))
+            if (board.allPieces & (1ULL << knightSquare) && 
+                ((defender == WHITE && board.blackPieces & (1ULL << knightSquare) && board.pieces[knightSquare] == KNIGHT) || 
+                 (defender == BLACK && board.whitePieces & (1ULL << knightSquare) && board.pieces[knightSquare] == KNIGHT)))
             {
                 return true; // Attacked by a knight
             }
@@ -70,10 +90,12 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
             if (board.allPieces & (1ULL << newSquare))
             {
                 // If a piece is found, check its type
-                if ((board.blackPieces & (1ULL << newSquare) && attacker == WHITE) ||
-                    (board.whitePieces & (1ULL << newSquare) && attacker == BLACK))
+                if ((defender == WHITE && board.blackPieces & (1ULL << newSquare)) ||
+                    (defender == BLACK && board.whitePieces & (1ULL << newSquare)))
                 {
-                    return true; // Attacked by bishop or queen
+                    if (board.pieces[newSquare] == BISHOP || board.pieces[newSquare] == QUEEN) {
+                        return true; // Attacked by a bishop or queen
+                    }
                 }
                 break; // Stop if a piece is blocking the path
             }
@@ -98,10 +120,12 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
             if (board.allPieces & (1ULL << newSquare))
             {
                 // If a piece is found, check its type
-                if ((board.blackPieces & (1ULL << newSquare) && attacker == WHITE) ||
-                    (board.whitePieces & (1ULL << newSquare) && attacker == BLACK))
+                if ((defender == WHITE && board.blackPieces & (1ULL << newSquare)) ||
+                    (defender == BLACK && board.whitePieces & (1ULL << newSquare)))
                 {
-                    return true; // Attacked by rook or queen
+                    if (board.pieces[newSquare] == ROOK || board.pieces[newSquare] == QUEEN) {
+                        return true; // Attacked by a rook or queen
+                    }
                 }
                 break; // Stop if a piece is blocking the path
             }
@@ -118,7 +142,9 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
         if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE)
         {
             int kingSquare = newRank * BOARD_SIZE + newFile;
-            if (board.allPieces & (1ULL << kingSquare) && (board.blackPieces & (1ULL << kingSquare) || board.whitePieces & (1ULL << kingSquare)))
+            if (board.allPieces & (1ULL << kingSquare) &&
+                ((defender == WHITE && board.blackPieces & (1ULL << kingSquare) && board.pieces[kingSquare] == KING) ||
+                 (defender == BLACK && board.whitePieces & (1ULL << kingSquare) && board.pieces[kingSquare] == KING)))
             {
                 return true; // Attacked by a king
             }
@@ -127,3 +153,4 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
 
     return false; // Not attacked
 }
+
