@@ -164,3 +164,11 @@ void Board::printBoard() const
         }
     }
 }
+
+int Board::getKingSquare(Colour colour) const {
+    uint64_t kingBitboard = bitboards[KING][colour]; // Get bitboard for the king
+    if (kingBitboard) {
+        return __builtin_ctzll(kingBitboard); // Find the least significant set bit (LSB)
+    }
+    return -1; // Should never happen in a valid game
+}

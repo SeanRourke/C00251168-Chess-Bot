@@ -104,6 +104,14 @@ public:
      * @brief Prints bitboards for all pieces.
      */
     void printBoard() const;
+
+    /**
+     * @brief Get the location of a player's king.
+     * 
+     * @param colour The colour of king being retrieved.
+     * @return int The square the king is on.
+     */
+    int getKingSquare(Colour colour) const;
 };
 
 #endif
