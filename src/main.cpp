@@ -32,7 +32,7 @@ int main()
 {
     Board chessBoard;        ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    chessBoard.printBoard();
+    //chessBoard.printBoard();
 
     int depth = 4;
 
@@ -60,8 +60,8 @@ int main()
         if (!moves.empty())
         {
             makeMove(chessBoard, bestMove);
-            std::cout << std::endl  << bestMove <<  std::endl;
-            chessBoard.printBoard();
+            std::cout << std::endl  << "White " <<  bestMove <<  std::endl;
+            //chessBoard.printBoard();
         }
         else
         {
@@ -69,6 +69,8 @@ int main()
         }
 
     }
+
+    std::cin.get();
 
     // Black's turn
     {
@@ -94,8 +96,8 @@ int main()
         if (!moves.empty())
         {
             makeMove(chessBoard, bestMove);
-            std::cout << std::endl << bestMove <<  std::endl << std::endl;
-            chessBoard.printBoard();
+            std::cout << std::endl << "Black " <<  bestMove <<  std::endl;
+            //chessBoard.printBoard();
         }
         else
         {
@@ -103,6 +105,8 @@ int main()
         }
 
     }
+
+    std::cin.get();
 
     // White's turn
     {
@@ -128,8 +132,8 @@ int main()
         if (!moves.empty())
         {
             makeMove(chessBoard, bestMove);
-            std::cout << std::endl  << bestMove <<  std::endl << std::endl;
-            chessBoard.printBoard();
+            std::cout << std::endl  << "White " <<  bestMove <<  std::endl << std::endl;
+            //chessBoard.printBoard();
         }
         else
         {
@@ -137,6 +141,8 @@ int main()
         }
 
     }
+
+    std::cin.get();
 
     // Black's turn
     {
@@ -162,8 +168,8 @@ int main()
         if (!moves.empty())
         {
             makeMove(chessBoard, bestMove);
-            std::cout << std::endl << bestMove << std::endl << std::endl;
-            chessBoard.printBoard();
+            std::cout << std::endl <<  "Black " << bestMove << std::endl << std::endl;
+            //chessBoard.printBoard();
         }
         else
         {
