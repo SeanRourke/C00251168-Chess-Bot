@@ -331,15 +331,17 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
     {
         if (board.whiteCanCastleKingSide &&
             !(board.allPieces & ((1ULL << 5) | (1ULL << 6))) &&
-            !isSquareAttacked(4, WHITE, board) &&
-            !isSquareAttacked(5, WHITE, board) &&
-            !isSquareAttacked(6, WHITE, board))
+            (board.bitboards[ROOK][WHITE] & (1ULL << 0)) &&
+            !isSquareAttacked(4, BLACK, board) &&
+            !isSquareAttacked(5, BLACK, board) &&
+            !isSquareAttacked(6, BLACK, board))
         {
             moves.push_back({4, 6, -1, true});
         }
 
         if (board.whiteCanCastleQueenSide &&
             !(board.allPieces & ((1ULL << 1) | (1ULL << 2) | (1ULL << 3))) &&
+            (board.bitboards[ROOK][WHITE] & (1ULL << 7)) &&
             !isSquareAttacked(4, BLACK, board) &&
             !isSquareAttacked(3, BLACK, board) &&
             !isSquareAttacked(2, BLACK, board))
@@ -351,6 +353,7 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
     {
         if (board.blackCanCastleKingSide &&
             !(board.allPieces & ((1ULL << 61) | (1ULL << 62))) &&
+            (board.bitboards[ROOK][BLACK] & (1ULL << 63)) &&
             !isSquareAttacked(60, WHITE, board) &&
             !isSquareAttacked(61, WHITE, board) &&
             !isSquareAttacked(62, WHITE, board))
@@ -360,9 +363,10 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
         if (board.blackCanCastleQueenSide &&
             !(board.allPieces & ((1ULL << 57) | (1ULL << 58) | (1ULL << 59))) &&
-            !isSquareAttacked(60, BLACK, board) &&
-            !isSquareAttacked(59, BLACK, board) &&
-            !isSquareAttacked(58, BLACK, board))
+            (board.bitboards[ROOK][BLACK] & (1ULL << 56)) &&
+            !isSquareAttacked(60, WHITE, board) &&
+            !isSquareAttacked(59, WHITE, board) &&
+            !isSquareAttacked(58, WHITE, board))
         {
             moves.push_back({60, 58, -1, true});
         }
