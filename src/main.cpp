@@ -32,27 +32,26 @@ int main()
 {
     Board chessBoard;        ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    chessBoard.printBoard();
 
-    std::vector<Move> moves = generateKingMoves(0, 4, WHITE, chessBoard);
+    std::vector<Move> moves = generateRookMoves(0, 7, WHITE, chessBoard);
 
-    std::cout << chessBoard.whiteCanCastleKingSide << std::endl;
+    std::cout << std::endl << chessBoard.whiteCanCastleKingSide << std::endl;
 
-    for (Move move : moves) {
-        std::cout << " - " << move;
-    }
+    std::cout << moves[0];
 
     makeMove(chessBoard, moves[0]);
 
+    std::vector<Move> moves2 = generateRookMoves(1, 7, WHITE, chessBoard);
+
     std::cout << std::endl << std::endl;
 
-    std::vector<Move> moves2 = generateKingMoves(1, 4, WHITE, chessBoard);
+    std::cout << moves2[5];
 
-    std::cout << chessBoard.whiteCanCastleKingSide << std::endl;
+    makeMove(chessBoard, moves2[5]);
 
-    for (Move move : moves2) {
-        std::cout << " - " << move;
-    }
+    std::cout << std::endl << chessBoard.whiteCanCastleKingSide << std::endl;
+    std::cout << std::endl << chessBoard.whiteCanCastleQueenSide << std::endl;
+
     
     return 0;
 }

@@ -117,9 +117,9 @@ void makeMove(Board &board, const Move &move)
       if (pieceType == ROOK) {
          if (board.currentColour == WHITE) {
             if (fromSquare == 0 && board.whiteCanCastleKingSide) {
-               board.whiteCanCastleKingSide = false;
-            } else if (fromSquare == 7 && board.whiteCanCastleQueenSide) {
                board.whiteCanCastleQueenSide = false;
+            } else if (fromSquare == 7 && board.whiteCanCastleQueenSide) {
+               board.whiteCanCastleKingSide = false;
             }
          } else {
             if (fromSquare == 63 && board.blackCanCastleKingSide) {
