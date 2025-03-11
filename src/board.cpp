@@ -30,19 +30,19 @@ Board::Board() { initialise(); }
  */
 void Board::initialise()
 {
-    bitboards[PAWN][WHITE] = 0x0000000000000000;
+    bitboards[PAWN][WHITE] = 0x000000000000FF00;
     bitboards[PAWN][BLACK] = 0x00FF000000000000;
 
     bitboards[ROOK][WHITE] = 0x0000000000000081;
     bitboards[ROOK][BLACK] = 0x8100000000000000;
 
-    bitboards[KNIGHT][WHITE] = 0x0000000000000000;
+    bitboards[KNIGHT][WHITE] = 0x0000000000000042;
     bitboards[KNIGHT][BLACK] = 0x4200000000000000;
 
-    bitboards[BISHOP][WHITE] = 0x0000000000000000;
+    bitboards[BISHOP][WHITE] = 0x0000000000000024;
     bitboards[BISHOP][BLACK] = 0x2400000000000000;
 
-    bitboards[QUEEN][WHITE] = 0x0000000000000000;
+    bitboards[QUEEN][WHITE] = 0x0000000000000008;
     bitboards[QUEEN][BLACK] = 0x0800000000000000;
 
     bitboards[KING][WHITE] = 0x0000000000000010;
@@ -61,7 +61,7 @@ void Board::initialise()
     pieces[56] = ROOK;
     pieces[63] = ROOK;
 
-    /*pieces[1] = KNIGHT;
+    pieces[1] = KNIGHT;
     pieces[6] = KNIGHT;
     pieces[57] = KNIGHT;
     pieces[62] = KNIGHT;
@@ -69,11 +69,11 @@ void Board::initialise()
     pieces[2] = BISHOP;
     pieces[5] = BISHOP;
     pieces[58] = BISHOP;
-    pieces[61] = BISHOP;*/
+    pieces[61] = BISHOP;
 
-    //pieces[3] = QUEEN;
+    pieces[3] = QUEEN;
     pieces[4] = KING;
-    //pieces[59] = QUEEN;
+    pieces[59] = QUEEN;
     pieces[60] = KING;
 
     whiteCanCastleKingSide = true;
