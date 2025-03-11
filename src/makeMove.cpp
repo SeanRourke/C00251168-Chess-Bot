@@ -78,6 +78,15 @@ void makeMove(Board &board, const Move &move)
       }
 
       // Handle castling
+      if (pieceType == KING) {
+         if (board.currentColour == WHITE) {
+            board.whiteCanCastleKingSide = false;
+            board.whiteCanCastleQueenSide = false;
+         } else {
+            board.blackCanCastleKingSide = false;
+            board.blackCanCastleQueenSide = false;
+         }
+      }
       if (pieceType == KING && move.castling)
       {
          int rookFrom, rookTo;
