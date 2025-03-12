@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['evaluation_0',['evaluation',['../evaluation_8cpp.html#a243b861cdb58af85604f90464a65cd84',1,'evaluation(const Board &amp;board):&#160;evaluation.cpp'],['../evaluation_8h.html#a243b861cdb58af85604f90464a65cd84',1,'evaluation(const Board &amp;board):&#160;evaluation.cpp']]]
+  ['converttouci_0',['convertToUCI',['../uci_conversion_8cpp.html#a0a94186721e70304a6a99cfa9d7779f9',1,'convertToUCI(Move &amp;move):&#160;uciConversion.cpp'],['../uci_conversion_8h.html#a0a94186721e70304a6a99cfa9d7779f9',1,'convertToUCI(Move &amp;move):&#160;uciConversion.cpp']]]
 ];
