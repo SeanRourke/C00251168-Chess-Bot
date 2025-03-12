@@ -3,17 +3,23 @@
  * @author Seán Rourke
  * @brief Implements uciConversion.h
  * @date 2025
- *  
+ * 
+ * Converts numeric square representation to Universal Chess Interface. eg. 28 -> e4.
+ *
  */
 
 #include "uciConversion.h"
 
-void convertToUCI(Move &move){
-    move.from = 'a' + (move.from % 8);
-    move.from += '1' + (move.from / 8);
+std::string convertToUCI(Move &move)
+{
 
-    move.to = 'a' + (move.to % 8);
-    move.to += '1' + (move.to / 8);
+    std::string moveString;
 
-    return;
+    moveString += 'a' + (move.from % 8);
+    moveString += '1' + (move.from / 8);
+
+    moveString += 'a' + (move.to % 8);
+    moveString += '1' + (move.to / 8);
+
+    return moveString;
 }

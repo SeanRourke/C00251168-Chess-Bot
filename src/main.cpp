@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "board.h"
 #include "move.h"
 #include "moveGeneration.h"
@@ -20,6 +21,7 @@
 #include "undoMove.h"
 #include "moveValidation.h"
 #include "search.h"
+#include "uciConversion.h"
 
 /**
  * @brief Main function of the chess engine.
@@ -32,7 +34,28 @@ int main()
 {
     Board chessBoard;        ///< Instance of the chessboard.
     chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    chessBoard.printBoard();
- 
+    // chessBoard.printBoard();
+
+    std::vector<Move> moves = generateMoves(WHITE, chessBoard);
+    std::vector<std::string> moveStrings;
+    for (Move move : moves)
+    {
+        std::cout << "Move: " << move << std::endl;
+    }
+
+    for (Move move : moves)
+    {
+        std::string moveString = convertToUCI(move);
+        moveStrings.push_back(moveString);
+    }
+
+    std::cout << std::endl
+              << std::endl;
+
+    for (std::string moveString : moveStrings)
+    {
+        std::cout << "Move: " << moveString << std::endl;
+    }
+
     return 0;
 }
