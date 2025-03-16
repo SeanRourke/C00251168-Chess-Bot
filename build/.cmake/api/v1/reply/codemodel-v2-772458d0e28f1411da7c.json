@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "chess_bot",
+					"name" : "herm0ni",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "chess_bot::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-chess_bot-Debug-e9f9349739796348dfcd.json",
-					"name" : "chess_bot",
+					"id" : "herm0ni::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-herm0ni-Debug-e9be34f9fca014326751.json",
+					"name" : "herm0ni",
 					"projectIndex" : 0
 				}
 			]

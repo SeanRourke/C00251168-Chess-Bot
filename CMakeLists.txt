@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(chess_bot)
+project(herm0ni)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -7,10 +7,10 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB SRC_FILES "src/*.cpp")
 
 # Add executable with all source files
-add_executable(chess_bot ${SRC_FILES})
+add_executable(herm0ni ${SRC_FILES})
 
 # Include directories
 include_directories(include)
 
 # Place executable in project root
-set_target_properties(chess_bot PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+set_target_properties(herm0ni PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})

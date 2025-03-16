@@ -156,7 +156,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=chess_bot
+CMAKE_PROJECT_NAME:STATIC=herm0ni
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/ranlib.exe
@@ -249,6 +249,15 @@ chess_bot_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 chess_bot_SOURCE_DIR:STATIC=C:/College/Year4/Project/C00251168-Chess-Bot
+
+//Value Computed by CMake
+herm0ni_BINARY_DIR:STATIC=C:/College/Year4/Project/C00251168-Chess-Bot/build
+
+//Value Computed by CMake
+herm0ni_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+herm0ni_SOURCE_DIR:STATIC=C:/College/Year4/Project/C00251168-Chess-Bot
 
 
 ########################

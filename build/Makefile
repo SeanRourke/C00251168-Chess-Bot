@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named chess_bot
+# Target rules for targets named herm0ni
 
 # Build rule for target.
-chess_bot: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 chess_bot
-.PHONY : chess_bot
+herm0ni: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 herm0ni
+.PHONY : herm0ni
 
 # fast build rule for target.
-chess_bot/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/build
-.PHONY : chess_bot/fast
+herm0ni/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/build
+.PHONY : herm0ni/fast
 
 src/board.obj: src/board.cpp.obj
 .PHONY : src/board.obj
 
 # target to build an object file
 src/board.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/board.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/board.cpp.obj
 .PHONY : src/board.cpp.obj
 
 src/board.i: src/board.cpp.i
@@ -141,7 +141,7 @@ src/board.i: src/board.cpp.i
 
 # target to preprocess a source file
 src/board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/board.cpp.i
 .PHONY : src/board.cpp.i
 
 src/board.s: src/board.cpp.s
@@ -149,7 +149,7 @@ src/board.s: src/board.cpp.s
 
 # target to generate assembly for a file
 src/board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
 src/evaluation.obj: src/evaluation.cpp.obj
@@ -157,7 +157,7 @@ src/evaluation.obj: src/evaluation.cpp.obj
 
 # target to build an object file
 src/evaluation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/evaluation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj
 .PHONY : src/evaluation.cpp.obj
 
 src/evaluation.i: src/evaluation.cpp.i
@@ -165,7 +165,7 @@ src/evaluation.i: src/evaluation.cpp.i
 
 # target to preprocess a source file
 src/evaluation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/evaluation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/evaluation.cpp.i
 .PHONY : src/evaluation.cpp.i
 
 src/evaluation.s: src/evaluation.cpp.s
@@ -173,7 +173,7 @@ src/evaluation.s: src/evaluation.cpp.s
 
 # target to generate assembly for a file
 src/evaluation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/evaluation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/evaluation.cpp.s
 .PHONY : src/evaluation.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -181,7 +181,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -189,7 +189,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -197,7 +197,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/makeMove.obj: src/makeMove.cpp.obj
@@ -205,7 +205,7 @@ src/makeMove.obj: src/makeMove.cpp.obj
 
 # target to build an object file
 src/makeMove.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/makeMove.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj
 .PHONY : src/makeMove.cpp.obj
 
 src/makeMove.i: src/makeMove.cpp.i
@@ -213,7 +213,7 @@ src/makeMove.i: src/makeMove.cpp.i
 
 # target to preprocess a source file
 src/makeMove.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/makeMove.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/makeMove.cpp.i
 .PHONY : src/makeMove.cpp.i
 
 src/makeMove.s: src/makeMove.cpp.s
@@ -221,7 +221,7 @@ src/makeMove.s: src/makeMove.cpp.s
 
 # target to generate assembly for a file
 src/makeMove.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/makeMove.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/makeMove.cpp.s
 .PHONY : src/makeMove.cpp.s
 
 src/move.obj: src/move.cpp.obj
@@ -229,7 +229,7 @@ src/move.obj: src/move.cpp.obj
 
 # target to build an object file
 src/move.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/move.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/move.cpp.obj
 .PHONY : src/move.cpp.obj
 
 src/move.i: src/move.cpp.i
@@ -237,7 +237,7 @@ src/move.i: src/move.cpp.i
 
 # target to preprocess a source file
 src/move.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/move.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/move.cpp.i
 .PHONY : src/move.cpp.i
 
 src/move.s: src/move.cpp.s
@@ -245,7 +245,7 @@ src/move.s: src/move.cpp.s
 
 # target to generate assembly for a file
 src/move.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/move.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/move.cpp.s
 .PHONY : src/move.cpp.s
 
 src/moveGeneration.obj: src/moveGeneration.cpp.obj
@@ -253,7 +253,7 @@ src/moveGeneration.obj: src/moveGeneration.cpp.obj
 
 # target to build an object file
 src/moveGeneration.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveGeneration.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj
 .PHONY : src/moveGeneration.cpp.obj
 
 src/moveGeneration.i: src/moveGeneration.cpp.i
@@ -261,7 +261,7 @@ src/moveGeneration.i: src/moveGeneration.cpp.i
 
 # target to preprocess a source file
 src/moveGeneration.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveGeneration.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.i
 .PHONY : src/moveGeneration.cpp.i
 
 src/moveGeneration.s: src/moveGeneration.cpp.s
@@ -269,7 +269,7 @@ src/moveGeneration.s: src/moveGeneration.cpp.s
 
 # target to generate assembly for a file
 src/moveGeneration.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveGeneration.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.s
 .PHONY : src/moveGeneration.cpp.s
 
 src/moveValidation.obj: src/moveValidation.cpp.obj
@@ -277,7 +277,7 @@ src/moveValidation.obj: src/moveValidation.cpp.obj
 
 # target to build an object file
 src/moveValidation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveValidation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj
 .PHONY : src/moveValidation.cpp.obj
 
 src/moveValidation.i: src/moveValidation.cpp.i
@@ -285,7 +285,7 @@ src/moveValidation.i: src/moveValidation.cpp.i
 
 # target to preprocess a source file
 src/moveValidation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveValidation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveValidation.cpp.i
 .PHONY : src/moveValidation.cpp.i
 
 src/moveValidation.s: src/moveValidation.cpp.s
@@ -293,7 +293,7 @@ src/moveValidation.s: src/moveValidation.cpp.s
 
 # target to generate assembly for a file
 src/moveValidation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/moveValidation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/moveValidation.cpp.s
 .PHONY : src/moveValidation.cpp.s
 
 src/search.obj: src/search.cpp.obj
@@ -301,7 +301,7 @@ src/search.obj: src/search.cpp.obj
 
 # target to build an object file
 src/search.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/search.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/search.cpp.obj
 .PHONY : src/search.cpp.obj
 
 src/search.i: src/search.cpp.i
@@ -309,7 +309,7 @@ src/search.i: src/search.cpp.i
 
 # target to preprocess a source file
 src/search.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/search.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/search.cpp.i
 .PHONY : src/search.cpp.i
 
 src/search.s: src/search.cpp.s
@@ -317,7 +317,7 @@ src/search.s: src/search.cpp.s
 
 # target to generate assembly for a file
 src/search.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/search.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/search.cpp.s
 .PHONY : src/search.cpp.s
 
 src/uciConversion.obj: src/uciConversion.cpp.obj
@@ -325,7 +325,7 @@ src/uciConversion.obj: src/uciConversion.cpp.obj
 
 # target to build an object file
 src/uciConversion.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/uciConversion.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj
 .PHONY : src/uciConversion.cpp.obj
 
 src/uciConversion.i: src/uciConversion.cpp.i
@@ -333,7 +333,7 @@ src/uciConversion.i: src/uciConversion.cpp.i
 
 # target to preprocess a source file
 src/uciConversion.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/uciConversion.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/uciConversion.cpp.i
 .PHONY : src/uciConversion.cpp.i
 
 src/uciConversion.s: src/uciConversion.cpp.s
@@ -341,7 +341,7 @@ src/uciConversion.s: src/uciConversion.cpp.s
 
 # target to generate assembly for a file
 src/uciConversion.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/uciConversion.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/uciConversion.cpp.s
 .PHONY : src/uciConversion.cpp.s
 
 src/undoMove.obj: src/undoMove.cpp.obj
@@ -349,7 +349,7 @@ src/undoMove.obj: src/undoMove.cpp.obj
 
 # target to build an object file
 src/undoMove.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/undoMove.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj
 .PHONY : src/undoMove.cpp.obj
 
 src/undoMove.i: src/undoMove.cpp.i
@@ -357,7 +357,7 @@ src/undoMove.i: src/undoMove.cpp.i
 
 # target to preprocess a source file
 src/undoMove.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/undoMove.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.i
 .PHONY : src/undoMove.cpp.i
 
 src/undoMove.s: src/undoMove.cpp.s
@@ -365,7 +365,7 @@ src/undoMove.s: src/undoMove.cpp.s
 
 # target to generate assembly for a file
 src/undoMove.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_bot.dir\build.make CMakeFiles/chess_bot.dir/src/undoMove.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.s
 .PHONY : src/undoMove.cpp.s
 
 # Help Target
@@ -376,7 +376,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... chess_bot
+	@echo ... herm0ni
 	@echo ... src/board.obj
 	@echo ... src/board.i
 	@echo ... src/board.s

@@ -879,7 +879,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "chess_bot"
+			"value" : "herm0ni"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1335,6 +1335,42 @@
 		},
 		{
 			"name" : "chess_bot_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/College/Year4/Project/C00251168-Chess-Bot"
+		},
+		{
+			"name" : "herm0ni_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/College/Year4/Project/C00251168-Chess-Bot/build"
+		},
+		{
+			"name" : "herm0ni_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "herm0ni_SOURCE_DIR",
 			"properties" : 
 			[
 				{

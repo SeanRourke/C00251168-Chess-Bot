@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/College/Year4/Project/C00251168-Chess-Bot/chess_bot.exe"
+			"path" : "C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe"
 		},
 		{
-			"path" : "C:/College/Year4/Project/C00251168-Chess-Bot/chess_bot.pdb"
+			"path" : "C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -79,7 +79,7 @@
 			]
 		}
 	],
-	"id" : "chess_bot::@6890427a1f51a3e7e1df",
+	"id" : "herm0ni::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -99,8 +99,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "chess_bot",
-	"nameOnDisk" : "chess_bot.exe",
+	"name" : "herm0ni",
+	"nameOnDisk" : "herm0ni.exe",
 	"paths" : 
 	{
 		"build" : ".",

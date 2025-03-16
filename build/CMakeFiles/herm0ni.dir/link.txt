@@ -1,0 +1,3 @@
+C:\mingw64\bin\cmake.exe -E rm -f CMakeFiles\herm0ni.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\herm0ni.dir/objects.a @CMakeFiles\herm0ni.dir\objects1.rsp
+C:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\herm0ni.dir/objects.a -Wl,--no-whole-archive -o C:\College\Year4\Project\C00251168-Chess-Bot\herm0ni.exe -Wl,--out-implib,libherm0ni.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\herm0ni.dir\linkLibs.rsp

@@ -1,62 +1,62 @@
 [
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\board.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\board.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\board.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\board.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/board.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/board.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/board.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\evaluation.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\evaluation.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\evaluation.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\evaluation.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/evaluation.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/evaluation.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\main.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\main.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\main.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\main.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/main.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/main.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/main.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\makeMove.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\makeMove.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\makeMove.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\makeMove.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/makeMove.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/makeMove.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\move.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\move.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\move.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\move.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/move.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/move.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/move.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\moveGeneration.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\moveGeneration.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\moveGeneration.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\moveGeneration.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/moveGeneration.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/moveGeneration.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\moveValidation.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\moveValidation.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\moveValidation.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\moveValidation.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/moveValidation.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/moveValidation.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\search.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\search.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\search.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\search.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/search.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/search.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/search.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\uciConversion.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\uciConversion.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\uciConversion.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\uciConversion.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/uciConversion.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/uciConversion.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj"
 },
 {
   "directory": "C:/College/Year4/Project/C00251168-Chess-Bot/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/chess_bot.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\chess_bot.dir\\src\\undoMove.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\undoMove.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/herm0ni.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\herm0ni.dir\\src\\undoMove.cpp.obj -c C:\\College\\Year4\\Project\\C00251168-Chess-Bot\\src\\undoMove.cpp",
   "file": "C:/College/Year4/Project/C00251168-Chess-Bot/src/undoMove.cpp",
-  "output": "CMakeFiles/chess_bot.dir/src/undoMove.cpp.obj"
+  "output": "CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj"
 }
 ]
