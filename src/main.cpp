@@ -67,7 +67,7 @@ int main() {
 
     Board chessBoard;
     chessBoard.initialise();
-    /*int depth = 6;
+    int depth = 6;
     std::string input;
     std::cout.sync_with_stdio(false);
 
@@ -85,7 +85,7 @@ int main() {
         } else if (input == "quit") {
             break;
         }
-    }*/
+    }
 
 
     return 0;

@@ -81,40 +81,6 @@ void Board::initialise()
     blackCanCastleKingSide = true;
     blackCanCastleQueenSide = true;
 
-    /* Mate in 2 puzzle setup
-    bitboards[PAWN][WHITE] = 0x0000000000000000;
-    bitboards[PAWN][BLACK] = 0x0080000000000000;
-
-    bitboards[ROOK][WHITE] = 0x0200000000000000;
-    bitboards[ROOK][BLACK] = 0x4000000000000000;
-
-    bitboards[KNIGHT][WHITE] = 0x0000000000000000;
-    bitboards[KNIGHT][BLACK] = 0x0000000000000000;
-
-    bitboards[BISHOP][WHITE] = 0x0000001000000000;
-    bitboards[BISHOP][BLACK] = 0x0040000000000000;
-
-    bitboards[QUEEN][WHITE] = 0x0000000000008000;
-    bitboards[QUEEN][BLACK] = 0x0000000000000000;
-
-    bitboards[KING][WHITE] = 0x0000000000020000;
-    bitboards[KING][BLACK] = 0x8000000000000000;
-
-    pieces[17] = KING;
-    pieces[15] = QUEEN;
-    pieces[36] = BISHOP;
-    pieces[57] = ROOK;
-    pieces[54] = BISHOP;
-    pieces[55] = PAWN;
-    pieces[62] = ROOK;
-    pieces[63] = KING;
-
-    whiteCanCastleKingSide = false;
-    whiteCanCastleQueenSide = false;
-    blackCanCastleKingSide = false;
-    blackCanCastleQueenSide = false;
-    */
-
     updateAggregateBitboards();
 }
 
