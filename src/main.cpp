@@ -23,6 +23,10 @@
 #include "search.h"
 #include "uciConversion.h"
 
+void handlePosition(Board chessBoard) {
+
+}
+
 std::string findBestMove(Board chessBoard, int depth)
 {
     std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
@@ -54,10 +58,6 @@ std::string findBestMove(Board chessBoard, int depth)
     return bestMoveString;
 }
 
-void handlePosition(Board chessBoard) {
-
-}
-
 void handleGo(Board chessBoard, int depth) {
     std::string bestMoveString = findBestMove(chessBoard, depth);
     std::cout << "bestmove " << bestMoveString << std::endl;
@@ -86,14 +86,6 @@ int main() {
             break;
         }
     }*/
-
-    std::vector<Move> moves = generatePawnMoves(6, 0, WHITE, chessBoard);
-
-    for (auto &move : moves) {
-        std::string moveString = convertToUCI(move);
-        std::cout << moveString << std::endl;
-    }
-
 
 
     return 0;

@@ -15,10 +15,17 @@
 #include <string>
 
 /**
- * @brief Converts the toSquare and the fromSquare of a move to UCI.
+ * @brief Converts a move to UCI notation.
  *
  * @param move The move who's squares are being converted.
  */
 std::string convertToUCI(Move &move);
+
+/**
+ * @brief Converts a move from UCI notation to numerical representation.
+ * 
+ * @param moveString The move who's squares are being converted.
+ */
+Move convertFromUCI(std::string &moveString);
 
 #endif
