@@ -23,39 +23,78 @@
 #include "search.h"
 #include "uciConversion.h"
 
-/**
- * @brief Main function of the chess engine.
- *
- * This function initialises the starting position of the chessboard.
- *
- * @return int Returns 0 on successful execution.
- */
-int main()
+std::string findBestMove(Board chessBoard, int depth)
 {
-    Board chessBoard;        ///< Instance of the chessboard.
-    chessBoard.initialise(); ///< Initialises the chessboard with the starting position.
-    // chessBoard.printBoard();
-
-    std::vector<Move> moves = generateMoves(WHITE, chessBoard);
-    std::vector<std::string> moveStrings;
-    for (Move move : moves)
+    std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
+    Move bestMove;
+    if (moves.empty())
     {
-        std::cout << "Move: " << move << std::endl;
+        std::string bestMoveString = "(none)";
+        return bestMoveString;
     }
+    float bestEval = (chessBoard.currentColour == WHITE) ? -1000000 : 1000000;
+    float alpha = -1000000;
+    float beta = 1000000;
 
-    for (Move move : moves)
+    for (const Move &move : moves)
     {
+        Board newBoard = chessBoard;
+        makeMove(newBoard, move);
+
+        float eval = alphaBeta(newBoard, depth - 1, alpha, beta, chessBoard.currentColour == BLACK);
+
+        if ((chessBoard.currentColour == WHITE && eval > bestEval) ||
+            (chessBoard.currentColour == BLACK && eval < bestEval))
+        {
+            bestEval = eval;
+            bestMove = move;
+        }
+    }
+    std::string bestMoveString = convertToUCI(bestMove);
+    return bestMoveString;
+}
+
+void handlePosition(Board chessBoard) {
+
+}
+
+void handleGo(Board chessBoard, int depth) {
+    std::string bestMoveString = findBestMove(chessBoard, depth);
+    std::cout << "bestmove " << bestMoveString << std::endl;
+}
+
+int main() {
+
+    Board chessBoard;
+    chessBoard.initialise();
+    /*int depth = 6;
+    std::string input;
+    std::cout.sync_with_stdio(false);
+
+    while (std::getline(std::cin, input)) {
+        if (input == "uci") {
+            std::cout << "id name Herm0ni" << std::endl;
+            std::cout << "id author Seán Rourke" << std::endl;
+            std::cout << "uciok" << std::endl;
+        } else if (input == "isready") {
+            std::cout << "readyok" << std::endl;
+        } else if (input.rfind("position", 0) == 0) {
+            handlePosition(chessBoard);
+        } else if (input.rfind("go", 0) == 0) {
+            handleGo(chessBoard, depth);
+        } else if (input == "quit") {
+            break;
+        }
+    }*/
+
+    std::vector<Move> moves = generatePawnMoves(6, 0, WHITE, chessBoard);
+
+    for (auto &move : moves) {
         std::string moveString = convertToUCI(move);
-        moveStrings.push_back(moveString);
+        std::cout << moveString << std::endl;
     }
 
-    std::cout << std::endl
-              << std::endl;
 
-    for (std::string moveString : moveStrings)
-    {
-        std::cout << "Move: " << moveString << std::endl;
-    }
 
     return 0;
 }

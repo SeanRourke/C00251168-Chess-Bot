@@ -21,5 +21,15 @@ std::string convertToUCI(Move &move)
     moveString += 'a' + (move.to % 8);
     moveString += '1' + (move.to / 8);
 
+    if (move.promotionPiece == QUEEN) {
+        moveString += "=q";
+    } else if (move.promotionPiece == ROOK) {
+        moveString += "=r";
+    } else if (move.promotionPiece == BISHOP) {
+        moveString += "=b";
+    } else if (move.promotionPiece == KNIGHT) {
+        moveString += "=n";
+    }
+
     return moveString;
 }
