@@ -141,6 +141,8 @@ CMakeFiles/herm0ni.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.1.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/14.1.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/14.1.0/bits/vector.tcc \
+ C:/msys64/ucrt64/include/c++/14.1.0/sstream \
+ C:/msys64/ucrt64/include/c++/14.1.0/bits/sstream.tcc \
  C:/College/Year4/Project/C00251168-Chess-Bot/include/board.h \
  C:/msys64/ucrt64/include/c++/14.1.0/array \
  C:/msys64/ucrt64/include/c++/14.1.0/compare \

@@ -132,11 +132,11 @@ void makeMove(Board &board, const Move &move)
 
       // Clear the original square
       board.pieces[fromSquare] = EMPTY;
-
-      // Update bitboards
-      board.updateAggregateBitboards();
-
-      // Switch turns
-      board.currentColour = (board.currentColour == WHITE) ? BLACK : WHITE;
    }
+
+   // Update bitboards
+   board.updateAggregateBitboards();
+
+   // Switch turns
+   board.currentColour = (board.currentColour == WHITE) ? BLACK : WHITE;
 }
