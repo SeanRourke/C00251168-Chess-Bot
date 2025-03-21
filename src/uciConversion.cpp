@@ -27,13 +27,13 @@ std::string convertToUCI(Move &move)
     moveString += '1' + (move.to / 8);
 
     if (move.promotionPiece == QUEEN) {
-        moveString += "=q";
+        moveString += "q";
     } else if (move.promotionPiece == ROOK) {
-        moveString += "=r";
+        moveString += "r";
     } else if (move.promotionPiece == BISHOP) {
-        moveString += "=b";
+        moveString += "b";
     } else if (move.promotionPiece == KNIGHT) {
-        moveString += "=n";
+        moveString += "n";
     }
 
     return moveString;
@@ -44,7 +44,7 @@ std::string convertToUCI(Move &move)
  * 
  * @param moveString The move who's squares are being converted.
  */
-Move convertFromUCI(std::string &moveString) {
+Move convertFromUCI(Board &board, std::string &moveString) {
     if (moveString.length() < 4 || moveString.length() > 6) {
         throw std::invalid_argument("Invalid UCI move string");
     }
@@ -53,6 +53,21 @@ Move convertFromUCI(std::string &moveString) {
     move.from = (moveString[1] - '1') * 8 + (moveString[0] - 'a'); // Convert from UCI to index
     move.to = (moveString[3] - '1') * 8 + (moveString[2] - 'a');   // Convert to UCI to index
     move.promotionPiece = -1; // Default to no promotion
+    move.castling = false;
+    Piece piece = board.pieces[move.from];
+
+    if (moveString == "e1g1" && piece == KING) {
+        move.castling = true;
+    }
+    if (moveString == "e1c1" && piece == KING) {
+        move.castling = true;
+    }
+    if (moveString == "e8g8" && piece == KING) {
+        move.castling = true;
+    }
+    if (moveString == "e8c8" && piece == KING) {
+        move.castling = true;
+    }
 
     // Check for promotion
     if (moveString.length() == 5 || moveString.length() == 6) {

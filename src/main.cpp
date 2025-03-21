@@ -39,7 +39,7 @@ void handlePosition(Board &chessBoard, const std::string &input) {
 
     if(!moves.empty()) {
         std::string lastMove = moves.back();
-        Move move = convertFromUCI(lastMove);
+        Move move = convertFromUCI(chessBoard, lastMove);
         makeMove(chessBoard, move);
     }
     return;

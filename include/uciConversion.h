@@ -24,8 +24,9 @@ std::string convertToUCI(Move &move);
 /**
  * @brief Converts a move from UCI notation to numerical representation.
  * 
+ * @param board The current state of the chessboard.
  * @param moveString The move who's squares are being converted.
  */
-Move convertFromUCI(std::string &moveString);
+Move convertFromUCI(Board &board, std::string &moveString);
 
 #endif
