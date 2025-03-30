@@ -41,7 +41,6 @@ void makeMove(Board &board, const Move &move)
    if (move.promotionPiece != -1)
    {
       Piece promotedPiece = static_cast<Piece>(move.promotionPiece);
-      board.bitboards[PAWN][board.currentColour] &= ~(1ULL << fromSquare);
       board.pieces[toSquare] = promotedPiece;
       board.bitboards[promotedPiece][board.currentColour] |= (1ULL << toSquare);
    }
@@ -129,10 +128,9 @@ void makeMove(Board &board, const Move &move)
             }
          }
       }
-
-      // Clear the original square
-      board.pieces[fromSquare] = EMPTY;
    }
+   // Clear the original square
+   board.pieces[fromSquare] = EMPTY;
 
    // Update bitboards
    board.updateAggregateBitboards();
