@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "herm0ni::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-herm0ni-Debug-7ca0f47b1760956cd1f9.json",
+					"jsonFile" : "target-herm0ni-Debug-e9be34f9fca014326751.json",
 					"name" : "herm0ni",
 					"projectIndex" : 0
 				}
@@ -55,6 +55,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 8
+		"minor" : 7
 	}
 }
