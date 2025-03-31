@@ -21,17 +21,6 @@ void makeMove(Board &board, const Move &move)
    int fromSquare = move.from;
    int toSquare = move.to;
 
-   MoveHistory history;
-   history.move = move;
-   history.capturedPiece = board.pieces[toSquare]; // Store captured piece
-   history.whiteCanCastleKingSide = board.whiteCanCastleKingSide;
-   history.whiteCanCastleQueenSide = board.whiteCanCastleQueenSide;
-   history.blackCanCastleKingSide = board.blackCanCastleKingSide;
-   history.blackCanCastleQueenSide = board.blackCanCastleQueenSide;
-   history.enPassantSquare = board.enPassantSquare;
-
-   board.moveHistory.push_back(history); // Save the current board state
-
    Piece pieceType = board.pieces[fromSquare];
 
    // Remove the piece from its original position in the bitboard
@@ -77,53 +66,59 @@ void makeMove(Board &board, const Move &move)
       }
 
       // Handle castling
-      if (pieceType == KING) {
-         if (board.currentColour == WHITE) {
-            board.whiteCanCastleKingSide = false;
-            board.whiteCanCastleQueenSide = false;
-         } else {
-            board.blackCanCastleKingSide = false;
-            board.blackCanCastleQueenSide = false;
-         }
-      }
-      if (pieceType == KING && move.castling)
+      if (pieceType == KING)
       {
-         int rookFrom, rookTo;
-         if (toSquare == 62) // Black queenside castling
-            rookFrom = 63, rookTo = 61;
-         else if (toSquare == 58) // Black kingside castling
-            rookFrom = 56, rookTo = 59;
-         else if (toSquare == 6) // White kingside castling
-            rookFrom = 7, rookTo = 5;
-         else if (toSquare == 2) // White queenside castling
-            rookFrom = 0, rookTo = 3;
+         if (move.castling)
+         {
+            int rookFrom, rookTo;
+            if (toSquare == 62) // Black queenside castling
+               rookFrom = 63, rookTo = 61;
+            else if (toSquare == 58) // Black kingside castling
+               rookFrom = 56, rookTo = 59;
+            else if (toSquare == 6) // White kingside castling
+               rookFrom = 7, rookTo = 5;
+            else if (toSquare == 2) // White queenside castling
+               rookFrom = 0, rookTo = 3;
 
-         board.pieces[rookFrom] = EMPTY;
-         board.pieces[rookTo] = ROOK;
-         board.bitboards[ROOK][board.currentColour] &= ~(1ULL << rookFrom);
-         board.bitboards[ROOK][board.currentColour] |= (1ULL << rookTo);
-
-         if (board.currentColour == WHITE) {
+            board.pieces[rookFrom] = EMPTY;
+            board.pieces[rookTo] = ROOK;
+            board.bitboards[ROOK][board.currentColour] &= ~(1ULL << rookFrom);
+            board.bitboards[ROOK][board.currentColour] |= (1ULL << rookTo);
+         }
+         if (board.currentColour == WHITE)
+         {
             board.whiteCanCastleKingSide = false;
             board.whiteCanCastleQueenSide = false;
-         } else {
+         }
+         else
+         {
             board.blackCanCastleKingSide = false;
             board.blackCanCastleQueenSide = false;
          }
       }
 
       // Remove castling rights for a side if a rook moves
-      if (pieceType == ROOK) {
-         if (board.currentColour == WHITE) {
-            if (fromSquare == 0 && board.whiteCanCastleKingSide) {
+      if (pieceType == ROOK)
+      {
+         if (board.currentColour == WHITE)
+         {
+            if (fromSquare == 0 && board.whiteCanCastleQueenSide)
+            {
                board.whiteCanCastleQueenSide = false;
-            } else if (fromSquare == 7 && board.whiteCanCastleQueenSide) {
+            }
+            else if (fromSquare == 7 && board.whiteCanCastleKingSide)
+            {
                board.whiteCanCastleKingSide = false;
             }
-         } else {
-            if (fromSquare == 63 && board.blackCanCastleKingSide) {
+         }
+         else
+         {
+            if (fromSquare == 63 && board.blackCanCastleKingSide)
+            {
                board.blackCanCastleKingSide = false;
-            } else if (fromSquare == 56 && board.blackCanCastleQueenSide) {
+            }
+            else if (fromSquare == 56 && board.blackCanCastleQueenSide)
+            {
                board.blackCanCastleQueenSide = false;
             }
          }
