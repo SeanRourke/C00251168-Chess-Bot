@@ -2,18 +2,20 @@
 \hypertarget{uci_conversion_8cpp}{}\label{uci_conversion_8cpp}\index{src/uciConversion.cpp@{src/uciConversion.cpp}}
 
 
-Implements \doxylink{uci_conversion_8h}{uci\+Conversion.\+h}.  
+Implements uci\+Conversion.\+h.  
 
 
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \mbox{\hyperlink{uci_conversion_8cpp_a0a94186721e70304a6a99cfa9d7779f9}{convert\+To\+UCI}} (\mbox{\hyperlink{struct_move}{Move}} \&move)
-\begin{DoxyCompactList}\small\item\em Converts the to\+Square and the from\+Square of a move to UCI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::string \mbox{\hyperlink{uci_conversion_8cpp_a0a94186721e70304a6a99cfa9d7779f9}{convert\+To\+UCI}} (Move \&move)
+\begin{DoxyCompactList}\small\item\em Converts a move to UCI notation. \end{DoxyCompactList}\item 
+Move \mbox{\hyperlink{uci_conversion_8cpp_ac26fca1d96463e18851dfc8ad9899ddf}{convert\+From\+UCI}} (Board \&board, std\+::string \&move\+String)
+\begin{DoxyCompactList}\small\item\em Converts a move from UCI notation to numerical representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implements \doxylink{uci_conversion_8h}{uci\+Conversion.\+h}. 
+Implements uci\+Conversion.\+h. 
 
 \begin{DoxyAuthor}{Author}
 Seán Rourke 
@@ -24,15 +26,30 @@ Seán Rourke
 Converts numeric square representation to Universal Chess Interface. eg. 28 -\/\texorpdfstring{$>$}{>} e4. 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{uci_conversion_8cpp_ac26fca1d96463e18851dfc8ad9899ddf}\index{uciConversion.cpp@{uciConversion.cpp}!convertFromUCI@{convertFromUCI}}
+\index{convertFromUCI@{convertFromUCI}!uciConversion.cpp@{uciConversion.cpp}}
+\doxysubsubsection{\texorpdfstring{convertFromUCI()}{convertFromUCI()}}
+{\footnotesize\ttfamily \label{uci_conversion_8cpp_ac26fca1d96463e18851dfc8ad9899ddf} 
+Move convert\+From\+UCI (\begin{DoxyParamCaption}\item[{Board \&}]{board}{, }\item[{std\+::string \&}]{move\+String}{}\end{DoxyParamCaption})}
+
+
+
+Converts a move from UCI notation to numerical representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+String} & The move who\textquotesingle{}s squares are being converted. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{uci_conversion_8cpp_a0a94186721e70304a6a99cfa9d7779f9}\index{uciConversion.cpp@{uciConversion.cpp}!convertToUCI@{convertToUCI}}
 \index{convertToUCI@{convertToUCI}!uciConversion.cpp@{uciConversion.cpp}}
 \doxysubsubsection{\texorpdfstring{convertToUCI()}{convertToUCI()}}
 {\footnotesize\ttfamily \label{uci_conversion_8cpp_a0a94186721e70304a6a99cfa9d7779f9} 
-std\+::string convert\+To\+UCI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_move}{Move}} \&}]{move}{}\end{DoxyParamCaption})}
+std\+::string convert\+To\+UCI (\begin{DoxyParamCaption}\item[{Move \&}]{move}{}\end{DoxyParamCaption})}
 
 
 
-Converts the to\+Square and the from\+Square of a move to UCI. 
+Converts a move to UCI notation. 
 
 
 \begin{DoxyParams}{Parameters}

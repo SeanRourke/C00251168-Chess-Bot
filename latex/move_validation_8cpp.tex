@@ -2,20 +2,20 @@
 \hypertarget{move_validation_8cpp}{}\label{move_validation_8cpp}\index{src/moveValidation.cpp@{src/moveValidation.cpp}}
 
 
-Implements \doxylink{move_validation_8h}{move\+Validation.\+h} to check if a move is legal.  
+Implements move\+Validation.\+h to check if a move is legal.  
 
 
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5}{is\+Square\+Attacked}} (int square, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} attacker, const \mbox{\hyperlink{class_board}{Board}} \&board)
+bool \mbox{\hyperlink{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5}{is\+Square\+Attacked}} (int square, Colour attacker, const Board \&board)
 \item 
-void \mbox{\hyperlink{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9}{filter\+Illegal\+Moves}} (std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \&moves, const \mbox{\hyperlink{class_board}{Board}} \&board, \mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} colour)
+void \mbox{\hyperlink{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9}{filter\+Illegal\+Moves}} (std\+::vector$<$ Move $>$ \&moves, const Board \&board, Colour colour)
 \begin{DoxyCompactList}\small\item\em Filters out moves that would leave the moving player\textquotesingle{}s king in check. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Implements \doxylink{move_validation_8h}{move\+Validation.\+h} to check if a move is legal. 
+Implements move\+Validation.\+h to check if a move is legal. 
 
 \begin{DoxyAuthor}{Author}
 Seán Rourke 
@@ -35,7 +35,7 @@ Copyright (c) 2025
 \index{filterIllegalMoves@{filterIllegalMoves}!moveValidation.cpp@{moveValidation.cpp}}
 \doxysubsubsection{\texorpdfstring{filterIllegalMoves()}{filterIllegalMoves()}}
 {\footnotesize\ttfamily \label{move_validation_8cpp_a9364ccb99bc4361d2680f39f27e4c5f9} 
-void filter\+Illegal\+Moves (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_move}{Move}} $>$ \&}]{moves}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{colour}{}\end{DoxyParamCaption})}
+void filter\+Illegal\+Moves (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Move $>$ \&}]{moves}{, }\item[{const Board \&}]{board}{, }\item[{Colour}]{colour}{}\end{DoxyParamCaption})}
 
 
 
@@ -54,19 +54,5 @@ This function creates a copy of the main board. It then simulates each potential
 \index{isSquareAttacked@{isSquareAttacked}!moveValidation.cpp@{moveValidation.cpp}}
 \doxysubsubsection{\texorpdfstring{isSquareAttacked()}{isSquareAttacked()}}
 {\footnotesize\ttfamily \label{move_validation_8cpp_a680473f8d22ad30898a31ba3e9ccb9d5} 
-bool is\+Square\+Attacked (\begin{DoxyParamCaption}\item[{int}]{square}{, }\item[{\mbox{\hyperlink{board_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}}]{attacker}{, }\item[{const \mbox{\hyperlink{class_board}{Board}} \&}]{board}{}\end{DoxyParamCaption})}
+bool is\+Square\+Attacked (\begin{DoxyParamCaption}\item[{int}]{square}{, }\item[{Colour}]{attacker}{, }\item[{const Board \&}]{board}{}\end{DoxyParamCaption})}
 
-
-\begin{DoxyParams}{Parameters}
-{\em square} & The square being checked for attacks. \\
-\hline
-{\em attacker} & The colour of the attacking player. \\
-\hline
-{\em board} & The current state of the chessboard. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true If the square is attacked. 
-
-false If the square is not attacked. 
-\end{DoxyReturn}

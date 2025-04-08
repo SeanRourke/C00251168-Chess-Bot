@@ -26,6 +26,13 @@ void makeMove(Board &board, const Move &move)
    // Remove the piece from its original position in the bitboard
    board.bitboards[pieceType][board.currentColour] &= ~(1ULL << fromSquare);
 
+   // Handle captures
+   Piece capturedPiece = board.pieces[toSquare];
+   if (capturedPiece != EMPTY)
+   {
+      board.bitboards[capturedPiece][!board.currentColour] &= ~(1ULL << toSquare);
+   }
+
    // Handle promotions
    if (move.promotionPiece != -1)
    {
@@ -35,12 +42,6 @@ void makeMove(Board &board, const Move &move)
    }
    else
    {
-      // Handle captures
-      Piece capturedPiece = board.pieces[toSquare];
-      if (capturedPiece != EMPTY)
-      {
-         board.bitboards[capturedPiece][!board.currentColour] &= ~(1ULL << toSquare);
-      }
 
       // Handle en passant
       if (pieceType == PAWN && toSquare == board.enPassantSquare)

@@ -26,6 +26,12 @@
 #include "search.h"
 #include "uciConversion.h"
 
+/**
+ * @brief UCI protocol to receive move made in the lichess website and update board.
+ *
+ * @param chessBoard The current state of the chessboard.
+ * @param input String sent by the lichess-bot api client containing the moves that have been made.
+ */
 void handlePosition(Board &chessBoard, const std::string &input)
 {
     std::istringstream iss(input);
@@ -52,6 +58,12 @@ void handlePosition(Board &chessBoard, const std::string &input)
     return;
 }
 
+/**
+ * @brief Search for best move for the bot to make using alpha beta.
+ *
+ * @param chessBoard The current state of the chessboard.
+ * @param depth The number of moves to simulate ahead when searching.
+ */
 std::string findBestMove(Board &chessBoard, int depth)
 {
     std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
@@ -84,6 +96,12 @@ std::string findBestMove(Board &chessBoard, int depth)
     return bestMoveString;
 }
 
+/**
+ * @brief UCI protocol to respond when it is bot's turn to move.
+ *
+ * @param chessBoard The current state of the chessboard.
+ * @param depth The number of moves to simulate ahead when searching.
+ */
 void handleGo(Board &chessBoard, int depth)
 {
     std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -92,13 +110,16 @@ void handleGo(Board &chessBoard, int depth)
     return;
 }
 
+/**
+ * @brief Main function to receive and respond to UCI commands.
+ */
 int main()
 {
 
     Board chessBoard;
     chessBoard.initialise();
-    chessBoard.printBoard();
-    int depth = 2;
+    // chessBoard.printBoard();
+    int depth = 4;
     std::string input;
     std::cout.sync_with_stdio(false);
 
@@ -127,6 +148,55 @@ int main()
             break;
         }
     }
+
+    /*while (depth = 4) {
+
+        chessBoard.printBoard();
+
+        std::cout << std::endl << std::endl;
+
+        for (int rank = 7; rank >= 0; --rank) {
+            for (int file = 0; file < 8; ++file) {
+                int index = rank * 8 + file;
+                switch (chessBoard.pieces[index]) {
+                    case EMPTY: std::cout << ". "; break;
+                    case PAWN: std::cout << "P "; break;
+                    case ROOK: std::cout << "R "; break;
+                    case KNIGHT: std::cout << "N "; break;
+                    case BISHOP: std::cout << "B "; break;
+                    case QUEEN: std::cout << "Q "; break;
+                    case KING: std::cout << "K "; break;
+                    default: std::cout << "- "; break;
+                }
+            }
+            std::cout << "\n";
+        }
+
+        std::cout << std::endl << std::endl;
+
+        std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
+
+        for (Move move : moves) {
+            std::string moveString = convertToUCI(move);
+            std::cout << "Move: " << moveString << std::endl;
+        }
+
+
+        std::cout << std::endl << std::endl;
+
+        std::cout << "Next Move: " << std::endl;
+        std::string move;
+        std::cin >> move;
+
+        Move nextMove = convertFromUCI(chessBoard, move);
+        makeMove(chessBoard, nextMove);
+
+
+        std::cin.get();
+
+
+
+    }*/
 
     return 0;
 }

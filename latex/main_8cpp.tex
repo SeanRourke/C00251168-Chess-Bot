@@ -8,8 +8,14 @@ Entry point for the chess engine.
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{main_8cpp_af29557444b1c97657a6deaa108469092}{handle\+Position}} (Board \&chess\+Board, const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em UCI protocol to receive move made in the lichess website and update board. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{main_8cpp_a0a02078724ad6757afafa3ff76faaac6}{find\+Best\+Move}} (Board \&chess\+Board, int depth)
+\begin{DoxyCompactList}\small\item\em Search for best move for the bot to make using alpha beta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_adb7a22c285aa8a0592df83d6ad545da2}{handle\+Go}} (Board \&chess\+Board, int depth)
+\begin{DoxyCompactList}\small\item\em UCI protocol to respond when it is bot\textquotesingle{}s turn to move. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em Main function of the chess engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main function to receive and respond to UCI commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -29,6 +35,57 @@ Copyright (c) 2025
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0a02078724ad6757afafa3ff76faaac6}\index{main.cpp@{main.cpp}!findBestMove@{findBestMove}}
+\index{findBestMove@{findBestMove}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{findBestMove()}{findBestMove()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0a02078724ad6757afafa3ff76faaac6} 
+std\+::string find\+Best\+Move (\begin{DoxyParamCaption}\item[{Board \&}]{chess\+Board}{, }\item[{int}]{depth}{}\end{DoxyParamCaption})}
+
+
+
+Search for best move for the bot to make using alpha beta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chess\+Board} & The current state of the chessboard. \\
+\hline
+{\em depth} & The number of moves to simulate ahead when searching. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_adb7a22c285aa8a0592df83d6ad545da2}\index{main.cpp@{main.cpp}!handleGo@{handleGo}}
+\index{handleGo@{handleGo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleGo()}{handleGo()}}
+{\footnotesize\ttfamily \label{main_8cpp_adb7a22c285aa8a0592df83d6ad545da2} 
+void handle\+Go (\begin{DoxyParamCaption}\item[{Board \&}]{chess\+Board}{, }\item[{int}]{depth}{}\end{DoxyParamCaption})}
+
+
+
+UCI protocol to respond when it is bot\textquotesingle{}s turn to move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chess\+Board} & The current state of the chessboard. \\
+\hline
+{\em depth} & The number of moves to simulate ahead when searching. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_af29557444b1c97657a6deaa108469092}\index{main.cpp@{main.cpp}!handlePosition@{handlePosition}}
+\index{handlePosition@{handlePosition}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handlePosition()}{handlePosition()}}
+{\footnotesize\ttfamily \label{main_8cpp_af29557444b1c97657a6deaa108469092} 
+void handle\+Position (\begin{DoxyParamCaption}\item[{Board \&}]{chess\+Board}{, }\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})}
+
+
+
+UCI protocol to receive move made in the lichess website and update board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chess\+Board} & The current state of the chessboard. \\
+\hline
+{\em input} & String sent by the lichess-\/bot api client containing the moves that have been made. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
@@ -37,13 +94,5 @@ int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Main function of the chess engine. 
+Main function to receive and respond to UCI commands. 
 
-This function initialises the starting position of the chessboard.
-
-\begin{DoxyReturn}{Returns}
-int Returns 0 on successful execution. 
-\end{DoxyReturn}
-\texorpdfstring{$<$}{<} Instance of the chessboard.
-
-\texorpdfstring{$<$}{<} Initialises the chessboard with the starting position.

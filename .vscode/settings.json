@@ -59,6 +59,10 @@
         "algorithm": "cpp",
         "optional": "cpp",
         "string": "cpp",
-        "sstream": "cpp"
-    }
+        "sstream": "cpp",
+        "chrono": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
