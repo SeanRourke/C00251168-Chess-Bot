@@ -108,6 +108,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a195fbc67849bfb912fc2316004a208af" id="r_a195fbc67849bfb912fc2316004a208af"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a195fbc67849bfb912fc2316004a208af">centreAttacks</a> (const Board &amp;board)</td></tr>
 <tr class="memdesc:a195fbc67849bfb912fc2316004a208af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts number of pieces each player has attacking the centre of the board,.  <br /></td></tr>
 <tr class="separator:a195fbc67849bfb912fc2316004a208af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd976906da5726655809111c2ebf954" id="r_a1bd976906da5726655809111c2ebf954"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bd976906da5726655809111c2ebf954">development</a> (const Board &amp;board)</td></tr>
+<tr class="memdesc:a1bd976906da5726655809111c2ebf954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates how developed each player's pieces are.  <br /></td></tr>
+<tr class="separator:a1bd976906da5726655809111c2ebf954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a243b861cdb58af85604f90464a65cd84" id="r_a243b861cdb58af85604f90464a65cd84"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243b861cdb58af85604f90464a65cd84">evaluation</a> (const Board &amp;board)</td></tr>
 <tr class="memdesc:a243b861cdb58af85604f90464a65cd84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all heuristic functions to determine evaluation.  <br /></td></tr>
 <tr class="separator:a243b861cdb58af85604f90464a65cd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +166,32 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The evaluation of the position. </dd></dl>
+
+</div>
+</div>
+<a id="a1bd976906da5726655809111c2ebf954" name="a1bd976906da5726655809111c2ebf954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd976906da5726655809111c2ebf954">&#9670;&#160;</a></span>development()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float development </td>
+          <td>(</td>
+          <td class="paramtype">const Board &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates how developed each player's pieces are. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The current state odf the chessboard. </td></tr>
   </table>
   </dd>
 </dl>

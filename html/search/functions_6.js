@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['issquareattacked_0',['isSquareAttacked',['../move_validation_8cpp.html#a680473f8d22ad30898a31ba3e9ccb9d5',1,'moveValidation.cpp']]]
+  ['handlego_0',['handleGo',['../main_8cpp.html#adb7a22c285aa8a0592df83d6ad545da2',1,'main.cpp']]],
+  ['handleposition_1',['handlePosition',['../main_8cpp.html#af29557444b1c97657a6deaa108469092',1,'main.cpp']]]
 ];

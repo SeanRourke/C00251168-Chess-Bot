@@ -81,6 +81,31 @@ float centreAttacks(const Board &board)
     return score;
 }
 
+/**
+ * @brief Evaluates how developed each player's pieces are.
+ * 
+ * @param board The current state odf the chessboard.
+ * @return float The evaluation of the position.
+ */
+float development(const Board &board){
+
+    float score = 0.0f;
+    
+    // White minor pieces starting squares
+    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 1))) score += 0.3f; // b1
+    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 6))) score += 0.3f; // g1
+    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 2))) score += 0.3f; // c1
+    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 5))) score += 0.3f; // f1
+
+    // Black minor pieces starting squares
+    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 57))) score -= 0.3f; // b8
+    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 62))) score -= 0.3f; // g8
+    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 58))) score -= 0.3f; // c8
+    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 61))) score -= 0.3f; // f8
+
+    return score;
+}
+
 
 /**
  * @brief Run all heuristic functions to determine evaluation.
@@ -95,6 +120,7 @@ float evaluation(const Board &board)
     eval += materialCount(board);
     eval += centrePresence(board);
     eval += centreAttacks(board);
+    eval += development(board);
 
     return eval;
 }

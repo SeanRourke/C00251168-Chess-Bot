@@ -14,6 +14,8 @@ float \mbox{\hyperlink{evaluation_8cpp_a10d8756213f5b14c32f813ca3aaaa61c}{centre
 \begin{DoxyCompactList}\small\item\em Counts number of pieces each player has in the centre of the board,. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{evaluation_8cpp_a195fbc67849bfb912fc2316004a208af}{centre\+Attacks}} (const Board \&board)
 \begin{DoxyCompactList}\small\item\em Counts number of pieces each player has attacking the centre of the board,. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{evaluation_8cpp_a1bd976906da5726655809111c2ebf954}{development}} (const Board \&board)
+\begin{DoxyCompactList}\small\item\em Evaluates how developed each player\textquotesingle{}s pieces are. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84}{evaluation}} (const Board \&board)
 \begin{DoxyCompactList}\small\item\em Run all heuristic functions to determine evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -64,6 +66,24 @@ Counts number of pieces each player has in the centre of the board,.
 
 \begin{DoxyParams}{Parameters}
 {\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The evaluation of the position. 
+\end{DoxyReturn}
+\Hypertarget{evaluation_8cpp_a1bd976906da5726655809111c2ebf954}\index{evaluation.cpp@{evaluation.cpp}!development@{development}}
+\index{development@{development}!evaluation.cpp@{evaluation.cpp}}
+\doxysubsubsection{\texorpdfstring{development()}{development()}}
+{\footnotesize\ttfamily \label{evaluation_8cpp_a1bd976906da5726655809111c2ebf954} 
+float development (\begin{DoxyParamCaption}\item[{const Board \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Evaluates how developed each player\textquotesingle{}s pieces are. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state odf the chessboard. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

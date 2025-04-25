@@ -37,6 +37,14 @@ float centrePresence(const Board &board);
  */
 float centreAttacks(const Board &board);
 
+/**
+ * @brief Evaluates how developed each player's pieces are.
+ * 
+ * @param board The current state odf the chessboard.
+ * @return float The evaluation of the position.
+ */
+float development(const Board &board);
+
 
 /**
  * @brief Run all heuristic functions to determine evaluation.
