@@ -76,150 +76,135 @@ CMakeFiles/herm0ni.dir/src/board.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rs
 CMakeFiles/herm0ni.dir/src/board.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/board.cpp
 CMakeFiles/herm0ni.dir/src/board.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/herm0ni.dir/src/board.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/board.cpp.obj -MF CMakeFiles\herm0ni.dir\src\board.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\board.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/board.cpp.obj -MF CMakeFiles\herm0ni.dir\src\board.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\board.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp
 
 CMakeFiles/herm0ni.dir/src/board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/board.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp > CMakeFiles\herm0ni.dir\src\board.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp > CMakeFiles\herm0ni.dir\src\board.cpp.i
 
 CMakeFiles/herm0ni.dir/src/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/board.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp -o CMakeFiles\herm0ni.dir\src\board.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\board.cpp -o CMakeFiles\herm0ni.dir\src\board.cpp.s
 
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/evaluation.cpp
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj -MF CMakeFiles\herm0ni.dir\src\evaluation.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\evaluation.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/evaluation.cpp.obj -MF CMakeFiles\herm0ni.dir\src\evaluation.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\evaluation.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp
 
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/evaluation.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp > CMakeFiles\herm0ni.dir\src\evaluation.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp > CMakeFiles\herm0ni.dir\src\evaluation.cpp.i
 
 CMakeFiles/herm0ni.dir/src/evaluation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/evaluation.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp -o CMakeFiles\herm0ni.dir\src\evaluation.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\evaluation.cpp -o CMakeFiles\herm0ni.dir\src\evaluation.cpp.s
 
 CMakeFiles/herm0ni.dir/src/main.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/main.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/main.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/main.cpp
 CMakeFiles/herm0ni.dir/src/main.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/herm0ni.dir/src/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/main.cpp.obj -MF CMakeFiles\herm0ni.dir\src\main.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\main.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/main.cpp.obj -MF CMakeFiles\herm0ni.dir\src\main.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\main.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp
 
 CMakeFiles/herm0ni.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp > CMakeFiles\herm0ni.dir\src\main.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp > CMakeFiles\herm0ni.dir\src\main.cpp.i
 
 CMakeFiles/herm0ni.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp -o CMakeFiles\herm0ni.dir\src\main.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\main.cpp -o CMakeFiles\herm0ni.dir\src\main.cpp.s
 
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/makeMove.cpp
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj -MF CMakeFiles\herm0ni.dir\src\makeMove.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\makeMove.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/makeMove.cpp.obj -MF CMakeFiles\herm0ni.dir\src\makeMove.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\makeMove.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp
 
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/makeMove.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp > CMakeFiles\herm0ni.dir\src\makeMove.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp > CMakeFiles\herm0ni.dir\src\makeMove.cpp.i
 
 CMakeFiles/herm0ni.dir/src/makeMove.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/makeMove.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp -o CMakeFiles\herm0ni.dir\src\makeMove.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\makeMove.cpp -o CMakeFiles\herm0ni.dir\src\makeMove.cpp.s
 
 CMakeFiles/herm0ni.dir/src/move.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/move.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/move.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/move.cpp
 CMakeFiles/herm0ni.dir/src/move.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/herm0ni.dir/src/move.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/move.cpp.obj -MF CMakeFiles\herm0ni.dir\src\move.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\move.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/move.cpp.obj -MF CMakeFiles\herm0ni.dir\src\move.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\move.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp
 
 CMakeFiles/herm0ni.dir/src/move.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/move.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp > CMakeFiles\herm0ni.dir\src\move.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp > CMakeFiles\herm0ni.dir\src\move.cpp.i
 
 CMakeFiles/herm0ni.dir/src/move.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/move.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp -o CMakeFiles\herm0ni.dir\src\move.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\move.cpp -o CMakeFiles\herm0ni.dir\src\move.cpp.s
 
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/moveGeneration.cpp
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj -MF CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj -MF CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp
 
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp > CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp > CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.i
 
 CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp -o CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\moveGeneration.cpp -o CMakeFiles\herm0ni.dir\src\moveGeneration.cpp.s
 
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/moveValidation.cpp
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj -MF CMakeFiles\herm0ni.dir\src\moveValidation.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\moveValidation.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj -MF CMakeFiles\herm0ni.dir\src\moveValidation.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\moveValidation.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp
 
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/moveValidation.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp > CMakeFiles\herm0ni.dir\src\moveValidation.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp > CMakeFiles\herm0ni.dir\src\moveValidation.cpp.i
 
 CMakeFiles/herm0ni.dir/src/moveValidation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/moveValidation.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp -o CMakeFiles\herm0ni.dir\src\moveValidation.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\moveValidation.cpp -o CMakeFiles\herm0ni.dir\src\moveValidation.cpp.s
 
 CMakeFiles/herm0ni.dir/src/search.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/search.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/search.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/search.cpp
 CMakeFiles/herm0ni.dir/src/search.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/herm0ni.dir/src/search.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/search.cpp.obj -MF CMakeFiles\herm0ni.dir\src\search.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\search.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/search.cpp.obj -MF CMakeFiles\herm0ni.dir\src\search.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\search.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp
 
 CMakeFiles/herm0ni.dir/src/search.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/search.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp > CMakeFiles\herm0ni.dir\src\search.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp > CMakeFiles\herm0ni.dir\src\search.cpp.i
 
 CMakeFiles/herm0ni.dir/src/search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/search.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp -o CMakeFiles\herm0ni.dir\src\search.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\search.cpp -o CMakeFiles\herm0ni.dir\src\search.cpp.s
 
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/uciConversion.cpp
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj -MF CMakeFiles\herm0ni.dir\src\uciConversion.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\uciConversion.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj -MF CMakeFiles\herm0ni.dir\src\uciConversion.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\uciConversion.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp
 
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/uciConversion.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp > CMakeFiles\herm0ni.dir\src\uciConversion.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp > CMakeFiles\herm0ni.dir\src\uciConversion.cpp.i
 
 CMakeFiles/herm0ni.dir/src/uciConversion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/uciConversion.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp -o CMakeFiles\herm0ni.dir\src\uciConversion.cpp.s
-
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj: CMakeFiles/herm0ni.dir/flags.make
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj: CMakeFiles/herm0ni.dir/includes_CXX.rsp
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj: C:/College/Year4/Project/C00251168-Chess-Bot/src/undoMove.cpp
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj: CMakeFiles/herm0ni.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj -MF CMakeFiles\herm0ni.dir\src\undoMove.cpp.obj.d -o CMakeFiles\herm0ni.dir\src\undoMove.cpp.obj -c C:\College\Year4\Project\C00251168-Chess-Bot\src\undoMove.cpp
-
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/herm0ni.dir/src/undoMove.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\College\Year4\Project\C00251168-Chess-Bot\src\undoMove.cpp > CMakeFiles\herm0ni.dir\src\undoMove.cpp.i
-
-CMakeFiles/herm0ni.dir/src/undoMove.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/herm0ni.dir/src/undoMove.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\undoMove.cpp -o CMakeFiles\herm0ni.dir\src\undoMove.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\College\Year4\Project\C00251168-Chess-Bot\src\uciConversion.cpp -o CMakeFiles\herm0ni.dir\src\uciConversion.cpp.s
 
 # Object files for target herm0ni
 herm0ni_OBJECTS = \
@@ -231,8 +216,7 @@ herm0ni_OBJECTS = \
 "CMakeFiles/herm0ni.dir/src/moveGeneration.cpp.obj" \
 "CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj" \
 "CMakeFiles/herm0ni.dir/src/search.cpp.obj" \
-"CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj" \
-"CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj"
+"CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj"
 
 # External object files for target herm0ni
 herm0ni_EXTERNAL_OBJECTS =
@@ -246,12 +230,11 @@ C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/src/moveValidation.cpp.obj
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/src/search.cpp.obj
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj
-C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/build.make
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/linkLibs.rsp
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/objects1.rsp
 C:/College/Year4/Project/C00251168-Chess-Bot/herm0ni.exe: CMakeFiles/herm0ni.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable C:\College\Year4\Project\C00251168-Chess-Bot\herm0ni.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable C:\College\Year4\Project\C00251168-Chess-Bot\herm0ni.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\herm0ni.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

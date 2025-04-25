@@ -84,12 +84,12 @@ clean: CMakeFiles/herm0ni.dir/clean
 CMakeFiles/herm0ni.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target herm0ni"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target herm0ni"
 .PHONY : CMakeFiles/herm0ni.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/herm0ni.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/herm0ni.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles 0
 .PHONY : CMakeFiles/herm0ni.dir/rule
@@ -101,7 +101,7 @@ herm0ni: CMakeFiles/herm0ni.dir/rule
 # codegen rule for target.
 CMakeFiles/herm0ni.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target herm0ni"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\College\Year4\Project\C00251168-Chess-Bot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Finished codegen for target herm0ni"
 .PHONY : CMakeFiles/herm0ni.dir/codegen
 
 # clean rule for target.

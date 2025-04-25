@@ -49,8 +49,6 @@ enum Colour
     MAX_COLOUR ///< Colour count.
 };
 
-struct MoveHistory;
-
 /**
  * @class Board
  * @brief Represents a chessboard using bitboards.
@@ -71,12 +69,14 @@ public:
     int enPassantSquare = -1; ///< Stores location of valid en passant square (-1 if none).
     std::array<Piece, 64> pieces;
     Colour currentColour = WHITE;
-    std::vector<MoveHistory> moveHistory;
 
     bool whiteCanCastleKingSide;
     bool whiteCanCastleQueenSide;
     bool blackCanCastleKingSide;
     bool blackCanCastleQueenSide;
+
+    bool whiteHasCastled;
+    bool blackHasCastled;
 
     /**
      * @brief Construct a new Board object.
@@ -105,6 +105,13 @@ public:
      */
     void printBoard() const;
 
+    /**
+     * @brief Finds the location of a given colours king.
+     *
+     * @param colour The colour of king to be found.
+     * @return The location of the king.
+     */
+    int kingSquare(Colour colour) const;
 };
 
 #endif

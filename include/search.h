@@ -10,7 +10,6 @@
 
 #include "board.h"
 #include "makeMove.h"
-#include "undoMove.h"
 
 #ifndef SEARCH_H
 #define SEARCH_H

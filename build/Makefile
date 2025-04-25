@@ -344,30 +344,6 @@ src/uciConversion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/uciConversion.cpp.s
 .PHONY : src/uciConversion.cpp.s
 
-src/undoMove.obj: src/undoMove.cpp.obj
-.PHONY : src/undoMove.obj
-
-# target to build an object file
-src/undoMove.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj
-.PHONY : src/undoMove.cpp.obj
-
-src/undoMove.i: src/undoMove.cpp.i
-.PHONY : src/undoMove.i
-
-# target to preprocess a source file
-src/undoMove.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.i
-.PHONY : src/undoMove.cpp.i
-
-src/undoMove.s: src/undoMove.cpp.s
-.PHONY : src/undoMove.s
-
-# target to generate assembly for a file
-src/undoMove.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\herm0ni.dir\build.make CMakeFiles/herm0ni.dir/src/undoMove.cpp.s
-.PHONY : src/undoMove.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -404,9 +380,6 @@ help:
 	@echo ... src/uciConversion.obj
 	@echo ... src/uciConversion.i
 	@echo ... src/uciConversion.s
-	@echo ... src/undoMove.obj
-	@echo ... src/undoMove.i
-	@echo ... src/undoMove.s
 .PHONY : help
 
 

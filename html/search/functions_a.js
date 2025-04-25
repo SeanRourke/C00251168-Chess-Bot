@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['undomove_0',['undoMove',['../undo_move_8cpp.html#abf670acc4c3db2e626e02c55cf16d3e9',1,'undoMove.cpp']]]
+  ['operator_3c_3c_0',['operator&lt;&lt;',['../move_8cpp.html#a72317566849f53db8af92bbf38903102',1,'move.cpp']]]
 ];

@@ -15,7 +15,7 @@
  * @brief Counts material value of each player.
  *
  * @param board The current state of the chessboard.
- * @return float The evaluation of the position.
+ * @return float The evaluation of the material count.
  */
 float materialCount(const Board &board)
 {
@@ -34,9 +34,9 @@ float materialCount(const Board &board)
 
 /**
  * @brief Counts number of pieces each player has in the centre of the board,
- * 
+ *
  * @param board The current state of the chessboard.
- * @return float The evaluation of the position.
+ * @return float The evaluation of centre presence.
  */
 float centrePresence(const Board &board)
 {
@@ -57,9 +57,9 @@ float centrePresence(const Board &board)
 
 /**
  * @brief Counts number of pieces each player has attacking the centre of the board,
- * 
+ *
  * @param board The current state of the chessboard.
- * @return float The evaluation of the position.
+ * @return float The evaluation of centre attacks.
  */
 float centreAttacks(const Board &board)
 {
@@ -83,29 +83,104 @@ float centreAttacks(const Board &board)
 
 /**
  * @brief Evaluates how developed each player's pieces are.
- * 
- * @param board The current state odf the chessboard.
- * @return float The evaluation of the position.
+ *
+ * @param board The current state of the chessboard.
+ * @return float The evaluation of development.
  */
-float development(const Board &board){
+float development(const Board &board)
+{
 
     float score = 0.0f;
-    
+
     // White minor pieces starting squares
-    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 1))) score += 0.3f; // b1
-    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 6))) score += 0.3f; // g1
-    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 2))) score += 0.3f; // c1
-    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 5))) score += 0.3f; // f1
+    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 1)))
+        score += 0.3f; // b1
+    if (!(board.bitboards[KNIGHT][WHITE] & (1ULL << 6)))
+        score += 0.3f; // g1
+    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 2)))
+        score += 0.3f; // c1
+    if (!(board.bitboards[BISHOP][WHITE] & (1ULL << 5)))
+        score += 0.3f; // f1
 
     // Black minor pieces starting squares
-    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 57))) score -= 0.3f; // b8
-    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 62))) score -= 0.3f; // g8
-    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 58))) score -= 0.3f; // c8
-    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 61))) score -= 0.3f; // f8
+    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 57)))
+        score -= 0.3f; // b8
+    if (!(board.bitboards[KNIGHT][BLACK] & (1ULL << 62)))
+        score -= 0.3f; // g8
+    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 58)))
+        score -= 0.3f; // c8
+    if (!(board.bitboards[BISHOP][BLACK] & (1ULL << 61)))
+        score -= 0.3f; // f8
 
     return score;
 }
 
+/**
+ * @brief Evaluate the safety of each player's king.
+ *
+ * @param board The current state of the chessboard.
+ * @return float The evaluation of king safety.
+ */
+float kingSafety(const Board &board)
+{
+    float score = 0.0f;
+
+    // White king
+    int whiteKing = board.kingSquare(WHITE);
+    if (board.whiteHasCastled)
+    {
+        score += 0.5f; // White castling
+    }
+
+    // Check white pawn shield
+    if (whiteKing == 6) // g1
+    {
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 13))
+            score += 0.2f; // f2
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 14))
+            score += 0.2f; // g2
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 15))
+            score += 0.2f; // h2
+    }
+    else if (whiteKing == 2) // c1
+    {
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 9))
+            score += 0.2f; // b2
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 10))
+            score += 0.2f; // c2
+        if (board.bitboards[PAWN][WHITE] & (1ULL << 11))
+            score += 0.2f; // d2
+    }
+
+    // Black king
+    int blackKing = board.kingSquare(BLACK);
+    if (board.blackHasCastled)
+    {
+        score -= 0.5f; // Black castling
+    }
+
+    // Check black pawn shield
+    if (blackKing == 62) // g8
+    {
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 53))
+            score -= 0.2f; // f7
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 54))
+            score -= 0.2f; // g7
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 55))
+            score -= 0.2f; // h7
+    }
+    else if (blackKing == 58) // c8
+    {
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 49))
+            score -= 0.2f; // b7
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 50))
+            score -= 0.2f; // c7
+        if (board.bitboards[PAWN][BLACK] & (1ULL << 51))
+            score -= 0.2f; // d7
+    }
+
+    return score;
+}
 
 /**
  * @brief Run all heuristic functions to determine evaluation.
@@ -121,6 +196,7 @@ float evaluation(const Board &board)
     eval += centrePresence(board);
     eval += centreAttacks(board);
     eval += development(board);
+    eval += kingSafety(board);
 
     return eval;
 }

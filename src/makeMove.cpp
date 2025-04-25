@@ -90,11 +90,13 @@ void makeMove(Board &board, const Move &move)
          {
             board.whiteCanCastleKingSide = false;
             board.whiteCanCastleQueenSide = false;
+            board.whiteHasCastled = true;
          }
          else
          {
             board.blackCanCastleKingSide = false;
             board.blackCanCastleQueenSide = false;
+            board.blackHasCastled = true;
          }
       }
 

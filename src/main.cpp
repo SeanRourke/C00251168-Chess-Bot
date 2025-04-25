@@ -21,7 +21,6 @@
 #include "moveGeneration.h"
 #include "makeMove.h"
 #include "evaluation.h"
-#include "undoMove.h"
 #include "moveValidation.h"
 #include "search.h"
 #include "uciConversion.h"
@@ -68,6 +67,7 @@ std::string findBestMove(Board &chessBoard, int depth)
 {
     std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
     Move bestMove;
+    bestMove = moves[0];
     if (moves.empty())
     {
         std::string bestMoveString = "(none)";
@@ -104,7 +104,7 @@ std::string findBestMove(Board &chessBoard, int depth)
  */
 void handleGo(Board &chessBoard, int depth)
 {
-    //std::this_thread::sleep_for(std::chrono::seconds(1));
+    // std::this_thread::sleep_for(std::chrono::seconds(1));
     std::string bestMoveString = findBestMove(chessBoard, depth);
     std::cout << "bestmove " << bestMoveString << std::endl;
     return;
@@ -148,55 +148,6 @@ int main()
             break;
         }
     }
-
-    /*while (depth = 4) {
-
-        chessBoard.printBoard();
-
-        std::cout << std::endl << std::endl;
-
-        for (int rank = 7; rank >= 0; --rank) {
-            for (int file = 0; file < 8; ++file) {
-                int index = rank * 8 + file;
-                switch (chessBoard.pieces[index]) {
-                    case EMPTY: std::cout << ". "; break;
-                    case PAWN: std::cout << "P "; break;
-                    case ROOK: std::cout << "R "; break;
-                    case KNIGHT: std::cout << "N "; break;
-                    case BISHOP: std::cout << "B "; break;
-                    case QUEEN: std::cout << "Q "; break;
-                    case KING: std::cout << "K "; break;
-                    default: std::cout << "- "; break;
-                }
-            }
-            std::cout << "\n";
-        }
-
-        std::cout << std::endl << std::endl;
-
-        std::vector<Move> moves = generateMoves(chessBoard.currentColour, chessBoard);
-
-        for (Move move : moves) {
-            std::string moveString = convertToUCI(move);
-            std::cout << "Move: " << moveString << std::endl;
-        }
-
-
-        std::cout << std::endl << std::endl;
-
-        std::cout << "Next Move: " << std::endl;
-        std::string move;
-        std::cin >> move;
-
-        Move nextMove = convertFromUCI(chessBoard, move);
-        makeMove(chessBoard, nextMove);
-
-
-        std::cin.get();
-
-
-
-    }*/
 
     return 0;
 }

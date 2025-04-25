@@ -22,36 +22,45 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
     Colour defender = (attacker == WHITE) ? BLACK : WHITE;
 
     // Check for pawn attacks
-    if (defender == WHITE) {
-        if (square % 8 != 0){
+    if (defender == WHITE)
+    {
+        if (square % 8 != 0)
+        {
             int left = square + 7;
-            if (board.blackPieces & (1ULL << left) && board.pieces[left] == PAWN) {
+            if (board.blackPieces & (1ULL << left) && board.pieces[left] == PAWN)
+            {
                 return true;
             }
         }
-        if (square % 8 != 7){
+        if (square % 8 != 7)
+        {
             int right = square + 9;
-            if (board.blackPieces & (1ULL << right) && board.pieces[right] == PAWN) {
+            if (board.blackPieces & (1ULL << right) && board.pieces[right] == PAWN)
+            {
                 return true;
             }
         }
     }
 
-    if (defender == BLACK) {
-        if (square % 8 != 0){
+    if (defender == BLACK)
+    {
+        if (square % 8 != 0)
+        {
             int left = square - 7;
-            if (board.whitePieces & (1ULL << left) && board.pieces[left] == PAWN) {
+            if (board.whitePieces & (1ULL << left) && board.pieces[left] == PAWN)
+            {
                 return true;
             }
         }
-        if (square % 8 != 7){
+        if (square % 8 != 7)
+        {
             int right = square - 9;
-            if (board.whitePieces & (1ULL << right) && board.pieces[right] == PAWN) {
+            if (board.whitePieces & (1ULL << right) && board.pieces[right] == PAWN)
+            {
                 return true;
             }
         }
     }
-    
 
     // Check for knight attacks
     int knightMoves[8][2] = {
@@ -64,8 +73,8 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
         if (newRank >= 0 && newRank < BOARD_SIZE && newFile >= 0 && newFile < BOARD_SIZE)
         {
             int knightSquare = newRank * BOARD_SIZE + newFile;
-            if (board.allPieces & (1ULL << knightSquare) && 
-                ((defender == WHITE && board.blackPieces & (1ULL << knightSquare) && board.pieces[knightSquare] == KNIGHT) || 
+            if (board.allPieces & (1ULL << knightSquare) &&
+                ((defender == WHITE && board.blackPieces & (1ULL << knightSquare) && board.pieces[knightSquare] == KNIGHT) ||
                  (defender == BLACK && board.whitePieces & (1ULL << knightSquare) && board.pieces[knightSquare] == KNIGHT)))
             {
                 return true; // Attacked by a knight
@@ -94,7 +103,8 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
                 if ((defender == WHITE && board.blackPieces & (1ULL << newSquare)) ||
                     (defender == BLACK && board.whitePieces & (1ULL << newSquare)))
                 {
-                    if (board.pieces[newSquare] == BISHOP || board.pieces[newSquare] == QUEEN) {
+                    if (board.pieces[newSquare] == BISHOP || board.pieces[newSquare] == QUEEN)
+                    {
                         return true; // Attacked by a bishop or queen
                     }
                 }
@@ -124,7 +134,8 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
                 if ((defender == WHITE && board.blackPieces & (1ULL << newSquare)) ||
                     (defender == BLACK && board.whitePieces & (1ULL << newSquare)))
                 {
-                    if (board.pieces[newSquare] == ROOK || board.pieces[newSquare] == QUEEN) {
+                    if (board.pieces[newSquare] == ROOK || board.pieces[newSquare] == QUEEN)
+                    {
                         return true; // Attacked by a rook or queen
                     }
                 }
@@ -157,31 +168,33 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board)
 
 /**
  * @brief Filters out moves that would leave the moving player's king in check.
- * 
+ *
  * @param moves Unfiltered generated moves.
  * @param board The current state of the chessboard.
  * @param colour The player making the move.
- * 
+ *
  * This function creates a copy of the main board.
  * It then simulates each potential move and checks if it leaves the moving player's king in check.
  * If it does, the move is removed from the movelist.
  */
-void filterIllegalMoves(std::vector<Move> &moves, const Board &board, Colour colour){
+void filterIllegalMoves(std::vector<Move> &moves, const Board &board, Colour colour)
+{
 
     moves.erase(std::remove_if(moves.begin(), moves.end(),
-                                [&](const Move &move)
-                                {
-                                    Board tempBoard = board; // Copy the board
-                                    makeMove(tempBoard, move);
+                               [&](const Move &move)
+                               {
+                                   Board tempBoard = board; // Copy the board
+                                   makeMove(tempBoard, move);
 
-                                    Bitboard kingBB = tempBoard.bitboards[KING][colour];
-                                    if (kingBB == 0) return true; // If king is missing, move is illegal
+                                   Bitboard kingBB = tempBoard.bitboards[KING][colour];
+                                   if (kingBB == 0)
+                                       return true; // If king is missing, move is illegal
 
-                                    // Find the king's position after making the move
-                                    int kingSquare = __builtin_ctzll(kingBB);
+                                   // Find the king's position after making the move
+                                   int kingSquare = __builtin_ctzll(kingBB);
 
-                                    // Remove move if it leaves the king in check
-                                    return isSquareAttacked(kingSquare, (colour == WHITE) ? BLACK : WHITE, tempBoard);
-                                }),
+                                   // Remove move if it leaves the king in check
+                                   return isSquareAttacked(kingSquare, (colour == WHITE) ? BLACK : WHITE, tempBoard);
+                               }),
                 moves.end());
 }

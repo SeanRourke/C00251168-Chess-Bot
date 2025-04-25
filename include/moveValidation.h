@@ -28,7 +28,7 @@ bool isSquareAttacked(int square, Colour attacker, const Board &board);
 
 /**
  * @brief Filters out moves that would leave the moving player's king in check.
- * 
+ *
  * @param moves Unfiltered generated moves.
  * @param board The current state of the chessboard.
  * @param colour The player making the move.

@@ -16,6 +16,8 @@ float \mbox{\hyperlink{evaluation_8cpp_a195fbc67849bfb912fc2316004a208af}{centre
 \begin{DoxyCompactList}\small\item\em Counts number of pieces each player has attacking the centre of the board,. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{evaluation_8cpp_a1bd976906da5726655809111c2ebf954}{development}} (const Board \&board)
 \begin{DoxyCompactList}\small\item\em Evaluates how developed each player\textquotesingle{}s pieces are. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{evaluation_8cpp_a563f75e85b23ce746c369ab9fbc5b028}{king\+Safety}} (const Board \&board)
+\begin{DoxyCompactList}\small\item\em Evaluate the safety of each player\textquotesingle{}s king. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84}{evaluation}} (const Board \&board)
 \begin{DoxyCompactList}\small\item\em Run all heuristic functions to determine evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -51,7 +53,7 @@ Counts number of pieces each player has attacking the centre of the board,.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-float The evaluation of the position. 
+float The evaluation of centre attacks. 
 \end{DoxyReturn}
 \Hypertarget{evaluation_8cpp_a10d8756213f5b14c32f813ca3aaaa61c}\index{evaluation.cpp@{evaluation.cpp}!centrePresence@{centrePresence}}
 \index{centrePresence@{centrePresence}!evaluation.cpp@{evaluation.cpp}}
@@ -69,7 +71,7 @@ Counts number of pieces each player has in the centre of the board,.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-float The evaluation of the position. 
+float The evaluation of centre presence. 
 \end{DoxyReturn}
 \Hypertarget{evaluation_8cpp_a1bd976906da5726655809111c2ebf954}\index{evaluation.cpp@{evaluation.cpp}!development@{development}}
 \index{development@{development}!evaluation.cpp@{evaluation.cpp}}
@@ -83,11 +85,11 @@ Evaluates how developed each player\textquotesingle{}s pieces are.
 
 
 \begin{DoxyParams}{Parameters}
-{\em board} & The current state odf the chessboard. \\
+{\em board} & The current state of the chessboard. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-float The evaluation of the position. 
+float The evaluation of development. 
 \end{DoxyReturn}
 \Hypertarget{evaluation_8cpp_a243b861cdb58af85604f90464a65cd84}\index{evaluation.cpp@{evaluation.cpp}!evaluation@{evaluation}}
 \index{evaluation@{evaluation}!evaluation.cpp@{evaluation.cpp}}
@@ -107,6 +109,24 @@ Run all heuristic functions to determine evaluation.
 \begin{DoxyReturn}{Returns}
 float The evaluation of the position. 
 \end{DoxyReturn}
+\Hypertarget{evaluation_8cpp_a563f75e85b23ce746c369ab9fbc5b028}\index{evaluation.cpp@{evaluation.cpp}!kingSafety@{kingSafety}}
+\index{kingSafety@{kingSafety}!evaluation.cpp@{evaluation.cpp}}
+\doxysubsubsection{\texorpdfstring{kingSafety()}{kingSafety()}}
+{\footnotesize\ttfamily \label{evaluation_8cpp_a563f75e85b23ce746c369ab9fbc5b028} 
+float king\+Safety (\begin{DoxyParamCaption}\item[{const Board \&}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate the safety of each player\textquotesingle{}s king. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The current state of the chessboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The evaluation of king safety. 
+\end{DoxyReturn}
 \Hypertarget{evaluation_8cpp_a3b2867ea6b179dcbb9204ea1bda62a19}\index{evaluation.cpp@{evaluation.cpp}!materialCount@{materialCount}}
 \index{materialCount@{materialCount}!evaluation.cpp@{evaluation.cpp}}
 \doxysubsubsection{\texorpdfstring{materialCount()}{materialCount()}}
@@ -123,5 +143,5 @@ Counts material value of each player.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-float The evaluation of the position. 
+float The evaluation of the material count. 
 \end{DoxyReturn}

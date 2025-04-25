@@ -320,7 +320,8 @@ std::vector<Move> generateKingMoves(int rank, int file, Colour colour, const Boa
 
             if (!(friendlyPieces & (1ULL << toSquare)))
             {
-                if (!isSquareAttacked(toSquare, attacker, board)){
+                if (!isSquareAttacked(toSquare, attacker, board))
+                {
                     moves.push_back({rank * BOARD_SIZE + file, toSquare});
                 }
             }

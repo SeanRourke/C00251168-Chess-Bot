@@ -20,8 +20,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/herm0ni.dir/src/search.cpp.obj.d"
   "CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj"
   "CMakeFiles/herm0ni.dir/src/uciConversion.cpp.obj.d"
-  "CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj"
-  "CMakeFiles/herm0ni.dir/src/undoMove.cpp.obj.d"
   "libherm0ni.dll.a"
 )
 

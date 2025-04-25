@@ -81,6 +81,9 @@ void Board::initialise()
     blackCanCastleKingSide = true;
     blackCanCastleQueenSide = true;
 
+    whiteHasCastled = false;
+    blackHasCastled = false;
+
     updateAggregateBitboards();
 }
 
@@ -143,4 +146,17 @@ void Board::printBoard() const
             printBitboard(bitboards[piece][colour]);
         }
     }
+}
+
+/**
+ * @brief Finds the location of a given colours king.
+ *
+ * @param colour The colour of king to be found.
+ * @return The location of the king.
+ */
+int Board::kingSquare(Colour colour) const
+{
+
+    uint64_t kingBitboard = bitboards[KING][colour];
+    return __builtin_ctzll(kingBitboard);
 }
