@@ -102,6 +102,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a3b2867ea6b179dcbb9204ea1bda62a19" id="r_a3b2867ea6b179dcbb9204ea1bda62a19"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b2867ea6b179dcbb9204ea1bda62a19">materialCount</a> (const Board &amp;board)</td></tr>
 <tr class="memdesc:a3b2867ea6b179dcbb9204ea1bda62a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts material value of each player.  <br /></td></tr>
 <tr class="separator:a3b2867ea6b179dcbb9204ea1bda62a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d8756213f5b14c32f813ca3aaaa61c" id="r_a10d8756213f5b14c32f813ca3aaaa61c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10d8756213f5b14c32f813ca3aaaa61c">centrePresence</a> (const Board &amp;board)</td></tr>
+<tr class="memdesc:a10d8756213f5b14c32f813ca3aaaa61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts number of pieces each player has in the centre of the board,.  <br /></td></tr>
+<tr class="separator:a10d8756213f5b14c32f813ca3aaaa61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195fbc67849bfb912fc2316004a208af" id="r_a195fbc67849bfb912fc2316004a208af"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a195fbc67849bfb912fc2316004a208af">centreAttacks</a> (const Board &amp;board)</td></tr>
+<tr class="memdesc:a195fbc67849bfb912fc2316004a208af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts number of pieces each player has attacking the centre of the board,.  <br /></td></tr>
+<tr class="separator:a195fbc67849bfb912fc2316004a208af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a243b861cdb58af85604f90464a65cd84" id="r_a243b861cdb58af85604f90464a65cd84"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243b861cdb58af85604f90464a65cd84">evaluation</a> (const Board &amp;board)</td></tr>
 <tr class="memdesc:a243b861cdb58af85604f90464a65cd84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all heuristic functions to determine evaluation.  <br /></td></tr>
 <tr class="separator:a243b861cdb58af85604f90464a65cd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,6 +118,58 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2025</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a195fbc67849bfb912fc2316004a208af" name="a195fbc67849bfb912fc2316004a208af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a195fbc67849bfb912fc2316004a208af">&#9670;&#160;</a></span>centreAttacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float centreAttacks </td>
+          <td>(</td>
+          <td class="paramtype">const Board &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Counts number of pieces each player has attacking the centre of the board,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The evaluation of the position. </dd></dl>
+
+</div>
+</div>
+<a id="a10d8756213f5b14c32f813ca3aaaa61c" name="a10d8756213f5b14c32f813ca3aaaa61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d8756213f5b14c32f813ca3aaaa61c">&#9670;&#160;</a></span>centrePresence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float centrePresence </td>
+          <td>(</td>
+          <td class="paramtype">const Board &amp;</td>          <td class="paramname"><span class="paramname"><em>board</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Counts number of pieces each player has in the centre of the board,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The evaluation of the position. </dd></dl>
+
+</div>
+</div>
 <a id="a243b861cdb58af85604f90464a65cd84" name="a243b861cdb58af85604f90464a65cd84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a243b861cdb58af85604f90464a65cd84">&#9670;&#160;</a></span>evaluation()</h2>
 
@@ -156,7 +214,7 @@ Functions</h2></td></tr>
 <p>Counts material value of each player. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">board</td><td>The current state of the chessboard; </td></tr>
+    <tr><td class="paramname">board</td><td>The current state of the chessboard. </td></tr>
   </table>
   </dd>
 </dl>

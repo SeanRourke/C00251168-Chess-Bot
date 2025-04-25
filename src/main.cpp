@@ -104,7 +104,7 @@ std::string findBestMove(Board &chessBoard, int depth)
  */
 void handleGo(Board &chessBoard, int depth)
 {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    //std::this_thread::sleep_for(std::chrono::seconds(1));
     std::string bestMoveString = findBestMove(chessBoard, depth);
     std::cout << "bestmove " << bestMoveString << std::endl;
     return;
